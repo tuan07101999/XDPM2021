@@ -21,5 +21,13 @@ namespace Business
         {
             return dal.UpdateCategory(category);
         }
+        public float getRentalChargeById(int id)
+        {
+            return dal.getRentalChargeById(id);
+        }
+        public Category getCategoryById(int id)
+        {
+            return dal.getCategoryById(id);
+        }
     }
 }

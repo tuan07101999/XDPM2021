@@ -55,5 +55,13 @@ namespace DataAccess
                 };
             }
         }
+        public float getRentalChargeById(int id)
+        {
+            return db.Categories.FirstOrDefault(x => x.idCategory == id).rentalCharge;
+        }
+        public Category getCategoryById(int id)
+        {
+            return db.Categories.FirstOrDefault(x => x.idCategory == id);
+        }
     }
 }

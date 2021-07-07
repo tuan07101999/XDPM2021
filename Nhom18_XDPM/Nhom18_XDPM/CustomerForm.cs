@@ -78,6 +78,10 @@ namespace Nhom18_XDPM
             // lỗi không đúng format
             if(txt_searchItem.Text != "")
             {
+                if (!(int.TryParse(txt_searchItem.Text, out int i) && customerBLL.searchCustomerbyId(Convert.ToInt32(txt_searchItem.Text)) != null))
+                {
+                    return;
+                }
                 int txt = Convert.ToInt32(txt_searchItem.Text.ToString().Trim());
                 CreateDataGridView();
                 bindingSource.DataSource = customerBLL.searchCustomerbyId(txt);

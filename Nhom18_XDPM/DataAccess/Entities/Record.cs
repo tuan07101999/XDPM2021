@@ -20,10 +20,8 @@ namespace DataAccess.Entities
         public int idCustomer { get; set; }
         //[Key]
         //[Column(Order = 3)]
-        public string? idDisk { get; set; }
-        //[Key]
-        //[Column(Order = 4)]
-        public string idTitle { get; set; }
+        public string idDisk { get; set; }
+
         public DateTime? rentDate { get; set; }
         public DateTime? dueDate { get; set; }
         public DateTime? actualReturnDate { get; set; }
@@ -32,6 +30,5 @@ namespace DataAccess.Entities
 
         public virtual Customer Customer { get; set; }
         public virtual Disk Disk { get; set; }
-        public virtual Title Title { get; set; }
     }
 }

@@ -54,6 +54,13 @@
     <Compile Include="CategoryBLL.cs" />
     <Compile Include="CustomerBLL.cs" />
     <Compile Include="DiskBLL.cs" />
+    <Compile Include="Enums\CustomerFilterTypeEnum.cs" />
+    <Compile Include="HoldingBLL.cs" />
+    <Compile Include="Models\CustomerReportModel.cs" />
+    <Compile Include="Models\FilterTypeObject.cs" />
+    <Compile Include="Models\HasOverdueModel.cs" />
+    <Compile Include="Models\RecordModel.cs" />
+    <Compile Include="Models\TitleReportModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecordBLL.cs" />
     <Compile Include="TitleBLL.cs" />

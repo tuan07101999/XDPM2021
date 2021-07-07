@@ -20,6 +20,7 @@ namespace DataAccess.Entities
         public DateTime birthDate { get; set; }
 
         public virtual IEnumerable<Record> Records { get; set; }
+        public virtual IEnumerable<Holding> Holdings { get; set; }
 
     }
 }

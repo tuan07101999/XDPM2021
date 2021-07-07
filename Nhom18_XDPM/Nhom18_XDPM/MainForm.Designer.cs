@@ -515,9 +515,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(12, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 19);
+            this.label1.Size = new System.Drawing.Size(82, 19);
             this.label1.TabIndex = 11;
-            this.label1.Text = "DIK STONE";
+            this.label1.Text = "Tick Shop";
             // 
             // panel2
             // 
@@ -562,12 +562,14 @@
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(51, 19);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(171, 19);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(167, 19);
             this.bunifuCustomLabel1.TabIndex = 0;
-            this.bunifuCustomLabel1.Text = "Nhóm 18 - DIK STONE";
+            this.bunifuCustomLabel1.Text = "Nhóm 18 - Tick Shop";
             // 
             // pnl_FormConnect
             // 
+            this.pnl_FormConnect.AutoSize = true;
+            this.pnl_FormConnect.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnl_FormConnect.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnl_FormConnect.Controls.Add(this.flowLayoutPanel1);
             this.pnl_FormConnect.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -615,6 +617,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.pnl_FormConnect.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

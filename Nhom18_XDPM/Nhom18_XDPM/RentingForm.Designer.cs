@@ -31,8 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RentingForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Back = new System.Windows.Forms.Button();
+            this.dgv_Disk = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txt_searchDisk = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_Back = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnSearchCustomer = new System.Windows.Forms.Button();
+            this.lb_TotalCharge = new System.Windows.Forms.Label();
             this.pnl_nameCustomer = new System.Windows.Forms.Panel();
             this.pnl_numberPhone = new System.Windows.Forms.Panel();
             this.txt_CustomerName = new System.Windows.Forms.TextBox();
@@ -48,19 +54,15 @@
             this.lb_CustomerID = new System.Windows.Forms.Label();
             this.btn_rentDisk = new Bunifu.Framework.UI.BunifuTileButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txt_searchDisk = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.dgv_Disk = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Disk)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_IMG_delete_PhiMoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_IMG_Delete_PhiTre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_IMG_menu_PhiMoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_IMG_menu_PhiTre)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Disk)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,6 +84,73 @@
             this.btn_Back.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Back.FlatAppearance.BorderSize = 0;
             this.btn_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Back.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Back.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Back.Location = new System.Drawing.Point(3, 415);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(150, 32);
+            this.btn_Back.TabIndex = 19;
+            this.btn_Back.Text = "          Back";
+            this.btn_Back.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // dgv_Disk
+            // 
+            this.dgv_Disk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Disk.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_Disk.Location = new System.Drawing.Point(0, 38);
+            this.dgv_Disk.Name = "dgv_Disk";
+            this.dgv_Disk.Size = new System.Drawing.Size(539, 412);
+            this.dgv_Disk.TabIndex = 23;
+            this.dgv_Disk.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Disk_CellClick);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.txt_searchDisk);
+            this.panel4.Controls.Add(this.pictureBox2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(539, 38);
+            this.panel4.TabIndex = 22;
+            // 
+            // txt_searchDisk
+            // 
+            this.txt_searchDisk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_searchDisk.Depth = 0;
+            this.txt_searchDisk.Hint = "Search Disk";
+            this.txt_searchDisk.Location = new System.Drawing.Point(39, 8);
+            this.txt_searchDisk.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_searchDisk.Name = "txt_searchDisk";
+            this.txt_searchDisk.PasswordChar = '\0';
+            this.txt_searchDisk.SelectedText = "";
+            this.txt_searchDisk.SelectionLength = 0;
+            this.txt_searchDisk.SelectionStart = 0;
+            this.txt_searchDisk.Size = new System.Drawing.Size(480, 23);
+            this.txt_searchDisk.TabIndex = 22;
+            this.txt_searchDisk.UseSystemPasswordChar = false;
+            this.txt_searchDisk.TextChanged += new System.EventHandler(this.txt_searchDisk_TextChanged_1);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.pictureBox2.Image = global::Nhom18_XDPM.Properties.Resources.search;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 8);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 21;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btn_Back
+            // 
+            this.btn_Back.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_Back.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Back.FlatAppearance.BorderSize = 0;
+            this.btn_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Back.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Back.Image = global::Nhom18_XDPM.Properties.Resources.double_left_26px;
@@ -96,7 +165,8 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.btnSearchCustomer);
+            this.panel2.Controls.Add(this.lb_TotalCharge);
             this.panel2.Controls.Add(this.pnl_nameCustomer);
             this.panel2.Controls.Add(this.pnl_numberPhone);
             this.panel2.Controls.Add(this.txt_CustomerName);
@@ -117,17 +187,30 @@
             this.panel2.Size = new System.Drawing.Size(262, 450);
             this.panel2.TabIndex = 3;
             // 
-            // label6
+            // btnSearchCustomer
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnSearchCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(204, 309);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 20);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "label6";
+            this.btnSearchCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchCustomer.Location = new System.Drawing.Point(187, 35);
+            this.btnSearchCustomer.Name = "btnSearchCustomer";
+            this.btnSearchCustomer.Size = new System.Drawing.Size(72, 23);
+            this.btnSearchCustomer.TabIndex = 18;
+            this.btnSearchCustomer.Text = "Tìm kiếm";
+            this.btnSearchCustomer.UseVisualStyleBackColor = true;
+            this.btnSearchCustomer.Click += new System.EventHandler(this.btnSearchCustomer_Click_1);
+            // 
+            // lb_TotalCharge
+            // 
+            this.lb_TotalCharge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_TotalCharge.AutoSize = true;
+            this.lb_TotalCharge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TotalCharge.Location = new System.Drawing.Point(204, 309);
+            this.lb_TotalCharge.Name = "lb_TotalCharge";
+            this.lb_TotalCharge.Size = new System.Drawing.Size(18, 20);
+            this.lb_TotalCharge.TabIndex = 16;
+            this.lb_TotalCharge.Text = "0";
             // 
             // pnl_nameCustomer
             // 
@@ -154,6 +237,7 @@
             this.txt_CustomerName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_CustomerName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_CustomerName.Enabled = false;
             this.txt_CustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CustomerName.Location = new System.Drawing.Point(7, 110);
             this.txt_CustomerName.Multiline = true;
@@ -171,9 +255,10 @@
             this.txt_CustomerID.Location = new System.Drawing.Point(7, 39);
             this.txt_CustomerID.Multiline = true;
             this.txt_CustomerID.Name = "txt_CustomerID";
-            this.txt_CustomerID.Size = new System.Drawing.Size(247, 22);
+            this.txt_CustomerID.Size = new System.Drawing.Size(189, 22);
             this.txt_CustomerID.TabIndex = 1;
             this.txt_CustomerID.Click += new System.EventHandler(this.txt_numberPhone_Click);
+            this.txt_CustomerID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CustomerID_KeyPress);
             // 
             // btn_IMG_delete_PhiMoi
             // 
@@ -182,6 +267,19 @@
             this.btn_IMG_delete_PhiMoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_IMG_delete_PhiMoi.Image")));
             this.btn_IMG_delete_PhiMoi.ImageActive = null;
             this.btn_IMG_delete_PhiMoi.Location = new System.Drawing.Point(226, 257);
+            this.btn_IMG_delete_PhiMoi.Name = "btn_IMG_delete_PhiMoi";
+            this.btn_IMG_delete_PhiMoi.Size = new System.Drawing.Size(30, 30);
+            this.btn_IMG_delete_PhiMoi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_IMG_delete_PhiMoi.TabIndex = 12;
+            this.btn_IMG_delete_PhiMoi.TabStop = false;
+            this.btn_IMG_delete_PhiMoi.Zoom = 10;
+            // 
+            // btn_IMG_delete_PhiMoi
+            // 
+            this.btn_IMG_delete_PhiMoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_IMG_delete_PhiMoi.BackColor = System.Drawing.Color.White;
+            this.btn_IMG_delete_PhiMoi.ImageActive = null;
+            this.btn_IMG_delete_PhiMoi.Location = new System.Drawing.Point(219, 298);
             this.btn_IMG_delete_PhiMoi.Name = "btn_IMG_delete_PhiMoi";
             this.btn_IMG_delete_PhiMoi.Size = new System.Drawing.Size(30, 30);
             this.btn_IMG_delete_PhiMoi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -207,6 +305,8 @@
             // 
             this.btn_IMG_menu_PhiMoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_IMG_menu_PhiMoi.BackColor = System.Drawing.Color.White;
+            this.btn_IMG_menu_PhiMoi.ImageActive = null;
+            this.btn_IMG_menu_PhiMoi.Location = new System.Drawing.Point(183, 298);
             this.btn_IMG_menu_PhiMoi.Image = global::Nhom18_XDPM.Properties.Resources.list_24px;
             this.btn_IMG_menu_PhiMoi.ImageActive = null;
             this.btn_IMG_menu_PhiMoi.Location = new System.Drawing.Point(190, 257);
@@ -216,6 +316,7 @@
             this.btn_IMG_menu_PhiMoi.TabIndex = 13;
             this.btn_IMG_menu_PhiMoi.TabStop = false;
             this.btn_IMG_menu_PhiMoi.Zoom = 10;
+            this.btn_IMG_menu_PhiMoi.Click += new System.EventHandler(this.btn_IMG_menu_PhiMoi_Click_1);
             // 
             // btn_IMG_menu_PhiTre
             // 
@@ -230,6 +331,8 @@
             this.btn_IMG_menu_PhiTre.TabIndex = 13;
             this.btn_IMG_menu_PhiTre.TabStop = false;
             this.btn_IMG_menu_PhiTre.Zoom = 10;
+            this.btn_IMG_menu_PhiTre.Click += new System.EventHandler(this.btn_IMG_menu_PhiTre_Click);
+            this.btn_IMG_menu_PhiTre.Click += new System.EventHandler(this.btn_IMG_menu_PhiTre_Click_1);
             // 
             // lb_CustomerName
             // 
@@ -252,6 +355,30 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 20);
             this.label4.TabIndex = 7;
+            this.label4.Text = "Tổng";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(9, 308);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 20);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Phí thuê mới";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(7, 272);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 20);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Phí trễ";
+            
             this.label4.Text = "Tổng tiền";
             // 
             // label5
@@ -306,6 +433,7 @@
             this.btn_rentDisk.Name = "btn_rentDisk";
             this.btn_rentDisk.Size = new System.Drawing.Size(242, 40);
             this.btn_rentDisk.TabIndex = 5;
+            this.btn_rentDisk.Click += new System.EventHandler(this.btn_rentDisk_Click);
             // 
             // panel3
             // 
@@ -315,54 +443,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(2, 450);
             this.panel3.TabIndex = 4;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.txt_searchDisk);
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(539, 38);
-            this.panel4.TabIndex = 22;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.pictureBox2.Image = global::Nhom18_XDPM.Properties.Resources.search;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 8);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(21, 21);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 21;
-            this.pictureBox2.TabStop = false;
-            // 
-            // txt_searchDisk
-            // 
-            this.txt_searchDisk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_searchDisk.Depth = 0;
-            this.txt_searchDisk.Hint = "Search Disk";
-            this.txt_searchDisk.Location = new System.Drawing.Point(39, 8);
-            this.txt_searchDisk.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txt_searchDisk.Name = "txt_searchDisk";
-            this.txt_searchDisk.PasswordChar = '\0';
-            this.txt_searchDisk.SelectedText = "";
-            this.txt_searchDisk.SelectionLength = 0;
-            this.txt_searchDisk.SelectionStart = 0;
-            this.txt_searchDisk.Size = new System.Drawing.Size(480, 23);
-            this.txt_searchDisk.TabIndex = 22;
-            this.txt_searchDisk.UseSystemPasswordChar = false;
-            // 
-            // dgv_Disk
-            // 
-            this.dgv_Disk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Disk.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_Disk.Location = new System.Drawing.Point(0, 38);
-            this.dgv_Disk.Name = "dgv_Disk";
-            this.dgv_Disk.Size = new System.Drawing.Size(539, 412);
-            this.dgv_Disk.TabIndex = 23;
             // 
             // RentingForm
             // 
@@ -379,15 +459,15 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.RentingForm_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Disk)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_IMG_delete_PhiMoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_IMG_Delete_PhiTre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_IMG_menu_PhiMoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_IMG_menu_PhiTre)).EndInit();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Disk)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -412,10 +492,11 @@
         private System.Windows.Forms.Panel pnl_nameCustomer;
         private System.Windows.Forms.TextBox txt_CustomerName;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lb_TotalCharge;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_searchDisk;
         private System.Windows.Forms.DataGridView dgv_Disk;
+        private System.Windows.Forms.Button btnSearchCustomer;
     }
 }

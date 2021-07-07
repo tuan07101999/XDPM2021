@@ -212,7 +212,7 @@ namespace Nhom18_XDPM
             btn_title.Normalcolor = Color.FromArgb(244, 246, 248);
             btn_reportTitle.Normalcolor = Color.FromArgb(244, 246, 248);
             Application.OpenForms.Cast<Form>().Where(x => !(x is MainForm)).ToList().ForEach(x => x.Close());
-            ReportCustomerForm CF = new ReportCustomerForm();
+            ReportCustomersForm CF = new ReportCustomersForm();
             CF.TopLevel = false;
             CF.Parent = pnl_FormConnect;
             CF.Show();

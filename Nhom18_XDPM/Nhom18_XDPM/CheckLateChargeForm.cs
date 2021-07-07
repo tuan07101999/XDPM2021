@@ -18,62 +18,52 @@ namespace Nhom18_XDPM
         private const string DATE_FORMAT = "dd/MM/yyyy";
         private CustomerBLL _customerBLL;
         private RecordBLL _recordBLL;
-        private TitleBLL _titleBLL;
 
         private Customer customer;
         private List<Record> recordUnPaid, recordPaid;
-        private Title title;
         int tong = 0;
 
-        private string _sendReturn;
+        private int _sendReturn;
         public CheckLateChargeForm()
         {
             InitializeComponent();
             _customerBLL = new CustomerBLL();
             _recordBLL = new RecordBLL();
-            _titleBLL = new TitleBLL();
 
-            customer = new Customer();
             recordUnPaid = new List<Record>();
             recordPaid = new List<Record>();
-            title = new Title();
-            lbl_lateFee.Text = tong.ToString() + "$";
+            lbl_lateFee.Text = tong.ToString() + " VND";
 
         }
-        public CheckLateChargeForm(string idCustomer)
+        public CheckLateChargeForm(int idCustomer)
         {
             InitializeComponent();
             _customerBLL = new CustomerBLL();
             _recordBLL = new RecordBLL();
-            _titleBLL = new TitleBLL();
 
-            customer = new Customer();
             recordUnPaid = new List<Record>();
-            title = new Title();
             recordPaid = new List<Record>();
 
             _sendReturn = idCustomer;
-            txt_numberPhone.Text = _sendReturn;
-            lbl_lateFee.Text = tong.ToString() + "$";
+            txt_numberPhone.Text = _sendReturn.ToString(); 
+            lbl_lateFee.Text = tong.ToString() + " VND";
 
         }
         private void CreateDataGridView()
         {
-            dgv_listItem.ColumnCount = 6;
+            dgv_listItem.ColumnCount = 5;
             dgv_listItem.MultiSelect = false;
             dgv_listItem.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_listItem.Columns[0].Name = "STT";
             dgv_listItem.Columns[0].Width = (int)(dgv_listItem.Width * 0.1);
             dgv_listItem.Columns[1].Name = "Mã đĩa";
             dgv_listItem.Columns[1].Width = (int)(dgv_listItem.Width * 0.15);
-            dgv_listItem.Columns[2].Name = "Tên tiêu đề";
-            dgv_listItem.Columns[2].Width = (int)(dgv_listItem.Width * 0.35);
-            dgv_listItem.Columns[3].Name = "Ngày thuê";
-            dgv_listItem.Columns[3].Width = (int)(dgv_listItem.Width * 0.16);
-            dgv_listItem.Columns[4].Name = "Ngày cần trả";
-            dgv_listItem.Columns[4].Width = (int)(dgv_listItem.Width * 0.16);
-            dgv_listItem.Columns[5].Name = "Ngày trả thực";
-            dgv_listItem.Columns[5].Width = (int)(dgv_listItem.Width * 0.16);
+            dgv_listItem.Columns[2].Name = "Ngày thuê";
+            dgv_listItem.Columns[2].Width = (int)(dgv_listItem.Width * 0.2);
+            dgv_listItem.Columns[3].Name = "Ngày cần trả";
+            dgv_listItem.Columns[3].Width = (int)(dgv_listItem.Width * 0.2);
+            dgv_listItem.Columns[4].Name = "Ngày trả thực";
+            dgv_listItem.Columns[4].Width = (int)(dgv_listItem.Width * 0.2);
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             dgv_listItem.Columns.Add(chk);
             chk.HeaderText = "Hủy trả";
@@ -86,47 +76,46 @@ namespace Nhom18_XDPM
             int i = 1;
             foreach (var item in records)
             {
-                title = _titleBLL.GetItemTitleById(item.idTitle);
                 if (item.idDisk != null && item.dueDate != null && item.rentDate != null && item.actualReturnDate != null)
                 {
-                    dgv_listItem.Rows.Add(i.ToString(), item.idDisk.ToString(), title.name,
+                    dgv_listItem.Rows.Add(i.ToString(), item.idDisk.ToString(),
                         item.rentDate.ToString(), item.dueDate.ToString(), item.actualReturnDate);
                 }
                 i++;
             }
             tong = (i - 1) * 1;
-            lbl_lateFee.Text = tong.ToString() + "$";
+            lbl_lateFee.Text = tong.ToString() + " VND";
         }
-    //    string FormatDate(this DateTime? dt, string format)
-    //=> dt == null ? "n/a" : ((DateTime)dt).ToString(format);
         private void txt_numberPhone_TextChanged(object sender, EventArgs e)
         {
-            if (txt_numberPhone.Text != null)
+            customer = new Customer();
+            if (txt_numberPhone.Text.Length > 0)
             {
-                customer = _customerBLL.searchCustomerbyPhone(txt_numberPhone.Text.Trim());
-            }
-            if (customer != null)
-            {
-                txt_numberPhone.Text = customer.phoneNumber;
-                txt_nameCustomer.Text = customer.name;
-                recordUnPaid = _recordBLL.GetAllRecordUnPaid(customer.idCustomer);
-                recordPaid = recordUnPaid;
-                if (recordUnPaid.Count > 0)
+                dgv_listItem.Rows.Clear();
+                customer = _customerBLL.searchCustomerbyId(Convert.ToInt32(txt_numberPhone.Text.Trim()));
+                if (customer != null)
                 {
-                    CreateDataGridView();
-                    LoadDataGridView(recordUnPaid);
-                }
-                else
-                {
-                    MessageBox.Show("Khách hàng không nợ phí trả trễ");
-                }
+                    txt_nameCustomer.Text = customer.name;
+                    recordUnPaid = _recordBLL.GetAllRecordUnPaid(customer.idCustomer);
+                    recordPaid = recordUnPaid;
+                    if (recordUnPaid.Count > 0)
+                    {
+                        CreateDataGridView();
+                        LoadDataGridView(recordUnPaid);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Khách hàng không nợ phí trả trễ");
+                    }
 
+                }
             }
+            
         }
         private void dgv_listItem_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Record record = new Record();
-            if (e.RowIndex >= 0 && e.ColumnIndex == 6)
+            if (e.RowIndex >= 0 && e.ColumnIndex == 5)
             {
                 //Reference the GridView Row.
                 DataGridViewRow row = dgv_listItem.Rows[e.RowIndex];
@@ -138,20 +127,19 @@ namespace Nhom18_XDPM
                 if (Convert.ToBoolean(row.Cells["Cancel"].Value))
                 {
                     tong += 1;
-                    lbl_lateFee.Text = tong.ToString() + "$";
+                    lbl_lateFee.Text = tong.ToString() + " VND";
                     record.idDisk = row.Cells[1].Value.ToString();
                     record.idCustomer = 0;
-                    record.idTitle = "000";
-                    record.isPaid = false;
-                    record.rentDate = DateTime.Parse(row.Cells[3].Value.ToString());
-                    record.dueDate = DateTime.Parse(row.Cells[4].Value.ToString());
-                    record.actualReturnDate = DateTime.Parse(row.Cells[5].Value.ToString());
+                    record.isPaid = true;
+                    record.rentDate = DateTime.Parse(row.Cells[2].Value.ToString());
+                    record.dueDate = DateTime.Parse(row.Cells[3].Value.ToString());
+                    record.actualReturnDate = DateTime.Parse(row.Cells[4].Value.ToString());
                     recordPaid.Add(record);
                 }
                 else
                 {
                     tong -= 1;
-                    lbl_lateFee.Text = tong.ToString() + "$";
+                    lbl_lateFee.Text = tong.ToString() + " VND";
                     for (int item=0; item< recordPaid.Count;item++)
                     {
                         if (row.Cells[1].Value.ToString() == recordPaid[item].idDisk)
@@ -168,11 +156,10 @@ namespace Nhom18_XDPM
             {
                 foreach (var update in recordPaid)
                 {
-                    Record temp = new Record();
                     if(item.idDisk==update.idDisk && item.rentDate==update.rentDate && item.dueDate== update.dueDate && item.actualReturnDate==update.actualReturnDate)
                     {
-                        temp = item;
-                        results.Add(_recordBLL.UpdateIsPaid(temp));
+                        results.Add(_recordBLL.UpdateIsPaid(update));
+
                     }
                 }
             }
@@ -186,6 +173,7 @@ namespace Nhom18_XDPM
             {
                 dgv_listItem.Rows.Clear();
                 LoadDataGridView(recordPaid);
+
                 MessageBox.Show("Thanh toán thành công");
             }
             

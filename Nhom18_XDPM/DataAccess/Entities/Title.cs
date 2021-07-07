@@ -19,7 +19,7 @@ namespace DataAccess.Entities
         public virtual Category Category { get; set; }
 
         public virtual IEnumerable<Disk> Disks { get; set; }
-        public virtual IEnumerable<Record> Records { get; set; }
+        public virtual IEnumerable<Holding> Holdings { get; set; }
 
     }
 }

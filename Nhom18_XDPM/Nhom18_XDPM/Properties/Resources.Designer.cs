@@ -183,6 +183,16 @@ namespace Nhom18_XDPM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap print_filled_100px {
+            get {
+                object obj = ResourceManager.GetObject("print_filled_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap reservation_24px {
             get {
                 object obj = ResourceManager.GetObject("reservation_24px", resourceCulture);

@@ -70,6 +70,18 @@
     <Compile Include="CheckLateChargeForm.Designer.cs">
       <DependentUpon>CheckLateChargeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckLateFeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckLateFeeForm.Designer.cs">
+      <DependentUpon>CheckLateFeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckTotalChargeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckTotalChargeForm.Designer.cs">
+      <DependentUpon>CheckTotalChargeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,17 +113,17 @@
     <Compile Include="RentingForm.Designer.cs">
       <DependentUpon>RentingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportCustomerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportCustomerForm.Designer.cs">
-      <DependentUpon>ReportCustomerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ReportTitleForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportTitleForm.Designer.cs">
       <DependentUpon>ReportTitleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportCustomerForm.Designer.cs">
+      <DependentUpon>ReportCustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ReservationForm.cs">
       <SubType>Form</SubType>
@@ -134,6 +146,12 @@
     <EmbeddedResource Include="CheckLateChargeForm.resx">
       <DependentUpon>CheckLateChargeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CheckLateFeeForm.resx">
+      <DependentUpon>CheckLateFeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckTotalChargeForm.resx">
+      <DependentUpon>CheckTotalChargeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,11 +170,11 @@
     <EmbeddedResource Include="RentingForm.resx">
       <DependentUpon>RentingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportCustomerForm.resx">
-      <DependentUpon>ReportCustomerForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ReportTitleForm.resx">
       <DependentUpon>ReportTitleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportCustomerForm.resx">
+      <DependentUpon>ReportCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReservationForm.resx">
       <DependentUpon>ReservationForm.cs</DependentUpon>
@@ -168,6 +186,11 @@
       <DependentUpon>TitleForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Business.Models.CustomerFilterTypeObject.datasource" />
+    <None Include="Properties\DataSources\Business.Models.CustomerReportModel.datasource" />
+    <None Include="Properties\DataSources\Business.Models.HasOverdueModel.datasource" />
+    <None Include="Properties\DataSources\Business.Models.RecordModel.datasource" />
+    <None Include="Properties\DataSources\Business.Models.TitleReportModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -194,6 +217,7 @@
     <Content Include="Resources\list_24px.png" />
     <Content Include="Resources\movies_folder_filled_50px.png" />
     <Content Include="Resources\password_24px.png" />
+    <None Include="Resources\print_filled_100px.png" />
     <Content Include="Resources\reservation_24px.png" />
     <Content Include="Resources\search.png" />
     <None Include="Resources\search_24px.png" />

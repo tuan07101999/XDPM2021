@@ -12,7 +12,8 @@ namespace DataAccess
     {
         public RentingDiskDBContext() : base("DBConnectionString")
         {
-
+            Configuration.LazyLoadingEnabled = true;
+            Configuration.ProxyCreationEnabled = true;
         }
 
         public DbSet<Customer> Customers { get; set; }
@@ -20,5 +21,6 @@ namespace DataAccess
         public DbSet<Title> Titles { get; set; }
         public DbSet<Disk> Disks { get; set; }
         public DbSet<Record> Records { get; set; }
+        public DbSet<Holding> Holdings { get; set; }
     }
 }
