@@ -79,9 +79,10 @@
             this.pnl_MenuOption.Controls.Add(this.btn_managementDisk);
             this.pnl_MenuOption.Controls.Add(this.panel1);
             this.pnl_MenuOption.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnl_MenuOption.Location = new System.Drawing.Point(0, 50);
+            this.pnl_MenuOption.Location = new System.Drawing.Point(0, 62);
+            this.pnl_MenuOption.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_MenuOption.Name = "pnl_MenuOption";
-            this.pnl_MenuOption.Size = new System.Drawing.Size(200, 699);
+            this.pnl_MenuOption.Size = new System.Drawing.Size(267, 860);
             this.pnl_MenuOption.TabIndex = 0;
             // 
             // pnl_reportDetail
@@ -89,9 +90,10 @@
             this.pnl_reportDetail.Controls.Add(this.btn_reportTitle);
             this.pnl_reportDetail.Controls.Add(this.btn_reportCustomer);
             this.pnl_reportDetail.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_reportDetail.Location = new System.Drawing.Point(0, 398);
+            this.pnl_reportDetail.Location = new System.Drawing.Point(0, 491);
+            this.pnl_reportDetail.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_reportDetail.Name = "pnl_reportDetail";
-            this.pnl_reportDetail.Size = new System.Drawing.Size(200, 74);
+            this.pnl_reportDetail.Size = new System.Drawing.Size(267, 91);
             this.pnl_reportDetail.TabIndex = 19;
             // 
             // btn_reportTitle
@@ -116,13 +118,14 @@
             this.btn_reportTitle.IconVisible = true;
             this.btn_reportTitle.IconZoom = 55D;
             this.btn_reportTitle.IsTab = false;
-            this.btn_reportTitle.Location = new System.Drawing.Point(0, 31);
+            this.btn_reportTitle.Location = new System.Drawing.Point(0, 38);
+            this.btn_reportTitle.Margin = new System.Windows.Forms.Padding(5);
             this.btn_reportTitle.Name = "btn_reportTitle";
             this.btn_reportTitle.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.btn_reportTitle.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_reportTitle.OnHoverTextColor = System.Drawing.Color.Black;
             this.btn_reportTitle.selected = false;
-            this.btn_reportTitle.Size = new System.Drawing.Size(200, 31);
+            this.btn_reportTitle.Size = new System.Drawing.Size(267, 38);
             this.btn_reportTitle.TabIndex = 1;
             this.btn_reportTitle.Text = "Báo cáo tựa";
             this.btn_reportTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -153,12 +156,13 @@
             this.btn_reportCustomer.IconZoom = 55D;
             this.btn_reportCustomer.IsTab = false;
             this.btn_reportCustomer.Location = new System.Drawing.Point(0, 0);
+            this.btn_reportCustomer.Margin = new System.Windows.Forms.Padding(5);
             this.btn_reportCustomer.Name = "btn_reportCustomer";
             this.btn_reportCustomer.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.btn_reportCustomer.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_reportCustomer.OnHoverTextColor = System.Drawing.Color.Black;
             this.btn_reportCustomer.selected = false;
-            this.btn_reportCustomer.Size = new System.Drawing.Size(200, 31);
+            this.btn_reportCustomer.Size = new System.Drawing.Size(267, 38);
             this.btn_reportCustomer.TabIndex = 1;
             this.btn_reportCustomer.Text = "Báo cáo khách hàng";
             this.btn_reportCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -171,9 +175,10 @@
             this.pnl_report.Controls.Add(this.pbo_dropdownReport);
             this.pnl_report.Controls.Add(this.btn_report);
             this.pnl_report.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_report.Location = new System.Drawing.Point(0, 346);
+            this.pnl_report.Location = new System.Drawing.Point(0, 427);
+            this.pnl_report.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_report.Name = "pnl_report";
-            this.pnl_report.Size = new System.Drawing.Size(200, 52);
+            this.pnl_report.Size = new System.Drawing.Size(267, 64);
             this.pnl_report.TabIndex = 18;
             // 
             // pbo_dropdownReport
@@ -181,9 +186,10 @@
             this.pbo_dropdownReport.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbo_dropdownReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.pbo_dropdownReport.Image = global::Nhom18_XDPM.Properties.Resources.sort_down_26px;
-            this.pbo_dropdownReport.Location = new System.Drawing.Point(167, 11);
+            this.pbo_dropdownReport.Location = new System.Drawing.Point(223, 14);
+            this.pbo_dropdownReport.Margin = new System.Windows.Forms.Padding(4);
             this.pbo_dropdownReport.Name = "pbo_dropdownReport";
-            this.pbo_dropdownReport.Size = new System.Drawing.Size(26, 26);
+            this.pbo_dropdownReport.Size = new System.Drawing.Size(35, 32);
             this.pbo_dropdownReport.TabIndex = 18;
             this.pbo_dropdownReport.TabStop = false;
             this.pbo_dropdownReport.Click += new System.EventHandler(this.pbo_dropdownReport_Click);
@@ -212,12 +218,13 @@
             this.btn_report.IconZoom = 80D;
             this.btn_report.IsTab = false;
             this.btn_report.Location = new System.Drawing.Point(0, 0);
+            this.btn_report.Margin = new System.Windows.Forms.Padding(5);
             this.btn_report.Name = "btn_report";
             this.btn_report.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.btn_report.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_report.OnHoverTextColor = System.Drawing.Color.Black;
             this.btn_report.selected = false;
-            this.btn_report.Size = new System.Drawing.Size(200, 50);
+            this.btn_report.Size = new System.Drawing.Size(267, 62);
             this.btn_report.TabIndex = 4;
             this.btn_report.Text = "      BÁO CÁO";
             this.btn_report.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -229,9 +236,10 @@
             // 
             this.pbo_dropdownCD_DVD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.pbo_dropdownCD_DVD.Image = global::Nhom18_XDPM.Properties.Resources.sort_down_26px;
-            this.pbo_dropdownCD_DVD.Location = new System.Drawing.Point(168, 102);
+            this.pbo_dropdownCD_DVD.Location = new System.Drawing.Point(224, 126);
+            this.pbo_dropdownCD_DVD.Margin = new System.Windows.Forms.Padding(4);
             this.pbo_dropdownCD_DVD.Name = "pbo_dropdownCD_DVD";
-            this.pbo_dropdownCD_DVD.Size = new System.Drawing.Size(26, 26);
+            this.pbo_dropdownCD_DVD.Size = new System.Drawing.Size(35, 32);
             this.pbo_dropdownCD_DVD.TabIndex = 17;
             this.pbo_dropdownCD_DVD.TabStop = false;
             this.pbo_dropdownCD_DVD.Click += new System.EventHandler(this.pbo_dropdownCD_DVD_Click);
@@ -259,13 +267,14 @@
             this.btn_title.IconVisible = true;
             this.btn_title.IconZoom = 78D;
             this.btn_title.IsTab = false;
-            this.btn_title.Location = new System.Drawing.Point(0, 296);
+            this.btn_title.Location = new System.Drawing.Point(0, 365);
+            this.btn_title.Margin = new System.Windows.Forms.Padding(5);
             this.btn_title.Name = "btn_title";
             this.btn_title.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.btn_title.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_title.OnHoverTextColor = System.Drawing.Color.Black;
             this.btn_title.selected = false;
-            this.btn_title.Size = new System.Drawing.Size(200, 50);
+            this.btn_title.Size = new System.Drawing.Size(267, 62);
             this.btn_title.TabIndex = 5;
             this.btn_title.Text = "      TỰA CD / DVD";
             this.btn_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -296,13 +305,14 @@
             this.btn_customer.IconVisible = true;
             this.btn_customer.IconZoom = 78D;
             this.btn_customer.IsTab = false;
-            this.btn_customer.Location = new System.Drawing.Point(0, 246);
+            this.btn_customer.Location = new System.Drawing.Point(0, 303);
+            this.btn_customer.Margin = new System.Windows.Forms.Padding(5);
             this.btn_customer.Name = "btn_customer";
             this.btn_customer.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.btn_customer.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_customer.OnHoverTextColor = System.Drawing.Color.Black;
             this.btn_customer.selected = false;
-            this.btn_customer.Size = new System.Drawing.Size(200, 50);
+            this.btn_customer.Size = new System.Drawing.Size(267, 62);
             this.btn_customer.TabIndex = 3;
             this.btn_customer.Text = "      KHÁCH HÀNG";
             this.btn_customer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -317,9 +327,10 @@
             this.pnl_CD_DVD.Controls.Add(this.btn_reservationDisk);
             this.pnl_CD_DVD.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_CD_DVD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.pnl_CD_DVD.Location = new System.Drawing.Point(0, 143);
+            this.pnl_CD_DVD.Location = new System.Drawing.Point(0, 176);
+            this.pnl_CD_DVD.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_CD_DVD.Name = "pnl_CD_DVD";
-            this.pnl_CD_DVD.Size = new System.Drawing.Size(200, 103);
+            this.pnl_CD_DVD.Size = new System.Drawing.Size(267, 127);
             this.pnl_CD_DVD.TabIndex = 14;
             // 
             // btn_returnDisk
@@ -344,13 +355,14 @@
             this.btn_returnDisk.IconVisible = true;
             this.btn_returnDisk.IconZoom = 60D;
             this.btn_returnDisk.IsTab = false;
-            this.btn_returnDisk.Location = new System.Drawing.Point(0, 31);
+            this.btn_returnDisk.Location = new System.Drawing.Point(0, 38);
+            this.btn_returnDisk.Margin = new System.Windows.Forms.Padding(5);
             this.btn_returnDisk.Name = "btn_returnDisk";
             this.btn_returnDisk.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.btn_returnDisk.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_returnDisk.OnHoverTextColor = System.Drawing.Color.Black;
             this.btn_returnDisk.selected = false;
-            this.btn_returnDisk.Size = new System.Drawing.Size(200, 31);
+            this.btn_returnDisk.Size = new System.Drawing.Size(267, 38);
             this.btn_returnDisk.TabIndex = 13;
             this.btn_returnDisk.Text = "Trả CD/DVD";
             this.btn_returnDisk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -381,12 +393,13 @@
             this.btn_RentDisk.IconZoom = 55D;
             this.btn_RentDisk.IsTab = false;
             this.btn_RentDisk.Location = new System.Drawing.Point(0, 0);
+            this.btn_RentDisk.Margin = new System.Windows.Forms.Padding(5);
             this.btn_RentDisk.Name = "btn_RentDisk";
             this.btn_RentDisk.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.btn_RentDisk.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_RentDisk.OnHoverTextColor = System.Drawing.Color.Black;
             this.btn_RentDisk.selected = false;
-            this.btn_RentDisk.Size = new System.Drawing.Size(200, 31);
+            this.btn_RentDisk.Size = new System.Drawing.Size(267, 38);
             this.btn_RentDisk.TabIndex = 13;
             this.btn_RentDisk.Text = "Thuê CD/DVD";
             this.btn_RentDisk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -416,13 +429,14 @@
             this.btn_reservationDisk.IconVisible = true;
             this.btn_reservationDisk.IconZoom = 55D;
             this.btn_reservationDisk.IsTab = false;
-            this.btn_reservationDisk.Location = new System.Drawing.Point(0, 68);
+            this.btn_reservationDisk.Location = new System.Drawing.Point(0, 84);
+            this.btn_reservationDisk.Margin = new System.Windows.Forms.Padding(5);
             this.btn_reservationDisk.Name = "btn_reservationDisk";
             this.btn_reservationDisk.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.btn_reservationDisk.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_reservationDisk.OnHoverTextColor = System.Drawing.Color.Black;
             this.btn_reservationDisk.selected = false;
-            this.btn_reservationDisk.Size = new System.Drawing.Size(200, 31);
+            this.btn_reservationDisk.Size = new System.Drawing.Size(267, 38);
             this.btn_reservationDisk.TabIndex = 13;
             this.btn_reservationDisk.Text = "Đặt CD/DVD";
             this.btn_reservationDisk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -453,14 +467,14 @@
             this.btn_managementDisk.IconVisible = true;
             this.btn_managementDisk.IconZoom = 80D;
             this.btn_managementDisk.IsTab = false;
-            this.btn_managementDisk.Location = new System.Drawing.Point(0, 93);
-            this.btn_managementDisk.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_managementDisk.Location = new System.Drawing.Point(0, 114);
+            this.btn_managementDisk.Margin = new System.Windows.Forms.Padding(5);
             this.btn_managementDisk.Name = "btn_managementDisk";
             this.btn_managementDisk.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.btn_managementDisk.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_managementDisk.OnHoverTextColor = System.Drawing.Color.Black;
             this.btn_managementDisk.selected = false;
-            this.btn_managementDisk.Size = new System.Drawing.Size(200, 50);
+            this.btn_managementDisk.Size = new System.Drawing.Size(267, 62);
             this.btn_managementDisk.TabIndex = 2;
             this.btn_managementDisk.Text = "      CD / DVD";
             this.btn_managementDisk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -476,8 +490,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 93);
+            this.panel1.Size = new System.Drawing.Size(267, 114);
             this.panel1.TabIndex = 16;
             // 
             // btn_Menu
@@ -486,9 +501,10 @@
             this.btn_Menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Menu.Image = global::Nhom18_XDPM.Properties.Resources.list_24px;
             this.btn_Menu.ImageActive = null;
-            this.btn_Menu.Location = new System.Drawing.Point(167, 6);
+            this.btn_Menu.Location = new System.Drawing.Point(223, 7);
+            this.btn_Menu.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Menu.Name = "btn_Menu";
-            this.btn_Menu.Size = new System.Drawing.Size(27, 26);
+            this.btn_Menu.Size = new System.Drawing.Size(36, 32);
             this.btn_Menu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_Menu.TabIndex = 12;
             this.btn_Menu.TabStop = false;
@@ -501,9 +517,10 @@
             this.TitleLogo.BackColor = System.Drawing.Color.White;
             this.TitleLogo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TitleLogo.ForeColor = System.Drawing.Color.Black;
-            this.TitleLogo.Location = new System.Drawing.Point(12, 29);
+            this.TitleLogo.Location = new System.Drawing.Point(16, 36);
+            this.TitleLogo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TitleLogo.Name = "TitleLogo";
-            this.TitleLogo.Size = new System.Drawing.Size(79, 19);
+            this.TitleLogo.Size = new System.Drawing.Size(97, 23);
             this.TitleLogo.TabIndex = 10;
             this.TitleLogo.Text = "Nhóm 18";
             // 
@@ -513,9 +530,10 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(12, 57);
+            this.label1.Location = new System.Drawing.Point(16, 70);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 19);
+            this.label1.Size = new System.Drawing.Size(102, 23);
             this.label1.TabIndex = 11;
             this.label1.Text = "Tick Shop";
             // 
@@ -528,8 +546,9 @@
             this.panel2.Controls.Add(this.bunifuCustomLabel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1082, 50);
+            this.panel2.Size = new System.Drawing.Size(1443, 62);
             this.panel2.TabIndex = 1;
             // 
             // pbo_closeForm
@@ -537,9 +556,10 @@
             this.pbo_closeForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pbo_closeForm.Dock = System.Windows.Forms.DockStyle.Right;
             this.pbo_closeForm.Image = global::Nhom18_XDPM.Properties.Resources.delete_sign_26px;
-            this.pbo_closeForm.Location = new System.Drawing.Point(1034, 0);
+            this.pbo_closeForm.Location = new System.Drawing.Point(1379, 0);
+            this.pbo_closeForm.Margin = new System.Windows.Forms.Padding(4);
             this.pbo_closeForm.Name = "pbo_closeForm";
-            this.pbo_closeForm.Size = new System.Drawing.Size(48, 50);
+            this.pbo_closeForm.Size = new System.Drawing.Size(64, 62);
             this.pbo_closeForm.TabIndex = 8;
             this.pbo_closeForm.TabStop = false;
             this.pbo_closeForm.Click += new System.EventHandler(this.pbo_closeForm_Click);
@@ -547,9 +567,10 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pictureBox4.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox4.Location = new System.Drawing.Point(16, 15);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(32, 31);
+            this.pictureBox4.Size = new System.Drawing.Size(43, 38);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
@@ -560,9 +581,10 @@
             this.bunifuCustomLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(51, 19);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(68, 23);
+            this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(167, 19);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(209, 23);
             this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "Nhóm 18 - Tick Shop";
             // 
@@ -573,30 +595,34 @@
             this.pnl_FormConnect.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnl_FormConnect.Controls.Add(this.flowLayoutPanel1);
             this.pnl_FormConnect.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_FormConnect.Location = new System.Drawing.Point(200, 50);
+            this.pnl_FormConnect.Location = new System.Drawing.Point(267, 62);
+            this.pnl_FormConnect.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_FormConnect.Name = "pnl_FormConnect";
-            this.pnl_FormConnect.Size = new System.Drawing.Size(882, 699);
+            this.pnl_FormConnect.Size = new System.Drawing.Size(1176, 860);
             this.pnl_FormConnect.TabIndex = 2;
+            this.pnl_FormConnect.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_FormConnect_Paint);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.DarkGray;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(2, 699);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(3, 860);
             this.flowLayoutPanel1.TabIndex = 13;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(1082, 749);
+            this.ClientSize = new System.Drawing.Size(1443, 922);
             this.Controls.Add(this.pnl_FormConnect);
             this.Controls.Add(this.pnl_MenuOption);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
