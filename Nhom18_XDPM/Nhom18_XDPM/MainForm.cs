@@ -236,6 +236,11 @@ namespace Nhom18_XDPM
             CF.Parent = pnl_FormConnect;
             CF.Show();
         }
+
+        private void pnl_FormConnect_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 }

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Busine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nhom18_XDPM", "Nhom18_XDPM\Nhom18_XDPM.csproj", "{4A2C05DB-5220-4EB8-992B-B12DEFD8AA93}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nhom18_XDPM_UI", "Nhom18_XDPM_UI\Nhom18_XDPM_UI.csproj", "{923022B4-EEFD-4F92-BC3A-A50B37E6A5FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4A2C05DB-5220-4EB8-992B-B12DEFD8AA93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A2C05DB-5220-4EB8-992B-B12DEFD8AA93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A2C05DB-5220-4EB8-992B-B12DEFD8AA93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{923022B4-EEFD-4F92-BC3A-A50B37E6A5FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{923022B4-EEFD-4F92-BC3A-A50B37E6A5FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{923022B4-EEFD-4F92-BC3A-A50B37E6A5FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{923022B4-EEFD-4F92-BC3A-A50B37E6A5FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

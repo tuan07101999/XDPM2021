@@ -68,8 +68,9 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 450);
+            this.panel1.Size = new System.Drawing.Size(1067, 554);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -77,8 +78,9 @@
             this.panel3.BackColor = System.Drawing.Color.DarkGray;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(2, 450);
+            this.panel3.Size = new System.Drawing.Size(3, 554);
             this.panel3.TabIndex = 24;
             // 
             // dgv_listItem
@@ -107,7 +109,8 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_listItem.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_listItem.GridColor = System.Drawing.Color.LightGray;
-            this.dgv_listItem.Location = new System.Drawing.Point(9, 80);
+            this.dgv_listItem.Location = new System.Drawing.Point(12, 98);
+            this.dgv_listItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgv_listItem.Name = "dgv_listItem";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -118,7 +121,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_listItem.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_listItem.RowHeadersVisible = false;
-            this.dgv_listItem.Size = new System.Drawing.Size(490, 329);
+            this.dgv_listItem.RowHeadersWidth = 51;
+            this.dgv_listItem.Size = new System.Drawing.Size(653, 405);
             this.dgv_listItem.TabIndex = 23;
             this.dgv_listItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listItem_CellContentClick);
             // 
@@ -127,9 +131,10 @@
             this.pnl_searchItemReturn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_searchItemReturn.BackColor = System.Drawing.Color.DarkGray;
-            this.pnl_searchItemReturn.Location = new System.Drawing.Point(30, 60);
+            this.pnl_searchItemReturn.Location = new System.Drawing.Point(40, 74);
+            this.pnl_searchItemReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnl_searchItemReturn.Name = "pnl_searchItemReturn";
-            this.pnl_searchItemReturn.Size = new System.Drawing.Size(469, 1);
+            this.pnl_searchItemReturn.Size = new System.Drawing.Size(625, 1);
             this.pnl_searchItemReturn.TabIndex = 22;
             // 
             // txt_searchDiskReturn
@@ -139,10 +144,11 @@
             this.txt_searchDiskReturn.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_searchDiskReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_searchDiskReturn.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.txt_searchDiskReturn.Location = new System.Drawing.Point(30, 39);
+            this.txt_searchDiskReturn.Location = new System.Drawing.Point(40, 48);
+            this.txt_searchDiskReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_searchDiskReturn.Multiline = true;
             this.txt_searchDiskReturn.Name = "txt_searchDiskReturn";
-            this.txt_searchDiskReturn.Size = new System.Drawing.Size(469, 22);
+            this.txt_searchDiskReturn.Size = new System.Drawing.Size(625, 27);
             this.txt_searchDiskReturn.TabIndex = 21;
             this.txt_searchDiskReturn.Text = "Nhập mã đĩa";
             this.txt_searchDiskReturn.Click += new System.EventHandler(this.txt_searchDiskReturn_Click);
@@ -152,9 +158,10 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkGray;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(537, 0);
+            this.panel4.Location = new System.Drawing.Point(716, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(2, 450);
+            this.panel4.Size = new System.Drawing.Size(3, 554);
             this.panel4.TabIndex = 20;
             // 
             // btn_Back
@@ -167,9 +174,10 @@
             this.btn_Back.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Back.Image = global::Nhom18_XDPM.Properties.Resources.double_left_26px;
             this.btn_Back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Back.Location = new System.Drawing.Point(9, 415);
+            this.btn_Back.Location = new System.Drawing.Point(12, 511);
+            this.btn_Back.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Back.Name = "btn_Back";
-            this.btn_Back.Size = new System.Drawing.Size(150, 32);
+            this.btn_Back.Size = new System.Drawing.Size(200, 39);
             this.btn_Back.TabIndex = 19;
             this.btn_Back.Text = "Back";
             this.btn_Back.UseVisualStyleBackColor = true;
@@ -179,9 +187,10 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.pictureBox1.Image = global::Nhom18_XDPM.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 41);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 50);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.Size = new System.Drawing.Size(27, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
@@ -198,9 +207,10 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btn_TraHang);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(539, 0);
+            this.panel2.Location = new System.Drawing.Point(719, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(261, 450);
+            this.panel2.Size = new System.Drawing.Size(348, 554);
             this.panel2.TabIndex = 0;
             // 
             // pnl_nameCustomer
@@ -208,9 +218,10 @@
             this.pnl_nameCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_nameCustomer.BackColor = System.Drawing.Color.DarkGray;
-            this.pnl_nameCustomer.Location = new System.Drawing.Point(7, 131);
+            this.pnl_nameCustomer.Location = new System.Drawing.Point(9, 161);
+            this.pnl_nameCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnl_nameCustomer.Name = "pnl_nameCustomer";
-            this.pnl_nameCustomer.Size = new System.Drawing.Size(246, 1);
+            this.pnl_nameCustomer.Size = new System.Drawing.Size(328, 1);
             this.pnl_nameCustomer.TabIndex = 19;
             // 
             // txt_nameCustomer
@@ -219,10 +230,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_nameCustomer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_nameCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nameCustomer.Location = new System.Drawing.Point(7, 110);
+            this.txt_nameCustomer.Location = new System.Drawing.Point(9, 135);
+            this.txt_nameCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_nameCustomer.Multiline = true;
             this.txt_nameCustomer.Name = "txt_nameCustomer";
-            this.txt_nameCustomer.Size = new System.Drawing.Size(246, 22);
+            this.txt_nameCustomer.Size = new System.Drawing.Size(328, 27);
             this.txt_nameCustomer.TabIndex = 18;
             this.txt_nameCustomer.Click += new System.EventHandler(this.txt_nameCustomer_Click);
             // 
@@ -231,9 +243,10 @@
             this.pnl_numberPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_numberPhone.BackColor = System.Drawing.Color.DarkGray;
-            this.pnl_numberPhone.Location = new System.Drawing.Point(9, 60);
+            this.pnl_numberPhone.Location = new System.Drawing.Point(12, 74);
+            this.pnl_numberPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnl_numberPhone.Name = "pnl_numberPhone";
-            this.pnl_numberPhone.Size = new System.Drawing.Size(246, 1);
+            this.pnl_numberPhone.Size = new System.Drawing.Size(328, 1);
             this.pnl_numberPhone.TabIndex = 17;
             // 
             // txt_numberPhone
@@ -242,10 +255,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_numberPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_numberPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_numberPhone.Location = new System.Drawing.Point(7, 39);
+            this.txt_numberPhone.Location = new System.Drawing.Point(9, 48);
+            this.txt_numberPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_numberPhone.Multiline = true;
             this.txt_numberPhone.Name = "txt_numberPhone";
-            this.txt_numberPhone.Size = new System.Drawing.Size(246, 22);
+            this.txt_numberPhone.Size = new System.Drawing.Size(328, 27);
             this.txt_numberPhone.TabIndex = 16;
             this.txt_numberPhone.Click += new System.EventHandler(this.txt_numberPhone_Click);
             this.txt_numberPhone.TextChanged += new System.EventHandler(this.txt_numberPhone_TextChanged);
@@ -255,9 +269,10 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 324);
+            this.label3.Location = new System.Drawing.Point(12, 399);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 20);
+            this.label3.Size = new System.Drawing.Size(67, 25);
             this.label3.TabIndex = 1;
             this.label3.Text = "Phí trễ";
             // 
@@ -267,9 +282,10 @@
             this.btn_openListLateCharge.BackColor = System.Drawing.Color.White;
             this.btn_openListLateCharge.Image = global::Nhom18_XDPM.Properties.Resources.list_24px;
             this.btn_openListLateCharge.ImageActive = null;
-            this.btn_openListLateCharge.Location = new System.Drawing.Point(225, 314);
+            this.btn_openListLateCharge.Location = new System.Drawing.Point(300, 386);
+            this.btn_openListLateCharge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_openListLateCharge.Name = "btn_openListLateCharge";
-            this.btn_openListLateCharge.Size = new System.Drawing.Size(30, 30);
+            this.btn_openListLateCharge.Size = new System.Drawing.Size(40, 37);
             this.btn_openListLateCharge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_openListLateCharge.TabIndex = 3;
             this.btn_openListLateCharge.TabStop = false;
@@ -281,9 +297,10 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 80);
+            this.label2.Location = new System.Drawing.Point(12, 98);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 20);
+            this.label2.Size = new System.Drawing.Size(154, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên khách hàng";
             // 
@@ -292,9 +309,10 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 11);
+            this.label1.Location = new System.Drawing.Point(12, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 20);
+            this.label1.Size = new System.Drawing.Size(138, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "ID khách hàng";
             // 
@@ -312,21 +330,22 @@
             this.btn_TraHang.ImageZoom = 50;
             this.btn_TraHang.LabelPosition = 30;
             this.btn_TraHang.LabelText = "Trả hàng";
-            this.btn_TraHang.Location = new System.Drawing.Point(9, 395);
-            this.btn_TraHang.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_TraHang.Location = new System.Drawing.Point(12, 486);
+            this.btn_TraHang.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btn_TraHang.Name = "btn_TraHang";
-            this.btn_TraHang.Size = new System.Drawing.Size(246, 40);
+            this.btn_TraHang.Size = new System.Drawing.Size(328, 49);
             this.btn_TraHang.TabIndex = 0;
             this.btn_TraHang.Click += new System.EventHandler(this.btn_TraHang_Click);
             // 
             // ReturnDVDForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ReturnDVDForm";
             this.Text = "ReturnDVDForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
