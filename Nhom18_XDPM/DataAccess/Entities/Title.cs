@@ -10,7 +10,7 @@ namespace DataAccess.Entities
     public class Title
     {
         [Key]
-        [RegularExpression(@"^\d{3}$")]
+        [RegularExpression(@"^[0-9]{1,3}$")]
         public string idTitle { get; set; }
         public string name { get; set; }
         public int numberOfCopies { get; set; }

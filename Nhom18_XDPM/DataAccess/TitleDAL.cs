@@ -64,5 +64,45 @@ namespace DataAccess
         {
             return db.Titles.FirstOrDefault(x => x.idTitle == idTitle).idCategory;
         }
+
+        public Result delete(int idTitle)
+        {
+            var item = db.Titles.FirstOrDefault(x => x.idTitle.Equals(idTitle));
+
+            if (item != null)
+            {
+                db.Titles.Remove(item);
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (DbEntityValidationException e)
+                {
+                    return new Result
+                    {
+                        message = e
+                            .EntityValidationErrors
+                            .LastOrDefault()
+                            .ValidationErrors
+                            .LastOrDefault()
+                            .ErrorMessage,
+                        isSuccess = false
+                    };
+                }
+                return new Result
+                {
+                    message = "Xóa Tiêu đề thành công",
+                    isSuccess = true
+                };
+            }
+            else
+            {
+                return new Result
+                {
+                    message = "Tiêu đề không tìm thấy",
+                    isSuccess = false
+                };
+            }
+        }
     }
 }

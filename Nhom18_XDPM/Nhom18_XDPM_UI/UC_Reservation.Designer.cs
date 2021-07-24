@@ -83,14 +83,13 @@ namespace Nhom18_XDPM_UI
             this.btnHuyThem.IconVisible = true;
             this.btnHuyThem.IconZoom = 70D;
             this.btnHuyThem.IsTab = false;
-            this.btnHuyThem.Location = new System.Drawing.Point(36, 496);
-            this.btnHuyThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHuyThem.Location = new System.Drawing.Point(27, 403);
             this.btnHuyThem.Name = "btnHuyThem";
             this.btnHuyThem.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btnHuyThem.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.btnHuyThem.OnHoverTextColor = System.Drawing.Color.White;
             this.btnHuyThem.selected = false;
-            this.btnHuyThem.Size = new System.Drawing.Size(140, 44);
+            this.btnHuyThem.Size = new System.Drawing.Size(106, 36);
             this.btnHuyThem.TabIndex = 7;
             this.btnHuyThem.Text = "HỦY";
             this.btnHuyThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -121,14 +120,13 @@ namespace Nhom18_XDPM_UI
             this.btnThem.IconVisible = true;
             this.btnThem.IconZoom = 70D;
             this.btnThem.IsTab = false;
-            this.btnThem.Location = new System.Drawing.Point(245, 496);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThem.Location = new System.Drawing.Point(184, 403);
             this.btnThem.Name = "btnThem";
             this.btnThem.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btnThem.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.btnThem.OnHoverTextColor = System.Drawing.Color.White;
             this.btnThem.selected = false;
-            this.btnThem.Size = new System.Drawing.Size(140, 44);
+            this.btnThem.Size = new System.Drawing.Size(106, 36);
             this.btnThem.TabIndex = 7;
             this.btnThem.Text = "THÊM";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -151,9 +149,11 @@ namespace Nhom18_XDPM_UI
             this.groupBox1.Controls.Add(this.txtTenKH);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(5, 160);
+            this.groupBox1.Location = new System.Drawing.Point(4, 130);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(478, 307);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(358, 249);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "KHÁCH HÀNG";
@@ -161,27 +161,30 @@ namespace Nhom18_XDPM_UI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 31);
+            this.label1.Location = new System.Drawing.Point(17, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 25);
+            this.label1.Size = new System.Drawing.Size(119, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "ID Khách hàng:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(65, 253);
+            this.label5.Location = new System.Drawing.Point(49, 206);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 25);
+            this.label5.Size = new System.Drawing.Size(84, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "Tình trạng:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(75, 208);
+            this.label6.Location = new System.Drawing.Point(56, 169);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 25);
+            this.label6.Size = new System.Drawing.Size(76, 20);
             this.label6.TabIndex = 0;
             this.label6.Text = "Ngày đặt:";
             // 
@@ -191,9 +194,10 @@ namespace Nhom18_XDPM_UI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTinhTrang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.txtTinhTrang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTinhTrang.Location = new System.Drawing.Point(188, 253);
+            this.txtTinhTrang.Location = new System.Drawing.Point(141, 206);
+            this.txtTinhTrang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTinhTrang.Name = "txtTinhTrang";
-            this.txtTinhTrang.Size = new System.Drawing.Size(271, 30);
+            this.txtTinhTrang.Size = new System.Drawing.Size(204, 26);
             this.txtTinhTrang.TabIndex = 1;
             // 
             // txtNgayDat
@@ -202,17 +206,19 @@ namespace Nhom18_XDPM_UI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNgayDat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.txtNgayDat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNgayDat.Location = new System.Drawing.Point(188, 208);
+            this.txtNgayDat.Location = new System.Drawing.Point(141, 169);
+            this.txtNgayDat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNgayDat.Name = "txtNgayDat";
-            this.txtNgayDat.Size = new System.Drawing.Size(271, 30);
+            this.txtNgayDat.Size = new System.Drawing.Size(204, 26);
             this.txtNgayDat.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(79, 165);
+            this.label4.Location = new System.Drawing.Point(59, 134);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 25);
+            this.label4.Size = new System.Drawing.Size(73, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Nhan đề:";
             // 
@@ -222,17 +228,19 @@ namespace Nhom18_XDPM_UI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNhanDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.txtNhanDe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNhanDe.Location = new System.Drawing.Point(188, 172);
+            this.txtNhanDe.Location = new System.Drawing.Point(141, 140);
+            this.txtNhanDe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNhanDe.Name = "txtNhanDe";
-            this.txtNhanDe.Size = new System.Drawing.Size(271, 30);
+            this.txtNhanDe.Size = new System.Drawing.Size(204, 26);
             this.txtNhanDe.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 122);
+            this.label3.Location = new System.Drawing.Point(41, 99);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 25);
+            this.label3.Size = new System.Drawing.Size(94, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "ID Nhan đề:";
             // 
@@ -242,9 +250,10 @@ namespace Nhom18_XDPM_UI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtIDNhanDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.txtIDNhanDe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIDNhanDe.Location = new System.Drawing.Point(188, 120);
+            this.txtIDNhanDe.Location = new System.Drawing.Point(141, 98);
+            this.txtIDNhanDe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtIDNhanDe.Name = "txtIDNhanDe";
-            this.txtIDNhanDe.Size = new System.Drawing.Size(271, 30);
+            this.txtIDNhanDe.Size = new System.Drawing.Size(204, 26);
             this.txtIDNhanDe.TabIndex = 1;
             // 
             // txtIDKhachHang
@@ -254,17 +263,19 @@ namespace Nhom18_XDPM_UI
             this.txtIDKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.txtIDKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIDKhachHang.ForeColor = System.Drawing.Color.White;
-            this.txtIDKhachHang.Location = new System.Drawing.Point(188, 29);
+            this.txtIDKhachHang.Location = new System.Drawing.Point(141, 24);
+            this.txtIDKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtIDKhachHang.Name = "txtIDKhachHang";
-            this.txtIDKhachHang.Size = new System.Drawing.Size(271, 30);
+            this.txtIDKhachHang.Size = new System.Drawing.Size(204, 26);
             this.txtIDKhachHang.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 77);
+            this.label2.Location = new System.Drawing.Point(5, 63);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 25);
+            this.label2.Size = new System.Drawing.Size(129, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên Khách hàng:";
             // 
@@ -274,9 +285,10 @@ namespace Nhom18_XDPM_UI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.txtTenKH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTenKH.Location = new System.Drawing.Point(188, 75);
+            this.txtTenKH.Location = new System.Drawing.Point(141, 61);
+            this.txtTenKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTenKH.Name = "txtTenKH";
-            this.txtTenKH.Size = new System.Drawing.Size(271, 30);
+            this.txtTenKH.Size = new System.Drawing.Size(204, 26);
             this.txtTenKH.TabIndex = 1;
             // 
             // pictureBoxTimKiem
@@ -286,9 +298,10 @@ namespace Nhom18_XDPM_UI
             this.pictureBoxTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxTimKiem.ErrorImage = null;
             this.pictureBoxTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTimKiem.Image")));
-            this.pictureBoxTimKiem.Location = new System.Drawing.Point(809, 11);
+            this.pictureBoxTimKiem.Location = new System.Drawing.Point(608, 9);
+            this.pictureBoxTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxTimKiem.Name = "pictureBoxTimKiem";
-            this.pictureBoxTimKiem.Size = new System.Drawing.Size(71, 44);
+            this.pictureBoxTimKiem.Size = new System.Drawing.Size(54, 36);
             this.pictureBoxTimKiem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxTimKiem.TabIndex = 1;
             this.pictureBoxTimKiem.TabStop = false;
@@ -301,10 +314,11 @@ namespace Nhom18_XDPM_UI
             this.txttimKiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txttimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttimKiem.ForeColor = System.Drawing.Color.LightGray;
-            this.txttimKiem.Location = new System.Drawing.Point(11, 11);
+            this.txttimKiem.Location = new System.Drawing.Point(8, 9);
+            this.txttimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txttimKiem.Multiline = true;
             this.txttimKiem.Name = "txttimKiem";
-            this.txttimKiem.Size = new System.Drawing.Size(792, 44);
+            this.txttimKiem.Size = new System.Drawing.Size(595, 36);
             this.txttimKiem.TabIndex = 0;
             this.txttimKiem.Text = "     Nhập mã đĩa cần tìm";
             // 
@@ -318,11 +332,12 @@ namespace Nhom18_XDPM_UI
             this.dgvListItem.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.dgvListItem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvListItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListItem.Location = new System.Drawing.Point(11, 61);
+            this.dgvListItem.Location = new System.Drawing.Point(8, 50);
+            this.dgvListItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvListItem.Name = "dgvListItem";
             this.dgvListItem.RowHeadersWidth = 51;
             this.dgvListItem.RowTemplate.Height = 24;
-            this.dgvListItem.Size = new System.Drawing.Size(868, 657);
+            this.dgvListItem.Size = new System.Drawing.Size(652, 534);
             this.dgvListItem.TabIndex = 0;
             // 
             // btnHuyDatTruoc
@@ -349,14 +364,13 @@ namespace Nhom18_XDPM_UI
             this.btnHuyDatTruoc.IconVisible = true;
             this.btnHuyDatTruoc.IconZoom = 70D;
             this.btnHuyDatTruoc.IsTab = false;
-            this.btnHuyDatTruoc.Location = new System.Drawing.Point(705, 725);
-            this.btnHuyDatTruoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHuyDatTruoc.Location = new System.Drawing.Point(530, 589);
             this.btnHuyDatTruoc.Name = "btnHuyDatTruoc";
             this.btnHuyDatTruoc.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btnHuyDatTruoc.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.btnHuyDatTruoc.OnHoverTextColor = System.Drawing.Color.White;
             this.btnHuyDatTruoc.selected = false;
-            this.btnHuyDatTruoc.Size = new System.Drawing.Size(174, 44);
+            this.btnHuyDatTruoc.Size = new System.Drawing.Size(132, 36);
             this.btnHuyDatTruoc.TabIndex = 7;
             this.btnHuyDatTruoc.Text = "HỦY ĐẶT TRƯỚC";
             this.btnHuyDatTruoc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -367,15 +381,16 @@ namespace Nhom18_XDPM_UI
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 502F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 376F));
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1399, 787);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1049, 639);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // panel2
@@ -384,10 +399,11 @@ namespace Nhom18_XDPM_UI
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.btnHuyThem);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(900, 3);
+            this.panel2.Location = new System.Drawing.Point(675, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(8);
-            this.panel2.Size = new System.Drawing.Size(496, 781);
+            this.panel2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel2.Size = new System.Drawing.Size(372, 635);
             this.panel2.TabIndex = 8;
             // 
             // panel1
@@ -397,20 +413,22 @@ namespace Nhom18_XDPM_UI
             this.panel1.Controls.Add(this.dgvListItem);
             this.panel1.Controls.Add(this.btnHuyDatTruoc);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(8);
-            this.panel1.Size = new System.Drawing.Size(891, 781);
+            this.panel1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Size = new System.Drawing.Size(669, 635);
             this.panel1.TabIndex = 1;
             // 
             // UC_Reservation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UC_Reservation";
-            this.Size = new System.Drawing.Size(1399, 787);
+            this.Size = new System.Drawing.Size(1049, 639);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimKiem)).EndInit();
