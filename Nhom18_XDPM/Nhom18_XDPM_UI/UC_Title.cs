@@ -42,289 +42,411 @@ namespace Nhom18_XDPM_UI
 
         }
 
+        private void UC_Title_Load(object sender, EventArgs e)
+        {
+            // Enabled false button
+            btnRemoveTitle.Enabled = false;
+            btnUpdateTitle.Enabled = false;
+            btnCancelTitle.Enabled = false;
+            btnRemoveDisk.Enabled = false;
+
+            // Enabled false textbox
+            txtTitleID.Enabled = false;
+            txtTitleName.Enabled = false;
+            cbxTitleType_AddTitle.Enabled = false;
+            txtRentalPeriod.Enabled = false;
+            txtRentFee.Enabled = false;
+            cbxRentalFee.Enabled = false;
+            txtDiskName.Enabled = false;
+        }
+
+        #region Load Data To dgvTitle
+        /// <summary>
+        /// Set up data to dgvTitle
+        /// </summary>
         private void SetUp_dataGridViewTitle()
         {
-            dgv_title.MultiSelect = false;
-            dgv_title.ReadOnly = true;
-            dgv_title.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_title.DefaultCellStyle.ForeColor = Color.Black;
-            dgv_title.ClearSelection();
+            dgvTitle.MultiSelect = false;
+            dgvTitle.ReadOnly = true;
+            dgvTitle.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTitle.DefaultCellStyle.ForeColor = Color.Black;
+            dgvTitle.ClearSelection();
             ///
-            dgv_disk.MultiSelect = false;
-            dgv_disk.ReadOnly = true;
-            dgv_disk.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_disk.DefaultCellStyle.ForeColor = Color.Black;
-            dgv_disk.ClearSelection();
+            dgvDisk.MultiSelect = false;
+            dgvDisk.ReadOnly = true;
+            dgvDisk.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDisk.DefaultCellStyle.ForeColor = Color.Black;
+            dgvDisk.ClearSelection();
 
         }
 
+        /// <summary>
+        /// Load dgvTitle
+        /// </summary>
         private void ReloadTitle()
         {
             DataBindings.Clear();
             bindingSource.DataSource = titleBLL.GetAlltt();
-            dgv_title.DataSource = bindingSource;
+            dgvTitle.DataSource = bindingSource;
             CustomDataGridViewTitle();
         }
 
+        /// <summary>
+        /// Create Haeder text Title
+        /// </summary>
         private void CustomDataGridViewTitle()
         {
-            dgv_title.Columns["idTitle"].HeaderText = "Mã tiêu đề";
-            dgv_title.Columns["name"].HeaderText = "Tên tiêu đề";
-            dgv_title.Columns["numberOfCopies"].HeaderText = "Số bản sao";
-            dgv_title.Columns["idCategory"].HeaderText = "Loại";
-            dgv_title.Columns["Disks"].Visible = false;
-            dgv_title.Columns["Category"].Visible = false;
+            dgvTitle.Columns["idTitle"].HeaderText = "Mã tiêu đề";
+            dgvTitle.Columns["name"].HeaderText = "Tên tiêu đề";
+            dgvTitle.Columns["numberOfCopies"].HeaderText = "Số bản sao";
+            dgvTitle.Columns["idCategory"].HeaderText = "Loại";
+            dgvTitle.Columns["Disks"].Visible = false;
+            dgvTitle.Columns["Category"].Visible = false;
 
-            dgv_title.Columns["idTitle"].Width = 120;
-            dgv_title.Columns["name"].Width = 240;
-            dgv_title.Columns["numberOfCopies"].Width = 100;
-            dgv_title.Columns["idCategory"].Width = 100;
+            dgvTitle.Columns["idTitle"].Width = 120;
+            dgvTitle.Columns["name"].Width = 240;
+            dgvTitle.Columns["numberOfCopies"].Width = 100;
+            dgvTitle.Columns["idCategory"].Width = 100;
         }
 
-        private void btnHuyThemNhanDe_Click(object sender, EventArgs e)
-        {
+        #endregion
 
-        }
-
-
+        #region Load Data to dgvDisk
+        /// <summary>
+        /// Load data to dgvDisk from ID title
+        /// </summary>
+        /// <param name="id"></param>
         private void DiskCreateDataGridView(string id)
         {
             bindingSource2.DataSource = diskBLL.GetListDiskByIDtitle(id);
-            dgv_disk.DataSource = bindingSource2;
+            dgvDisk.DataSource = bindingSource2;
         }
 
-        private void dgv_title_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+
+
+
+        #endregion
+
+        #region Event Datagridview of Title
+        private void dgvTitle_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
-            if (dgv_title.SelectedRows.Count > 0 && dgv_title.SelectedRows[0].Cells[0].Value != null)
+            if (dgvTitle.SelectedRows.Count > 0 && dgvTitle.SelectedRows[0].Cells[0].Value != null)
             {
-                string id = dgv_title.SelectedRows[0].Cells[0].Value.ToString();
+                string id = dgvTitle.SelectedRows[0].Cells[0].Value.ToString();
                 DiskCreateDataGridView(id);
             }
         }
+        #endregion
 
-        private void pictureBoxTimKiemNhanDe_Click(object sender, EventArgs e)
+        #region Event button of Title
+        /// <summary>
+        /// 
+        /// </summary>
+
+        private void pictureBoxUpdateTitle_Click(object sender, EventArgs e)
         {
             ReloadTitle();
         }
 
-        private void CleanTextBoxAddTitle()
+        private void btnRemoveTitle_Click(object sender, EventArgs e)
         {
-            txt_TitleID.Text = "";
-            txt_TitleName.Text = "";
+
         }
 
-        private void btn_AddTitle_Click(object sender, EventArgs e)
-        {
-            if (btn_AddTitle.Text == "Thêm")
-            {
-                txt_TitleID.Enabled = true;
-                txt_TitleName.Enabled = true;
-                btn_AddTitle.Text = "Lưu";
-                btn_CancelAddTitle.Visible = true;
-                CleanTextBoxAddTitle();
-                btn_ChangeTitle.Enabled = true;
-                btn_RemoveTitle.Enabled = true;
-            }
-            else
-            {
-                if(txt_TitleID.Text == "" || txt_TitleName.Text == "")
-                {
-                    MessageBox.Show("Không được bỏ trống đâu nhá");
-                }
-                else
-                {
-                    // Thực Thi Thêm Ở đây
-                    int typeTT = 1;
-                    if (cbx_titleType_addTitle.Text == "CD")
-                    {
-                        typeTT = 2;
-                    }
-                    Title title = new Title()
-                    {
-                        idTitle = txt_TitleID.Text.ToString().Trim(),
-                        name = txt_TitleName.Text.ToString().Trim(),
-                        numberOfCopies = 0,
-                        idCategory = typeTT
-                    };
-                    Result result = null;
-                    var taskCreate = Task.Factory.StartNew(() => result = titleBLL.addTitle(title));
-                    taskCreate.Wait();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
-                    if (result.isSuccess)
-                    {
-                        MessageBox.Show(result.message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        txt_TitleID.Enabled = false;
-                        txt_TitleName.Enabled = false;
-                        btn_ChangeTitle.Enabled = true;
-                        btn_RemoveTitle.Enabled = true;
-                        btn_AddTitle.Text = "Thêm";
-                        btn_CancelAddTitle.Visible = false;
-                    }
-                    else
-                    {
-                        MessageBox.Show(result.message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    }
-                }
-                
-                //
-                
-            }
+        private void btnAddTitle_Click(object sender, EventArgs e)
+        {
+
         }
 
-        private void btn_CancelAddTitle_Click(object sender, EventArgs e)
+        private void btnUpdateTitle_Click(object sender, EventArgs e)
         {
-            btn_AddTitle.Text = "Thêm";
-            btn_CancelAddTitle.Visible = false;
-            btn_ChangeTitle.Enabled = true;
-            btn_RemoveTitle.Enabled = true;
-            CleanTextBoxAddTitle();
-            txt_TitleID.Enabled = false;
-            txt_TitleName.Enabled = false;
+
         }
 
-        private void btn_ChangeTitle_Click(object sender, EventArgs e)
+        private void btnCancelTitle_Click(object sender, EventArgs e)
         {
-            if (dgv_title.Rows.Count == 0)
-            {
-                MessageBox.Show("Chưa có dữ liệu để sửa? Hãy tải dữ liệu");
-                return;
-            }
 
-            if (btn_ChangeTitle.Text == "Sửa")
-            {
-                btn_ChangeTitle.Text = "Lưu";
-                btn_CancelUpdateTitle.Visible = true;
-                btn_AddTitle.Enabled = false;
-                btn_RemoveTitle.Enabled = false;
-            }
-            else
-            {
-                //if (txt_IDKhachHang.Text == "")
-                //{
-                //    MessageBox.Show("Bạn chưa chọn khách hàng để sửa? Hãy chọn khách hàng");
-                //    return;
-                //}
-                ///
+        }
+        
+        #endregion
 
-                ///
-                btn_ChangeTitle.Text = "Sửa";
-                btn_CancelUpdateTitle.Visible = false;
-                btn_AddTitle.Enabled = true;
-                btn_RemoveTitle.Enabled = true;
-                //CleanFillTextBox();
-                //CleanTextBox();
-            }
+        #region Event Textbox of Title
+        private void txtSearchTitle_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtSearchTitle.Text = string.Empty;
         }
 
-        private void btn_CancelUpdateTitle_Click(object sender, EventArgs e)
-        {
-            btn_ChangeTitle.Text = "Sửa";
-            btn_CancelUpdateTitle.Visible = false;
-            //CleanFillTextBox();
-            //CleanTextBox();
-            btn_AddTitle.Enabled = true;
-            btn_RemoveTitle.Enabled = true;
-            //txt_IDKhachHang.Enabled = false;
-            //txt_IDKhachHang.Text = "";
-        }
+        
+        #endregion
 
-        private void btn_RemoveTitle_Click(object sender, EventArgs e)
-        {
-            if (dgv_title.Rows.Count == 0)
-            {
-                MessageBox.Show("Chưa có dữ liệu? Hãy tải dữ liệu");
-                return;
-            }
-            MessageBox.Show("Đang BUG");
-            //DialogResult dr = MessageBox.Show("Hãy Chắc Rằng Bạn Muốn Xóa Tiêu đề này Này.\nXác Nhận Xóa Khách Hàng ?", "Xóa Khách hàng", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            //var csID = dgv_title.CurrentRow.Cells[0].Value.ToString().Trim();
-            //if (dr == DialogResult.Yes && csID != null)
-            //{
-            //    dgv_title.Rows.RemoveAt(dgv_title.CurrentRow.Index);
-            //    titleBLL.delete(Convert.ToInt32(csID));
-            //}
-            //else
-            //{
-            //    return;
-            //}
-        }
+        #region Event Datagridview of Disk
 
-        private void TitleCreateDataGridView(string id)
-        {
-            bindingSource.DataSource = titleBLL.GetListTitleByID(id);
-            dgv_title.DataSource = bindingSource;
-            CustomDataGridViewTitle();
-        }
+        #endregion
 
-        private void txt_searchTitle_KeyUp(object sender, KeyEventArgs e)
-        {
-            string id = txt_searchTitle.Text.ToString();
-            TitleCreateDataGridView(id);
-        }
+        #region Event button of Disk
 
-        private void btn_ChangeRentFee_Click(object sender, EventArgs e)
-        {
-            if (btn_ChangeRentFee.Text == "Thay đổi")
-            {
-                txt_RentFee.Enabled = true;
-                txt_RentalPeriod.Enabled = true;
-                btn_ChangeRentFee.Text = "Lưu";
-            }
-            else
-            {
-                int var;
-                if (txt_RentFee.Text == "" || txt_RentalPeriod.Text == "" || !int.TryParse(txt_RentFee.Text, out var) || !int.TryParse(txt_RentalPeriod.Text, out var))
-                {
-                    MessageBox.Show("Không được bỏ trống đâu nhá!! Nhập rồi coi lại phải số ko");
-                }
-                else
-                {
-                    int typeTT = 1;
-                    if (cbx_rentalFee.Text == "CD")
-                    {
-                        typeTT = 2;
-                    }
-                    Category category = new Category()
-                    {
-                        rentalCharge = (float)Convert.ToDecimal(txt_RentFee.Text.ToString()),
-                        rentalPeriod = Convert.ToInt32(txt_RentalPeriod.Text),
-                        lateFee = 1,
-                        idCategory = typeTT
-                    };
-                    Result result = null;
-                    var taskCreate = Task.Factory.StartNew(() => result = categoryBLL.update(category));
-                    taskCreate.Wait();
 
-                    if (!result.isSuccess)
-                    {
-                        ReloadTitle();
-                    }
-                    if (result.isSuccess)
-                    {
-                        MessageBox.Show(result.message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        ReloadTitle();
-                        txt_RentFee.Enabled = false;
-                        txt_RentalPeriod.Enabled = false;
-                        btn_ChangeRentFee.Text = "Thay đổi";
-                    }
-                    else
-                    {
-                        MessageBox.Show(result.message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    }
-                    
-                } 
-            }
-            
-        }
+        #endregion
 
-        private void btn_RemoveDisk_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Chưa xóa được");
-        }
+        #region Event Textbox of Disk
 
-        private void btn_AddDisk_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Chưa thêm đĩa được từ từ");
-        }
+        #endregion
+
+
+        //private void dgv_title_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        //{
+        //    if (dgvTitle.SelectedRows.Count > 0 && dgvTitle.SelectedRows[0].Cells[0].Value != null)
+        //    {
+        //        string id = dgvTitle.SelectedRows[0].Cells[0].Value.ToString();
+        //        DiskCreateDataGridView(id);
+        //    }
+        //}
+
+
+
+        //private void CleanTextBoxAddTitle()
+        //{
+        //    txtTitleID.Text = "";
+        //    txtTitleName.Text = "";
+        //}
+
+        //private void btn_AddTitle_Click(object sender, EventArgs e)
+        //{
+        //    if (btnAddTitle.Text == "Thêm")
+        //    {
+        //        txtTitleID.Enabled = true;
+        //        txtTitleName.Enabled = true;
+        //        btnAddTitle.Text = "Lưu";
+
+        //        CleanTextBoxAddTitle();
+        //        btnUpdateTitle.Enabled = true;
+        //        btnRemoveTitle.Enabled = true;
+        //    }
+        //    else
+        //    {
+        //        if(txtTitleID.Text == "" || txtTitleName.Text == "")
+        //        {
+        //            MessageBox.Show("Không được bỏ trống đâu nhá");
+        //        }
+        //        else
+        //        {
+        //            // Thực Thi Thêm Ở đây
+        //            int typeTT = 1;
+        //            if (cbxTitleType_AddTitle.Text == "CD")
+        //            {
+        //                typeTT = 2;
+        //            }
+        //            Title title = new Title()
+        //            {
+        //                idTitle = txtTitleID.Text.ToString().Trim(),
+        //                name = txtTitleName.Text.ToString().Trim(),
+        //                numberOfCopies = 0,
+        //                idCategory = typeTT
+        //            };
+        //            Result result = null;
+        //            var taskCreate = Task.Factory.StartNew(() => result = titleBLL.addTitle(title));
+        //            taskCreate.Wait();
+
+        //            if (result.isSuccess)
+        //            {
+        //                MessageBox.Show(result.message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        //                txtTitleID.Enabled = false;
+        //                txtTitleName.Enabled = false;
+        //                btnUpdateTitle.Enabled = true;
+        //                btnRemoveTitle.Enabled = true;
+        //                btnAddTitle.Text = "Thêm";
+
+        //            }
+        //            else
+        //            {
+        //                MessageBox.Show(result.message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        //            }
+        //        }
+
+        //        //
+
+        //    }
+        //}
+
+        //private void btn_CancelAddTitle_Click(object sender, EventArgs e)
+        //{
+        //    btnAddTitle.Text = "Thêm";
+
+        //    btnUpdateTitle.Enabled = true;
+        //    btnRemoveTitle.Enabled = true;
+        //    CleanTextBoxAddTitle();
+        //    txtTitleID.Enabled = false;
+        //    txtTitleName.Enabled = false;
+        //}
+
+        //private void btn_ChangeTitle_Click(object sender, EventArgs e)
+        //{
+        //    if (dgvTitle.Rows.Count == 0)
+        //    {
+        //        MessageBox.Show("Chưa có dữ liệu để sửa? Hãy tải dữ liệu");
+        //        return;
+        //    }
+
+        //    if (btnUpdateTitle.Text == "Sửa")
+        //    {
+        //        btnUpdateTitle.Text = "Lưu";
+        //        btnCancelTitle.Visible = true;
+        //        btnAddTitle.Enabled = false;
+        //        btnRemoveTitle.Enabled = false;
+        //    }
+        //    else
+        //    {
+        //        //if (txt_IDKhachHang.Text == "")
+        //        //{
+        //        //    MessageBox.Show("Bạn chưa chọn khách hàng để sửa? Hãy chọn khách hàng");
+        //        //    return;
+        //        //}
+        //        ///
+
+        //        ///
+        //        btnUpdateTitle.Text = "Sửa";
+        //        btnCancelTitle.Visible = false;
+        //        btnAddTitle.Enabled = true;
+        //        btnRemoveTitle.Enabled = true;
+        //        //CleanFillTextBox();
+        //        //CleanTextBox();
+        //    }
+        //}
+
+        //private void btn_CancelUpdateTitle_Click(object sender, EventArgs e)
+        //{
+        //    btnUpdateTitle.Text = "Sửa";
+        //    btnCancelTitle.Visible = false;
+        //    //CleanFillTextBox();
+        //    //CleanTextBox();
+        //    btnAddTitle.Enabled = true;
+        //    btnRemoveTitle.Enabled = true;
+        //    //txt_IDKhachHang.Enabled = false;
+        //    //txt_IDKhachHang.Text = "";
+        //}
+
+        //private void btn_RemoveTitle_Click(object sender, EventArgs e)
+        //{
+        //    if (dgvTitle.Rows.Count == 0)
+        //    {
+        //        MessageBox.Show("Chưa có dữ liệu? Hãy tải dữ liệu");
+        //        return;
+        //    }
+        //    MessageBox.Show("Đang BUG");
+        //    //DialogResult dr = MessageBox.Show("Hãy Chắc Rằng Bạn Muốn Xóa Tiêu đề này Này.\nXác Nhận Xóa Khách Hàng ?", "Xóa Khách hàng", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+        //    //var csID = dgv_title.CurrentRow.Cells[0].Value.ToString().Trim();
+        //    //if (dr == DialogResult.Yes && csID != null)
+        //    //{
+        //    //    dgv_title.Rows.RemoveAt(dgv_title.CurrentRow.Index);
+        //    //    titleBLL.delete(Convert.ToInt32(csID));
+        //    //}
+        //    //else
+        //    //{
+        //    //    return;
+        //    //}
+        //}
+
+        //private void TitleCreateDataGridView(string id)
+        //{
+        //    bindingSource.DataSource = titleBLL.GetListTitleByID(id);
+        //    dgvTitle.DataSource = bindingSource;
+        //    CustomDataGridViewTitle();
+        //}
+
+        //private void txt_searchTitle_KeyUp(object sender, KeyEventArgs e)
+        //{
+        //    string id = txtSearchTitle.Text.ToString();
+        //    TitleCreateDataGridView(id);
+        //}
+
+        //private void btn_ChangeRentFee_Click(object sender, EventArgs e)
+        //{
+        //    if (btnUpdateRentFee.Text == "Thay đổi")
+        //    {
+        //        txtRentFee.Enabled = true;
+        //        txtRentalPeriod.Enabled = true;
+        //        btnUpdateRentFee.Text = "Lưu";
+        //    }
+        //    else
+        //    {
+        //        int var;
+        //        if (txtRentFee.Text == "" || txtRentalPeriod.Text == "" || !int.TryParse(txtRentFee.Text, out var) || !int.TryParse(txtRentalPeriod.Text, out var))
+        //        {
+        //            MessageBox.Show("Không được bỏ trống đâu nhá!! Nhập rồi coi lại phải số ko");
+        //        }
+        //        else
+        //        {
+        //            int typeTT = 1;
+        //            if (cbxRentalFee.Text == "CD")
+        //            {
+        //                typeTT = 2;
+        //            }
+        //            Category category = new Category()
+        //            {
+        //                rentalCharge = (float)Convert.ToDecimal(txtRentFee.Text.ToString()),
+        //                rentalPeriod = Convert.ToInt32(txtRentalPeriod.Text),
+        //                lateFee = 1,
+        //                idCategory = typeTT
+        //            };
+        //            Result result = null;
+        //            var taskCreate = Task.Factory.StartNew(() => result = categoryBLL.update(category));
+        //            taskCreate.Wait();
+
+        //            if (!result.isSuccess)
+        //            {
+        //                ReloadTitle();
+        //            }
+        //            if (result.isSuccess)
+        //            {
+        //                MessageBox.Show(result.message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        //                ReloadTitle();
+        //                txtRentFee.Enabled = false;
+        //                txtRentalPeriod.Enabled = false;
+        //                btnUpdateRentFee.Text = "Thay đổi";
+        //            }
+        //            else
+        //            {
+        //                MessageBox.Show(result.message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        //            }
+
+        //        } 
+        //    }
+
+        //}
+
+        //private void btn_RemoveDisk_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Chưa xóa được");
+        //}
+
+        //private void btn_AddDisk_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Chưa thêm đĩa được từ từ");
+        //}
+
+        //private void txt_searchTitle_MouseClick(object sender, MouseEventArgs e)
+        //{
+        //    txtSearchTitle.Text = string.Empty;
+        //}
+
+        //private void UC_Title_Load(object sender, EventArgs e)
+        //{
+        //    btnUpdateTitle.Enabled = true;
+        //    btnCancelTitle.Enabled = true;
+        //}
+
+        //private void dgvTitle_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    btnAddTitle.Enabled = true;
+        //    btnUpdateTitle.Enabled = false;
+
+        //}
+
     }
 }
