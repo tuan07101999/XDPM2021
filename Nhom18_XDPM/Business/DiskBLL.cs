@@ -1,4 +1,5 @@
 ﻿using DataAccess;
+using DataAccess.DTO;
 using DataAccess.Entities;
 using System;
 using System.Collections.Generic;
@@ -38,6 +39,14 @@ namespace Business
         public Disk GetONEDiskByIDtitle(string id)
         {
             return dal.GetONEDiskByIDtitle(id);
+        }
+        public Result delete(String idDisk)
+        {
+            return dal.delete(idDisk);
+        }
+        public Result addDisk(Disk disk)
+        {
+            return dal.addDisk(disk);
         }
     }
 }

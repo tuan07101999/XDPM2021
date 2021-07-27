@@ -11,7 +11,7 @@ namespace DataAccess.Entities
     public class Disk
     {
         [Key]
-        [RegularExpression(@"^\d{6}$")]
+        [RegularExpression(@"^[0-9]{6}$")]
         public string idDisk { get; set; }
         public string name { get; set; }
 
