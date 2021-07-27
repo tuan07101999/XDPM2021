@@ -36,6 +36,15 @@ namespace DataAccess
         }
         public Result addTitle(Title title)
         {
+            var TempTitle = db.Titles.FirstOrDefault(x => x.idTitle == title.idTitle);
+            if (TempTitle != null)
+            {
+                return new Result
+                {
+                    message = "Trùng mã không thể thêm",
+                    isSuccess = false
+                };
+            }
             db.Titles.Add(title);
             try
             {
@@ -65,9 +74,9 @@ namespace DataAccess
             return db.Titles.FirstOrDefault(x => x.idTitle == idTitle).idCategory;
         }
 
-        public Result delete(int idTitle)
+        public Result delete(String idTitle)
         {
-            var item = db.Titles.FirstOrDefault(x => x.idTitle.Equals(idTitle));
+            var item = db.Titles.FirstOrDefault(x => x.idTitle == idTitle);
 
             if (item != null)
             {
@@ -100,6 +109,45 @@ namespace DataAccess
                 return new Result
                 {
                     message = "Tiêu đề không tìm thấy",
+                    isSuccess = false
+                };
+            }
+        }
+
+        public Result updateTitle(Title title)
+        {
+            var item = db.Titles.FirstOrDefault(x => x.idTitle == title.idTitle);
+            if (item != null)
+            {
+                item.name = title.name;
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (DbEntityValidationException e)
+                {
+                    return new Result
+                    {
+                        message = e
+                            .EntityValidationErrors
+                            .LastOrDefault()
+                            .ValidationErrors
+                            .LastOrDefault()
+                            .ErrorMessage,
+                        isSuccess = false
+                    };
+                }
+                return new Result
+                {
+                    message = "Cập nhật thành công",
+                    isSuccess = true
+                };
+            }
+            else
+            {
+                return new Result
+                {
+                    message = "Khách hàng không tồn tại",
                     isSuccess = false
                 };
             }

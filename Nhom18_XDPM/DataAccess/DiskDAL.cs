@@ -1,6 +1,8 @@
-﻿using DataAccess.Entities;
+﻿using DataAccess.DTO;
+using DataAccess.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,6 +52,83 @@ namespace DataAccess
         public Disk GetONEDiskByIDtitle(string id)
         {
             return db.Disks.FirstOrDefault(x => x.idTitle == id);
+        }
+
+        public Result addDisk(Disk disk)
+        {
+            var Tempdisk = db.Disks.FirstOrDefault(x => x.idDisk == disk.idDisk);
+            if(Tempdisk != null)
+            {
+                return new Result
+                {
+                    message = "Trùng mã không thể thêm",
+                    isSuccess = false
+                };
+            }    
+            db.Disks.Add(disk);
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                return new Result
+                {
+                    message = e
+                        .EntityValidationErrors
+                        .LastOrDefault()
+                        .ValidationErrors
+                        .LastOrDefault()
+                        .ErrorMessage,
+                    isSuccess = false
+                };
+            }
+            return new Result
+            {
+                message = "Thêm thành công",
+                isSuccess = true
+            };
+        }
+
+
+        public Result delete(String idDisk)
+        {
+            var item = db.Disks.FirstOrDefault(x => x.idDisk == idDisk);
+
+            if (item != null)
+            {
+                db.Disks.Remove(item);
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (DbEntityValidationException e)
+                {
+                    return new Result
+                    {
+                        message = e
+                            .EntityValidationErrors
+                            .LastOrDefault()
+                            .ValidationErrors
+                            .LastOrDefault()
+                            .ErrorMessage,
+                        isSuccess = false
+                    };
+                }
+                return new Result
+                {
+                    message = "Xóa đĩa thành công",
+                    isSuccess = true
+                };
+            }
+            else
+            {
+                return new Result
+                {
+                    message = "Đĩa không tìm thấy",
+                    isSuccess = false
+                };
+            }
         }
     }
 }

@@ -46,9 +46,13 @@ namespace Business
         {
             return dal.GetAllTitle().ToList();
         }
-        public Result delete(int idTitle)
+        public Result delete(String idTitle)
         {
             return dal.delete(idTitle);
+        }
+        public Result updateTitle(Title title)
+        {
+            return dal.updateTitle(title);
         }
         //public Disk GetDiskById(string id)
         //{
