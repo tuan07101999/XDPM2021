@@ -12,6 +12,7 @@ namespace Nhom18_XDPM_UI
 {
     public partial class UC_CheckLateCharge : UserControl
     {
+        public string data;
         private static UC_CheckLateCharge _instance;
         public static UC_CheckLateCharge Instance
         {
@@ -35,6 +36,11 @@ namespace Nhom18_XDPM_UI
         private void btnHuy_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void UC_CheckLateCharge_Load(object sender, EventArgs e)
+        {
+            txtTimKiem.Text = data;
         }
     }
 }
