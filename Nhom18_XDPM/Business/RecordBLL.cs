@@ -29,6 +29,10 @@ namespace Business
         {
             return dal.GetAllRecordUnReturn(id);
         }
+        public Record GetRecordUnReturnByDiskID(string id)
+        {
+            return dal.GetRecordUnReturnByDiskID(id);
+        }
         public Result UpdateDateReturnAndLateFee(Record record)
         {
             return dal.UpdateDateReturnAndLateFee(record);
@@ -40,6 +44,10 @@ namespace Business
         public List<Record> checkLateFee(int idCustomer)
         {
             return dal.checkLateFee(idCustomer);
+        }
+        public bool updateReturnDisk(Record record)
+        {
+            return dal.updateReturnDisk(record);
         }
         public Record getRecordByID(int id)
         {
