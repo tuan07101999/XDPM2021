@@ -25,8 +25,11 @@ namespace Nhom18_XDPM_UI
         RecordBLL recordBLL;
         AutoCompleteStringCollection autoIDKhachHang;
         AutoCompleteStringCollection autoIDTieuDe;
+        DataGridViewButtonColumn btn;
+        DataGridViewButtonColumn btn2;
+        List<string> assignedDiskIDs;
 
-        //check button
+        //check button đặt đĩa
         int check;
 
         public static UC_Reservation Instance
@@ -39,13 +42,14 @@ namespace Nhom18_XDPM_UI
             }
         }
         public UC_Reservation()
-        {
+        {     
             InitializeComponent();
             customerBLL = new CustomerBLL();
             titleBLL = new TitleBLL();
             holdingBLL = new HoldingBLL();
             diskBLL = new DiskBLL();
             recordBLL = new RecordBLL();
+            assignedDiskIDs = new List<string>();
 
             //AutoComplete
             autoIDKhachHang = new AutoCompleteStringCollection();
@@ -56,26 +60,27 @@ namespace Nhom18_XDPM_UI
             txtIDNhanDe.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
             //Load dgvReservation
-            dgvReservation.DefaultCellStyle.Font = new Font("microsoft sans serif", 11);
-            dgvReservation.ColumnHeadersDefaultCellStyle.Font = new Font("microsoft sans serif", 13);
+            dgvReservation.DefaultCellStyle.Font = new Font("microsoft sans serif", 10);
+            dgvReservation.ColumnHeadersDefaultCellStyle.Font = new Font("microsoft sans serif", 11);
             dgvReservation.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             bindingSource = new BindingSource();
             LoadDgvReservation();
 
             // tạo mới btn trên DGV
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            btn = new DataGridViewButtonColumn();
             dgvReservation.Columns.Add(btn);
             btn.HeaderText = "Hủy Đặt";
             btn.Name = "btn_Detele";
             btn.Text = "Hủy";
             btn.UseColumnTextForButtonValue = true;
             // tạo mới btn trên DGV
-            DataGridViewButtonColumn btn2 = new DataGridViewButtonColumn();
+            btn2 = new DataGridViewButtonColumn();
             dgvReservation.Columns.Add(btn2);
             btn2.HeaderText = "Xác nhận thuê";
             btn2.Text = "Xác nhận";
             btn2.Name = "btn_Comfirm";
             btn2.UseColumnTextForButtonValue = true;
+
 
             //Default check button
             check = 0;
@@ -108,8 +113,13 @@ namespace Nhom18_XDPM_UI
 
         public void LoadDgvReservation()
         {
+            diskBLL = new DiskBLL();
             bindingSource.DataSource = holdingBLL.GetAllHodingModels().Reverse<HoldingModel>();
             dgvReservation.DataSource = bindingSource;
+            if(dgvReservation.Columns.Count < 5)
+            {
+                dgvReservation.Rows.Clear();
+            }
 
             dgvReservation.MultiSelect = false;
             dgvReservation.ReadOnly = true;
@@ -118,7 +128,13 @@ namespace Nhom18_XDPM_UI
             ////dataGridView_customer.Columns["Orders"].Visible = false;
             dgvReservation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvReservation.ClearSelection();
-            dgvReservation.Rows[0].Selected = false;
+            try
+            {
+                dgvReservation.Rows[0].Selected = false;
+            }
+            catch { }
+            assignedDiskIDs.Clear();
+            AutoAssignDisk();
         }
 
         private void btnHuyThem_Click(object sender, EventArgs e)
@@ -147,8 +163,8 @@ namespace Nhom18_XDPM_UI
         }
 
         private void btnThem_Click(object sender, EventArgs e)
-        {           
-            if(check == 0){
+        {
+            if (check == 0){
                 btnDat.Text = "LƯU";
                 btnHuyThem.Enabled = true;
                 txtIDKhachHang.Enabled = true;
@@ -161,7 +177,25 @@ namespace Nhom18_XDPM_UI
                 //check chưa nhập dữ liệu
                 if (String.IsNullOrWhiteSpace(txtIDKhachHang.Text) || String.IsNullOrWhiteSpace(txtIDNhanDe.Text))
                 {
-                    MessageBox.Show("Chưa nhập ID khách hàng hoặc ID tiêu đề!", "Nhập thiếu dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Chưa nhập ID khách hàng hoặc ID tiêu đề!", "Nhập thiếu dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                //check ID khách hàng không tồn tại
+                if (!autoIDKhachHang.Contains(txtIDKhachHang.Text))
+                {
+                    MessageBox.Show("Khách hàng không tồn tại trong hệ thống!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                //Check ID tiêu đề không tồn tại
+                if (!autoIDTieuDe.Contains(txtIDNhanDe.Text))
+                {
+                    MessageBox.Show("Nhan đề đĩa không tồn tại trong hệ thống!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                //Check đĩa còn không
+                if (isHaveDisk(txtIDNhanDe.Text))
+                {
+                    MessageBox.Show("Tiêu đề MÃ "+ txtIDNhanDe.Text +" vẫn còn đĩa. \nYêu cầu chọn chức năng thuê đĩa! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -182,7 +216,8 @@ namespace Nhom18_XDPM_UI
                     if (result.isSuccess)
                     {
                         MessageBox.Show(result.message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        bindingSource.DataSource = holdingBLL.GetAllHodingModels().Reverse<HoldingModel>();
+                        //bindingSource.DataSource = holdingBLL.GetAllHodingModels().Reverse<HoldingModel>();
+                        LoadDgvReservation();
                     }
                     else
                     {
@@ -202,7 +237,7 @@ namespace Nhom18_XDPM_UI
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
-                MessageBox.Show("Chỉ nhập số!", "Nhập sai", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Chỉ nhập số!", "Nhập sai", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
             }  
         }
@@ -211,7 +246,7 @@ namespace Nhom18_XDPM_UI
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
-                MessageBox.Show("Chỉ nhập số!", "Nhập sai", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Chỉ nhập số!", "Nhập sai", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
             }
         }
@@ -237,8 +272,14 @@ namespace Nhom18_XDPM_UI
                 var csID = dgvReservation.Rows[e.RowIndex].Cells["idHolding"].Value.ToString().Trim();
                 if (dr == DialogResult.Yes && csID != null)
                 {
-                    dgvReservation.Rows.RemoveAt(dgvReservation.Rows[e.RowIndex].Index);
+                    //var diskId = dgvReservation.Rows[e.RowIndex].Cells["idDisk"].Value;
+                    //if (!(diskId is null))
+                    //{
+                    //    assignedDiskIDs.Remove(diskId.ToString());
+                    //}
+                    //dgvReservation.Rows.RemoveAt(dgvReservation.Rows[e.RowIndex].Index);
                     holdingBLL.delete(Convert.ToInt32(csID));
+                    LoadDgvReservation();
                 }
                 else
                 {
@@ -265,10 +306,10 @@ namespace Nhom18_XDPM_UI
 
                 if(diskBLL.GetONEDiskOnshelftByIDtitle(titleID) is null)
                 {
-                    MessageBox.Show("Đĩa đã hết!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Đĩa đã hết!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                var diskID = diskBLL.GetONEDiskOnshelftByIDtitle(titleID).idDisk;
+                var diskID = dgvReservation.Rows[e.RowIndex].Cells["idDisk"].Value.ToString();
                 var cusID = dgvReservation.Rows[e.RowIndex].Cells["idCustomer"].Value.ToString().Trim();
                 if (dr == DialogResult.Yes && csID != null && diskID != null && cusID != null)
                 {
@@ -285,7 +326,7 @@ namespace Nhom18_XDPM_UI
                     holdingBLL.delete(Convert.ToInt32(csID));
 
                     //update disk statust
-                    var disk = diskBLL.GetONEDiskOnshelftByIDtitle(titleID);
+                    var disk = diskBLL.getDiskByID(diskID);
                     disk.status = DataAccess.Entities.Enum.Status.OnHold;
                     diskBLL.updateStatusDisk(disk);
 
@@ -326,5 +367,56 @@ namespace Nhom18_XDPM_UI
             txtNgayDat.Text = DateTime.Now.ToString();
         }
 
+        private void AutoAssignDisk()
+        {
+            if(dgvReservation.Rows.Count <= 0)
+            {
+                return;
+            }    
+            for(int i = dgvReservation.Rows.Count-1; i >= 0; i--)
+            {
+                if (!(dgvReservation.Rows[i].Cells["idDisk"].Value is null))
+                {
+                    break;
+                }
+                diskBLL = new DiskBLL();
+                var titleID = dgvReservation.Rows[i].Cells["idTitle"].Value.ToString();
+                var disks = diskBLL.GetListDiskByIDtitle(titleID);
+                var onShelfDisks = disks.Where(x => x.status == DataAccess.Entities.Enum.Status.OnShelf && x.idTitle == titleID).ToList();
+                if (onShelfDisks.Count > 0)
+                {
+                    foreach (var item in onShelfDisks)
+                    {
+                        if (!(assignedDiskIDs.Contains(item.idDisk)))
+                        {
+                            dgvReservation.Rows[i].Cells["idDisk"].Value = item.idDisk;
+                            assignedDiskIDs.Add(item.idDisk);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Kiểm tra số đĩa onSheft hiện có trong cửa hàng
+        // có > số đĩa đã đặt hay ko
+        // > là còn đĩa || <= là hết đĩa
+        private bool isHaveDisk(string id)
+        {
+            int diskHoldCount = 0;
+            var diskOnShelfCount = diskBLL.GetListDiskByIDtitle(id).Where(x => x.status == DataAccess.Entities.Enum.Status.OnShelf).ToList().Count;
+            for (int i = dgvReservation.Rows.Count - 1; i >= 0; i--)
+            {
+                if (dgvReservation.Rows[i].Cells["idTitle"].Value.ToString() == id && !(dgvReservation.Rows[i].Cells["idDisk"].Value is null))
+                {
+                    diskHoldCount++;
+                }
+            }
+            if (diskOnShelfCount > diskHoldCount)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

@@ -15,9 +15,6 @@ namespace Nhom18_XDPM_UI
     public partial class UC_ReturnDisk : UserControl
     {
         private static UC_ReturnDisk _instance;
-        //Quoc
-        BindingSource bindingSource;
-        CustomerBLL customerBLL;
         DiskBLL diskBLL;
         RecordBLL recordBLL;
         AutoCompleteStringCollection autoIDDisk;
@@ -37,7 +34,6 @@ namespace Nhom18_XDPM_UI
         {
             InitializeComponent();
             //Quoc
-            customerBLL = new CustomerBLL();
             diskBLL = new DiskBLL();
             recordBLL = new RecordBLL();
             records = new List<Record>();
@@ -47,7 +43,6 @@ namespace Nhom18_XDPM_UI
             txtIDDia.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtIDDia.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
-            CreateDataGridView();
             dgvReturn.DefaultCellStyle.Font = new Font("microsoft sans serif", 11);
             dgvReturn.ColumnHeadersDefaultCellStyle.Font = new Font("microsoft sans serif", 13);
             dgvReturn.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -79,31 +74,24 @@ namespace Nhom18_XDPM_UI
 
         }
 
-        public void LoadDataGridView(List<Record> records)
-        {
-            int i = 1;
-            foreach (var item in records)
-            {
-                dgvReturn.Rows.Add(i.ToString(), item.idDisk.ToString(), item.rentDate.ToString(), item.dueDate.ToString(), true);
-            }
-            i++;
-        }
-
-        private void btnThongTinPhiTre_Click(object sender, EventArgs e)
-        {
-            
-            if (!Parent.Controls.Contains(UC_CheckLateCharge.Instance))
-            {
-                Parent.Controls.Add(UC_CheckLateCharge.Instance);
-                UC_CheckLateCharge.Instance.Dock = DockStyle.Fill;
-                UC_CheckLateCharge.Instance.BringToFront();
-            }
-            else
-                UC_CheckLateCharge.Instance.BringToFront();
-        }
+        //private void btnThongTinPhiTre_Click(object sender, EventArgs e)
+        //{
+        //    if (!Parent.Controls.Contains(UC_CheckLateCharge.Instance))
+        //    {
+        //        Parent.Controls.Add(UC_CheckLateCharge.Instance);
+        //        UC_CheckLateCharge.Instance.Dock = DockStyle.Fill;
+        //        UC_CheckLateCharge.Instance.BringToFront();
+        //    }
+        //    else
+        //    {
+        //        UC_CheckLateCharge.Instance.BringToFront();
+        //    }
+        //}
 
         private void UC_ReturnDisk_Load(object sender, EventArgs e)
         {
+            CreateDataGridView();
+
             txtDiskName.Enabled = false;
 
             foreach (var item in diskBLL.getDisksRented())
@@ -128,16 +116,22 @@ namespace Nhom18_XDPM_UI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if(String.IsNullOrWhiteSpace(txtIDDia.Text))
+            {
+                MessageBox.Show("Chưa nhập ID đĩa!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (!autoIDDisk.Contains(txtIDDia.Text))
             {
-                MessageBox.Show("Chỉ nhập giá trị trong gợi ý!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Đĩa chưa được thuê!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             var record = recordBLL.GetRecordUnReturnByDiskID(txtIDDia.Text);
             if(record != null)
             {
                 records.Add(record);
-                CreateDataGridView();
+                //CreateDataGridView();
                 dgvReturn.Rows.Add(1, record.idDisk.ToString(), record.rentDate.ToString(), record.dueDate.ToString());
 
                 //xoá phần từ trong AutoComplete khi thêm record vào dgv
@@ -145,7 +139,6 @@ namespace Nhom18_XDPM_UI
                 txtIDDia.Text = "";
             }
         }
-
         private void dgvReturn_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 4)
@@ -169,30 +162,85 @@ namespace Nhom18_XDPM_UI
 
         private void btnTraDia_Click(object sender, EventArgs e)
         {
+            if (records.Count == 0)
+            {
+                MessageBox.Show("Chưa có đĩa trong danh sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             DialogResult dr = MessageBox.Show("Bạn xác nhận việc TRẢ đĩa.\nXác Nhận Hủy ?", "Hủy", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dr == DialogResult.Yes)
             {
+                float lateFeeTotal = 0;
                 foreach (var item in records)
                 {
                     //Cập nhật Record
                     item.isPaid = true;
                     item.actualReturnDate = DateTime.Now;
+                    if(!(item.dueDate is null))
+                    {
+                        item.lateFee = LateFeeCalculation(item);
+
+                    }
                     recordBLL.updateReturnDisk(item);
+
+                    //Tính phí trễ
+                    lateFeeTotal += item.lateFee.Value;
+
                     //thay đổi trạng thái đĩa
                     Disk disk = diskBLL.getDiskByID(item.idDisk);
                     disk.status = DataAccess.Entities.Enum.Status.OnShelf;
                     diskBLL.updateStatusDisk(disk);
-
-                    autoAssignDisk(disk);
                 }
-                MessageBox.Show("Trả đĩa thành công!");
+                MessageBox.Show("Trả đĩa thành công! \n Phí trễ được thêm vào:  "+ lateFeeTotal+"$", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dgvReturn.Rows.Clear();
-            }
-            
+            }   
         }
 
-        private void autoAssignDisk(Disk disk)
+        private float LateFeeCalculation(Record record)
         {
+            if(record.actualReturnDate > record.dueDate)
+            {
+                return record.Disk.Title.Category.lateFee;
+            }
+            return 0;
+        }
+
+
+        public void UC_Load()
+        {
+            txtDiskName.Enabled = false;
+            autoIDDisk.Clear();
+            foreach (var item in diskBLL.getDisksRented())
+            {
+                autoIDDisk.Add(item.idDisk.ToString());
+            }
+            txtIDDia.AutoCompleteCustomSource = autoIDDisk;
+
+            dgvReturn.Rows.Clear();
+            records.Clear();
+        }
+
+        private void txtIDDia_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if (String.IsNullOrWhiteSpace(txtIDDia.Text))
+                {
+                    MessageBox.Show("Chưa nhập ID đĩa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                btnThem_Click(sender, e);
+            }
+                
+        }
+
+        private void txtIDDia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Chỉ nhập số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+            }
 
         }
     }

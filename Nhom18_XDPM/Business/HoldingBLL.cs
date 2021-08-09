@@ -46,7 +46,7 @@ namespace Business
                 holdingModel.idHolding = item.idHolding;
                 holdingModel.idTitle = item.idTitle;
                 holdingModel.reservationTime = item.reservationTime;
-
+                holdingModel.idDisk = null;
                 holdingModels.Add(holdingModel);
             }
             return holdingModels;

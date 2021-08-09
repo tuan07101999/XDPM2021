@@ -30,7 +30,6 @@ namespace Nhom18_XDPM_UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnThongTinPhiTre = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnThem = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -45,50 +44,11 @@ namespace Nhom18_XDPM_UI
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnTraDia = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReturn)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnThongTinPhiTre
-            // 
-            this.btnThongTinPhiTre.Active = false;
-            this.btnThongTinPhiTre.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnThongTinPhiTre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThongTinPhiTre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnThongTinPhiTre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnThongTinPhiTre.BorderRadius = 0;
-            this.btnThongTinPhiTre.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnThongTinPhiTre.ButtonText = "THÔNG TIN PHÍ TRỄ";
-            this.btnThongTinPhiTre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnThongTinPhiTre.DisabledColor = System.Drawing.Color.Gray;
-            this.btnThongTinPhiTre.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnThongTinPhiTre.Iconimage = null;
-            this.btnThongTinPhiTre.Iconimage_right = null;
-            this.btnThongTinPhiTre.Iconimage_right_Selected = null;
-            this.btnThongTinPhiTre.Iconimage_Selected = null;
-            this.btnThongTinPhiTre.IconMarginLeft = 0;
-            this.btnThongTinPhiTre.IconMarginRight = 0;
-            this.btnThongTinPhiTre.IconRightVisible = true;
-            this.btnThongTinPhiTre.IconRightZoom = 0D;
-            this.btnThongTinPhiTre.IconVisible = true;
-            this.btnThongTinPhiTre.IconZoom = 70D;
-            this.btnThongTinPhiTre.IsTab = false;
-            this.btnThongTinPhiTre.Location = new System.Drawing.Point(648, 36);
-            this.btnThongTinPhiTre.Name = "btnThongTinPhiTre";
-            this.btnThongTinPhiTre.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnThongTinPhiTre.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnThongTinPhiTre.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnThongTinPhiTre.selected = false;
-            this.btnThongTinPhiTre.Size = new System.Drawing.Size(150, 36);
-            this.btnThongTinPhiTre.TabIndex = 6;
-            this.btnThongTinPhiTre.Text = "THÔNG TIN PHÍ TRỄ";
-            this.btnThongTinPhiTre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnThongTinPhiTre.Textcolor = System.Drawing.Color.White;
-            this.btnThongTinPhiTre.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongTinPhiTre.Click += new System.EventHandler(this.btnThongTinPhiTre_Click);
             // 
             // btnThem
             // 
@@ -178,6 +138,8 @@ namespace Nhom18_XDPM_UI
             this.txtIDDia.Size = new System.Drawing.Size(355, 27);
             this.txtIDDia.TabIndex = 1;
             this.txtIDDia.TextChanged += new System.EventHandler(this.txtIDDia_TextChanged);
+            this.txtIDDia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIDDia_KeyDown);
+            this.txtIDDia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDDia_KeyPress);
             // 
             // txtDiskName
             // 
@@ -267,8 +229,6 @@ namespace Nhom18_XDPM_UI
             // panel1
             // 
             this.panel1.Controls.Add(this.btnTraDia);
-            this.panel1.Controls.Add(this.bunifuFlatButton1);
-            this.panel1.Controls.Add(this.btnThongTinPhiTre);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 481);
             this.panel1.Name = "panel1";
@@ -299,7 +259,7 @@ namespace Nhom18_XDPM_UI
             this.btnTraDia.IconVisible = true;
             this.btnTraDia.IconZoom = 70D;
             this.btnTraDia.IsTab = false;
-            this.btnTraDia.Location = new System.Drawing.Point(293, 36);
+            this.btnTraDia.Location = new System.Drawing.Point(639, 31);
             this.btnTraDia.Name = "btnTraDia";
             this.btnTraDia.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btnTraDia.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
@@ -312,44 +272,6 @@ namespace Nhom18_XDPM_UI
             this.btnTraDia.Textcolor = System.Drawing.Color.White;
             this.btnTraDia.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTraDia.Click += new System.EventHandler(this.btnTraDia_Click);
-            // 
-            // bunifuFlatButton1
-            // 
-            this.bunifuFlatButton1.Active = false;
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.bunifuFlatButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 0;
-            this.bunifuFlatButton1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.bunifuFlatButton1.ButtonText = "THÔNG TIN PHÍ TRỄ";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = null;
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 0;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 70D;
-            this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(463, 36);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(150, 36);
-            this.bunifuFlatButton1.TabIndex = 6;
-            this.bunifuFlatButton1.Text = "THÔNG TIN PHÍ TRỄ";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton1.Click += new System.EventHandler(this.btnThongTinPhiTre_Click);
             // 
             // UC_ReturnDisk
             // 
@@ -372,7 +294,6 @@ namespace Nhom18_XDPM_UI
         }
 
         #endregion
-        private Bunifu.Framework.UI.BunifuFlatButton btnThongTinPhiTre;
         private Bunifu.Framework.UI.BunifuFlatButton btnThem;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -387,6 +308,5 @@ namespace Nhom18_XDPM_UI
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuFlatButton btnTraDia;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
     }
 }

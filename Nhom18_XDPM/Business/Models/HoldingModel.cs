@@ -15,6 +15,7 @@ namespace Business.Models
         public string idTitle { get; set; }
 
         public DateTime reservationTime { get; set; }
+        public string idDisk { get; set; }
 
     }
 }
