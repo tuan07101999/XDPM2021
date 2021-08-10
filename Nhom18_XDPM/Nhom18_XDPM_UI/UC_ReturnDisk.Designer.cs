@@ -29,9 +29,7 @@ namespace Nhom18_XDPM_UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnThem = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtIDDia = new System.Windows.Forms.TextBox();
@@ -39,7 +37,6 @@ namespace Nhom18_XDPM_UI
             this.label5 = new System.Windows.Forms.Label();
             this.txtNgayThue = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.dgvReturn = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -74,24 +71,19 @@ namespace Nhom18_XDPM_UI
             this.btnThem.IconVisible = true;
             this.btnThem.IconZoom = 70D;
             this.btnThem.IsTab = false;
-            this.btnThem.Location = new System.Drawing.Point(178, 157);
+            this.btnThem.Location = new System.Drawing.Point(216, 120);
             this.btnThem.Name = "btnThem";
             this.btnThem.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btnThem.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.btnThem.OnHoverTextColor = System.Drawing.Color.White;
             this.btnThem.selected = false;
-            this.btnThem.Size = new System.Drawing.Size(137, 39);
+            this.btnThem.Size = new System.Drawing.Size(80, 28);
             this.btnThem.TabIndex = 6;
             this.btnThem.Text = "THÊM";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThem.Textcolor = System.Drawing.Color.White;
             this.btnThem.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 35;
-            this.bunifuElipse2.TargetControl = this;
             // 
             // groupBox2
             // 
@@ -118,10 +110,10 @@ namespace Nhom18_XDPM_UI
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(44, 43);
+            this.label10.Location = new System.Drawing.Point(45, 21);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 22);
+            this.label10.Size = new System.Drawing.Size(58, 20);
             this.label10.TabIndex = 2;
             this.label10.Text = "ID Đĩa:";
             // 
@@ -132,10 +124,10 @@ namespace Nhom18_XDPM_UI
             this.txtIDDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.txtIDDia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIDDia.ForeColor = System.Drawing.Color.White;
-            this.txtIDDia.Location = new System.Drawing.Point(102, 43);
+            this.txtIDDia.Location = new System.Drawing.Point(103, 21);
             this.txtIDDia.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDDia.Name = "txtIDDia";
-            this.txtIDDia.Size = new System.Drawing.Size(355, 27);
+            this.txtIDDia.Size = new System.Drawing.Size(355, 26);
             this.txtIDDia.TabIndex = 1;
             this.txtIDDia.TextChanged += new System.EventHandler(this.txtIDDia_TextChanged);
             this.txtIDDia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIDDia_KeyDown);
@@ -148,19 +140,19 @@ namespace Nhom18_XDPM_UI
             this.txtDiskName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.txtDiskName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDiskName.ForeColor = System.Drawing.Color.White;
-            this.txtDiskName.Location = new System.Drawing.Point(104, 79);
+            this.txtDiskName.Location = new System.Drawing.Point(104, 51);
             this.txtDiskName.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiskName.Name = "txtDiskName";
-            this.txtDiskName.Size = new System.Drawing.Size(355, 27);
+            this.txtDiskName.Size = new System.Drawing.Size(355, 26);
             this.txtDiskName.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 81);
+            this.label5.Location = new System.Drawing.Point(30, 53);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 22);
+            this.label5.Size = new System.Drawing.Size(73, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "Nhan đề:";
             // 
@@ -170,26 +162,21 @@ namespace Nhom18_XDPM_UI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNgayThue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.txtNgayThue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNgayThue.Location = new System.Drawing.Point(104, 116);
+            this.txtNgayThue.Location = new System.Drawing.Point(105, 89);
             this.txtNgayThue.Margin = new System.Windows.Forms.Padding(2);
             this.txtNgayThue.Name = "txtNgayThue";
-            this.txtNgayThue.Size = new System.Drawing.Size(354, 27);
+            this.txtNgayThue.Size = new System.Drawing.Size(354, 26);
             this.txtNgayThue.TabIndex = 1;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 117);
+            this.label7.Location = new System.Drawing.Point(20, 90);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 22);
+            this.label7.Size = new System.Drawing.Size(85, 20);
             this.label7.TabIndex = 0;
             this.label7.Text = "Ngày thuê:";
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 50;
-            this.bunifuElipse1.TargetControl = this;
             // 
             // dgvReturn
             // 
@@ -295,7 +282,6 @@ namespace Nhom18_XDPM_UI
 
         #endregion
         private Bunifu.Framework.UI.BunifuFlatButton btnThem;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtIDDia;
@@ -303,7 +289,6 @@ namespace Nhom18_XDPM_UI
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNgayThue;
         private System.Windows.Forms.Label label7;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.DataGridView dgvReturn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;

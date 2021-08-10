@@ -7,12 +7,6 @@ using System.Linq;
 using Business;
 using DataAccess.Entities;
 using DataAccess.Entities.Enum;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -224,29 +218,29 @@ namespace Nhom18_XDPM_UI
             else
                 UC_CheckLateCharge.Instance.BringToFront();
 
-            if (form == null)
-            {
-                form = new UC_CheckLateCharge(customer.idCustomer);
-            }
+            //if (form == null)
+            //{
+            //    form = new UC_CheckLateCharge(customer.idCustomer);
+            //}
 
-            for (int i = 0; i < form.listRecord.Count; i++)
-            {
-                if (lateFeeList[i].isPaid != form.listRecord[i].isPaid)
-                {
-                    if (form.listRecord[i].isPaid)
-                    {
-                        totalCharge += (float)form.listRecord[i].lateFee;
-                    }
-                    else
-                    {
-                        totalCharge -= (float)form.listRecord[i].lateFee;
-                    }
-                    lateFeeList[i].isPaid = !lateFeeList[i].isPaid;
-                }
-            }
+            //for (int i = 0; i < form.listRecord.Count; i++)
+            //{
+            //    if (lateFeeList[i].isPaid != form.listRecord[i].isPaid)
+            //    {
+            //        if (form.listRecord[i].isPaid)
+            //        {
+            //            totalCharge += (float)form.listRecord[i].lateFee;
+            //        }
+            //        else
+            //        {
+            //            totalCharge -= (float)form.listRecord[i].lateFee;
+            //        }
+            //        lateFeeList[i].isPaid = !lateFeeList[i].isPaid;
+            //    }
+            //}
             //lateFeeList = form.listRecord;
-            txtTongTien.Text = totalCharge.ToString();
-            CreateDataGridView("");
+            //txtTongTien.Text = totalCharge.ToString();
+            //CreateDataGridView("");
         }
 
         private void btnThue_Click(object sender, EventArgs e)
@@ -264,13 +258,12 @@ namespace Nhom18_XDPM_UI
                         diskBLL.updateStatusDisk(item);
                         var newRecord = new Record()
                         {
-                            idRecord = 0,
                             idCustomer = Int32.Parse(txtIDKhachHang.Text),
                             idDisk = item.idDisk,
                             isPaid = true,
                             rentDate = DateTime.Now,
                             dueDate = DateTime.Now.AddDays(category.rentalPeriod),
-                            lateFee = category.lateFee
+                            lateFee = 0
                         };
                         var check = pendingRecords.FirstOrDefault(x => x.idCustomer == newRecord.idCustomer
                             && x.idDisk == newRecord.idDisk);

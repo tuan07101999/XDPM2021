@@ -109,7 +109,7 @@ namespace Nhom18_XDPM_UI
             this.btnThue.IconVisible = true;
             this.btnThue.IconZoom = 70D;
             this.btnThue.IsTab = false;
-            this.btnThue.Location = new System.Drawing.Point(593, 6);
+            this.btnThue.Location = new System.Drawing.Point(671, 6);
             this.btnThue.Name = "btnThue";
             this.btnThue.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btnThue.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
@@ -191,12 +191,12 @@ namespace Nhom18_XDPM_UI
             // 
             this.btnThongTinPhiTre.Active = false;
             this.btnThongTinPhiTre.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnThongTinPhiTre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThongTinPhiTre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThongTinPhiTre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btnThongTinPhiTre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnThongTinPhiTre.BorderRadius = 0;
             this.btnThongTinPhiTre.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnThongTinPhiTre.ButtonText = "THÔNG TIN PHÍ TRỄ";
+            this.btnThongTinPhiTre.ButtonText = "THÔNG TIN";
             this.btnThongTinPhiTre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.btnThongTinPhiTre.DisabledColor = System.Drawing.Color.Gray;
             this.btnThongTinPhiTre.Iconcolor = System.Drawing.Color.Transparent;
@@ -211,16 +211,16 @@ namespace Nhom18_XDPM_UI
             this.btnThongTinPhiTre.IconVisible = true;
             this.btnThongTinPhiTre.IconZoom = 70D;
             this.btnThongTinPhiTre.IsTab = false;
-            this.btnThongTinPhiTre.Location = new System.Drawing.Point(246, 143);
+            this.btnThongTinPhiTre.Location = new System.Drawing.Point(194, 143);
             this.btnThongTinPhiTre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThongTinPhiTre.Name = "btnThongTinPhiTre";
             this.btnThongTinPhiTre.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btnThongTinPhiTre.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.btnThongTinPhiTre.OnHoverTextColor = System.Drawing.Color.White;
             this.btnThongTinPhiTre.selected = false;
-            this.btnThongTinPhiTre.Size = new System.Drawing.Size(39, 26);
+            this.btnThongTinPhiTre.Size = new System.Drawing.Size(91, 26);
             this.btnThongTinPhiTre.TabIndex = 11;
-            this.btnThongTinPhiTre.Text = "THÔNG TIN PHÍ TRỄ";
+            this.btnThongTinPhiTre.Text = "THÔNG TIN";
             this.btnThongTinPhiTre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThongTinPhiTre.Textcolor = System.Drawing.Color.White;
             this.btnThongTinPhiTre.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -285,7 +285,7 @@ namespace Nhom18_XDPM_UI
             this.txtPhiTre.Location = new System.Drawing.Point(97, 143);
             this.txtPhiTre.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhiTre.Name = "txtPhiTre";
-            this.txtPhiTre.Size = new System.Drawing.Size(144, 26);
+            this.txtPhiTre.Size = new System.Drawing.Size(91, 26);
             this.txtPhiTre.TabIndex = 10;
             // 
             // txtTongPhiThue
@@ -343,13 +343,12 @@ namespace Nhom18_XDPM_UI
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.btnTimKH);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtSDT);
-            this.groupBox2.Controls.Add(this.txtIDKhachHang);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txtTenKH);
+            this.groupBox2.Controls.Add(this.txtTenDia);
+            this.groupBox2.Controls.Add(this.btnTimDia);
+            this.groupBox2.Controls.Add(this.txtIdDia);
+            this.groupBox2.Controls.Add(this.btnThemDia);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
@@ -365,7 +364,7 @@ namespace Nhom18_XDPM_UI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 58);
+            this.label1.Location = new System.Drawing.Point(15, 39);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 20);
@@ -376,7 +375,7 @@ namespace Nhom18_XDPM_UI
             // 
             this.btnTimKH.Active = false;
             this.btnTimKH.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnTimKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnTimKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTimKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btnTimKH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTimKH.BorderRadius = 0;
@@ -396,14 +395,14 @@ namespace Nhom18_XDPM_UI
             this.btnTimKH.IconVisible = true;
             this.btnTimKH.IconZoom = 70D;
             this.btnTimKH.IsTab = false;
-            this.btnTimKH.Location = new System.Drawing.Point(349, 56);
+            this.btnTimKH.Location = new System.Drawing.Point(148, 180);
             this.btnTimKH.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
             this.btnTimKH.Name = "btnTimKH";
             this.btnTimKH.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btnTimKH.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.btnTimKH.OnHoverTextColor = System.Drawing.Color.White;
             this.btnTimKH.selected = false;
-            this.btnTimKH.Size = new System.Drawing.Size(40, 26);
+            this.btnTimKH.Size = new System.Drawing.Size(96, 26);
             this.btnTimKH.TabIndex = 26;
             this.btnTimKH.Text = "THÊM";
             this.btnTimKH.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -414,7 +413,7 @@ namespace Nhom18_XDPM_UI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 150);
+            this.label4.Location = new System.Drawing.Point(15, 131);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 20);
@@ -427,10 +426,10 @@ namespace Nhom18_XDPM_UI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSDT.Location = new System.Drawing.Point(150, 148);
+            this.txtSDT.Location = new System.Drawing.Point(147, 125);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(2);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(189, 26);
+            this.txtSDT.Size = new System.Drawing.Size(230, 26);
             this.txtSDT.TabIndex = 8;
             // 
             // txtIDKhachHang
@@ -440,16 +439,16 @@ namespace Nhom18_XDPM_UI
             this.txtIDKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.txtIDKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIDKhachHang.ForeColor = System.Drawing.Color.White;
-            this.txtIDKhachHang.Location = new System.Drawing.Point(150, 56);
+            this.txtIDKhachHang.Location = new System.Drawing.Point(148, 39);
             this.txtIDKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDKhachHang.Name = "txtIDKhachHang";
-            this.txtIDKhachHang.Size = new System.Drawing.Size(189, 26);
+            this.txtIDKhachHang.Size = new System.Drawing.Size(229, 26);
             this.txtIDKhachHang.TabIndex = 10;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 103);
+            this.label2.Location = new System.Drawing.Point(15, 84);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 20);
@@ -462,20 +461,21 @@ namespace Nhom18_XDPM_UI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.txtTenKH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTenKH.Location = new System.Drawing.Point(150, 101);
+            this.txtTenKH.Location = new System.Drawing.Point(148, 84);
             this.txtTenKH.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenKH.Name = "txtTenKH";
-            this.txtTenKH.Size = new System.Drawing.Size(189, 26);
+            this.txtTenKH.Size = new System.Drawing.Size(229, 26);
             this.txtTenKH.TabIndex = 11;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnTimDia);
-            this.groupBox1.Controls.Add(this.btnThemDia);
-            this.groupBox1.Controls.Add(this.txtTenDia);
-            this.groupBox1.Controls.Add(this.txtIdDia);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btnTimKH);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtIDKhachHang);
+            this.groupBox1.Controls.Add(this.txtTenKH);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtSDT);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -492,7 +492,7 @@ namespace Nhom18_XDPM_UI
             // 
             this.btnTimDia.Active = false;
             this.btnTimDia.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnTimDia.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnTimDia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTimDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btnTimDia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTimDia.BorderRadius = 0;
@@ -513,14 +513,14 @@ namespace Nhom18_XDPM_UI
             this.btnTimDia.IconVisible = true;
             this.btnTimDia.IconZoom = 70D;
             this.btnTimDia.IsTab = false;
-            this.btnTimDia.Location = new System.Drawing.Point(341, 73);
+            this.btnTimDia.Location = new System.Drawing.Point(328, 52);
             this.btnTimDia.Margin = new System.Windows.Forms.Padding(14, 18, 14, 18);
             this.btnTimDia.Name = "btnTimDia";
             this.btnTimDia.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btnTimDia.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.btnTimDia.OnHoverTextColor = System.Drawing.Color.White;
             this.btnTimDia.selected = false;
-            this.btnTimDia.Size = new System.Drawing.Size(39, 26);
+            this.btnTimDia.Size = new System.Drawing.Size(52, 26);
             this.btnTimDia.TabIndex = 26;
             this.btnTimDia.Text = "THÊM";
             this.btnTimDia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -552,7 +552,7 @@ namespace Nhom18_XDPM_UI
             this.btnThemDia.IconVisible = true;
             this.btnThemDia.IconZoom = 70D;
             this.btnThemDia.IsTab = false;
-            this.btnThemDia.Location = new System.Drawing.Point(163, 168);
+            this.btnThemDia.Location = new System.Drawing.Point(150, 181);
             this.btnThemDia.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnThemDia.Name = "btnThemDia";
             this.btnThemDia.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
@@ -576,10 +576,10 @@ namespace Nhom18_XDPM_UI
             this.txtTenDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.txtTenDia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTenDia.ForeColor = System.Drawing.Color.White;
-            this.txtTenDia.Location = new System.Drawing.Point(92, 73);
+            this.txtTenDia.Location = new System.Drawing.Point(96, 103);
             this.txtTenDia.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenDia.Name = "txtTenDia";
-            this.txtTenDia.Size = new System.Drawing.Size(238, 26);
+            this.txtTenDia.Size = new System.Drawing.Size(224, 26);
             this.txtTenDia.TabIndex = 10;
             // 
             // txtIdDia
@@ -589,16 +589,16 @@ namespace Nhom18_XDPM_UI
             this.txtIdDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.txtIdDia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIdDia.ForeColor = System.Drawing.Color.White;
-            this.txtIdDia.Location = new System.Drawing.Point(92, 35);
+            this.txtIdDia.Location = new System.Drawing.Point(96, 52);
             this.txtIdDia.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdDia.Name = "txtIdDia";
-            this.txtIdDia.Size = new System.Drawing.Size(238, 26);
+            this.txtIdDia.Size = new System.Drawing.Size(224, 26);
             this.txtIdDia.TabIndex = 10;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 75);
+            this.label9.Location = new System.Drawing.Point(16, 105);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 20);
             this.label9.TabIndex = 0;
@@ -607,7 +607,7 @@ namespace Nhom18_XDPM_UI
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(24, 37);
+            this.label8.Location = new System.Drawing.Point(16, 52);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 20);
             this.label8.TabIndex = 0;
