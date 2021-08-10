@@ -22,8 +22,6 @@ namespace Nhom18_XDPM_UI
 {
     public partial class UC_RentDisk : UserControl
     {
-        DataTable table = new DataTable("table");
-        int index;
         private DiskBLL diskBLL;
         private TitleBLL titleBLL;
         private CategoryBLL categoryBLL;
@@ -35,9 +33,8 @@ namespace Nhom18_XDPM_UI
         private RecordBLL recordBLL;
         private float totalCharge = 0;
         private float totalPhiThue = 0;
-        private float phithuetam = 0;
         private List<Record> lateFeeList;
-        //private CheckLateFeeForm form;
+        private UC_CheckLateCharge form;
         private List<Record> pendingRecords;
         public UC_RentDisk()
         {
@@ -66,7 +63,37 @@ namespace Nhom18_XDPM_UI
         }
 
 
+        public void CreateButtonDataGridView()
+        {
+            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            btn.HeaderText = "";
+            btn.Name = "btnXoa";
+            btn.Text = "Xóa";
+            btn.UseColumnTextForButtonValue = true;
+            dgvListItem.Columns.Add(btn);
+        }
 
+        public void CreateDataGridView(string key)
+        {
+            var check = rentingList.Where(x => x.name.Contains(key));
+            if (check.Count() != 0)
+            {
+                bindingSource.DataSource = check;
+            }
+            dgvListItem.ClearSelection();
+            dgvListItem.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvListItem.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvListItem.DataSource = bindingSource;
+            dgvListItem.MultiSelect = false;
+            dgvListItem.ReadOnly = true;
+            dgvListItem.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            dgvListItem.Columns["Title"].Visible = false;
+            dgvListItem.Columns["Records"].Visible = false;
+
+            dgvListItem.Columns["idDisk"].Width = 100;
+            dgvListItem.Columns["name"].Width = 300;
+        }
 
         private void btnDatDia_Click(object sender, EventArgs e)
         {
@@ -81,7 +108,7 @@ namespace Nhom18_XDPM_UI
         }
         private void AutoComplete()
         {
-            var name = disks.Select(d => { return d.name;});
+            var name = disks.Select(d => { return d.name; });
             AutoCompleteStringCollection sourcename = new AutoCompleteStringCollection();
             sourcename.AddRange(name.ToArray());
             txtTenDia.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -109,139 +136,81 @@ namespace Nhom18_XDPM_UI
                         totalCharge += (float)item.lateFee;
                         item.isPaid = !item.isPaid;
                     }
+                    btnThue.Enabled = true;
                     MessageBox.Show("Khách hàng có phí trễ, có muốn thanh toán không?");
                 }
             }
             else
             {
+               btnThue.Enabled = false;
                 MessageBox.Show("Không tìm thấy khách hàng");
             }
-        }
-        public void CreateDataGridView()
-        {
-            table.Columns.Add("ID", Type.GetType("System.String"));
-            table.Columns.Add("Tên đĩa", Type.GetType("System.String"));
-            table.Columns.Add("Ngày trả", Type.GetType("System.String"));
-            table.Columns.Add("Phí thuê", Type.GetType("System.Double"));
-            dgvListItem.DataSource = table;
         }
         private void UC_RentDisk_Load(object sender, EventArgs e)
         {
             AutoComplete();
-            CreateDataGridView();
-            dtpNgayTra.Format = DateTimePickerFormat.Custom;
-            dtpNgayTra.CustomFormat = "dd-MM-yyyy";
+
+            DataBindings.Clear();
+            if (rentingList.Count > 0)
+            {
+                CreateDataGridView(""); 
+            }
+            CreateButtonDataGridView();
+
             txtTongTien.Text = totalCharge.ToString();
             txtTongPhiThue.Text = totalPhiThue.ToString();
             txtNgayThue.Text = DateTime.Now.Date.ToString("dd-MM-yyyy");
             txtIdDia.ReadOnly = true;
-            txtPhiThue.ReadOnly = true;
+
+            btnThue.Enabled = false;
         }
         private void ClearTextBox()
         {
             txtIdDia.Text = String.Empty;
             txtTenDia.Text = String.Empty;
-            txtPhiThue.Text = String.Empty;
         }
 
         private void btnThemDia_Click(object sender, EventArgs e)
         {
-            table.Rows.Add(txtIdDia.Text, txtTenDia.Text, dtpNgayTra.Text, txtPhiThue.Text);
-            totalCharge += Convert.ToInt32(txtPhiThue.Text);
-            totalPhiThue += Convert.ToInt32(txtPhiThue.Text);
-            txtTongTien.Text = totalCharge.ToString();
-            txtTongPhiThue.Text = totalPhiThue.ToString();
-            var idDia = txtIdDia.Text;
-            var disk = disks.FirstOrDefault(x => x.idDisk == idDia);
+            var idDisk = txtIdDia.Text;
+            var disk = disks.FirstOrDefault(x => x.idDisk == idDisk);
             disk.status = Status.Rented;
-            ClearTextBox();
-        }
-
-        private void dgvListItem_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            index = e.RowIndex;
-            DataGridViewRow row = dgvListItem.Rows[index];
-            txtIdDia.Text = row.Cells[0].Value.ToString();
-            txtTenDia.Text = row.Cells[1].Value.ToString();
-            dtpNgayTra.Value = DateTime.ParseExact(row.Cells[2].Value.ToString(), "dd-MM-yyyy", CultureInfo.InvariantCulture);
-            txtPhiThue.Text = row.Cells[3].Value.ToString();
-            phithuetam = Convert.ToInt32(txtPhiThue.Text);
-        }
-
-        private void btnSuaDia_Click(object sender, EventArgs e)
-        {
-            totalCharge -= phithuetam;
-            totalPhiThue -= phithuetam;
-            DataGridViewRow newdata = dgvListItem.Rows[index];
-            newdata.Cells[2].Value = dtpNgayTra.Text;
-            newdata.Cells[3].Value = txtPhiThue.Text;
-            totalCharge += Convert.ToInt32(txtPhiThue.Text);
-            totalPhiThue += Convert.ToInt32(txtPhiThue.Text);
-            txtTongTien.Text = totalCharge.ToString();
-            txtTongPhiThue.Text = totalPhiThue.ToString();
-            ClearTextBox();
-        }
-
-        private void btnXoaDia_Click(object sender, EventArgs e)
-        {
-            totalCharge -= Convert.ToInt32(txtPhiThue.Text);
-            txtTongTien.Text = totalCharge.ToString();
-            totalPhiThue -= Convert.ToInt32(txtPhiThue.Text);
-            txtTongPhiThue.Text = totalPhiThue.ToString();
-            index = dgvListItem.CurrentCell.RowIndex;
-            dgvListItem.Rows.RemoveAt(index);
-            var idDia = txtIdDia.Text;
-            var disk = disks.FirstOrDefault(x => x.idDisk == idDia);
-            disk.status = Status.OnShelf;
-            ClearTextBox();
-        }
-
-        private void dtpNgayTra_ValueChanged(object sender, EventArgs e)
-        {
-            DateTime currentDate = DateTime.Now.Date;
-            var date = dtpNgayTra.Value;
-            if (date <= currentDate)
+            var id = from d in disks where (d.idDisk == idDisk) select d.idTitle;
+            var idTitle = "";
+            foreach (var item in id)
             {
-                var result = MessageBox.Show("Hạn trả phải lớn hơn ngày thuê ít nhất 1 ngày!", "Lỗi",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                if (result == DialogResult.OK)
-                {
-                    dtpNgayTra.Value = currentDate.AddDays(1);
-                    var idDisk = txtIdDia.Text;
-                    var id = from d in disks where (d.idDisk == idDisk) select d.idTitle;
-                    var idTitle = "";
-                    foreach (var item in id)
-                    {
-                        idTitle = item.ToString();
-                    }
-                    var idCategory = titleBLL.getIdCategoryByIdTitle(idTitle);
-                    txtPhiThue.Text = categoryBLL.getRentalChargeById(idCategory).ToString();
-                }
-            }else
-            {
-                TimeSpan i = date.Subtract(currentDate);
-                var t = i.Days;
-
-                var idDisk = txtIdDia.Text;
-                var id = from d in disks where (d.idDisk == idDisk) select d.idTitle;
-                var idTitle = "";
-                foreach (var item in id)
-                {
-                    idTitle = item.ToString();
-                }
-                var idCategory = titleBLL.getIdCategoryByIdTitle(idTitle);
-                var phithue = categoryBLL.getRentalChargeById(idCategory) * t;
-                txtPhiThue.Text = phithue.ToString();
+                idTitle = item.ToString();
             }
+            var idCategory = titleBLL.getIdCategoryByIdTitle(idTitle);
+            totalPhiThue += categoryBLL.getRentalChargeById(idCategory);
+            totalCharge += categoryBLL.getRentalChargeById(idCategory);
+            txtTongPhiThue.Text = totalPhiThue.ToString();
+            txtTongTien.Text = totalCharge.ToString();
+
+            rentingList.Add(disk);
+            disks.Remove(disk);
+
+            CreateDataGridView("");
+            if (totalCharge > 0 && !String.IsNullOrEmpty(txtTenKH.Text))
+            {
+                btnThue.Enabled = true;
+            }
+            else
+            {
+                btnThue.Enabled = false;
+            }
+
+            var idDia = txtIdDia.Text;
+            ClearTextBox();
         }
+
 
         private void btnTimDia_Click(object sender, EventArgs e)
         {
-            var idDia = from disk in disks where (disk.name == txtTenDia.Text) select disk.idDisk;
-            foreach (var item in idDia)
-            { 
-                txtIdDia.Text = item.ToString(); 
+            var idDisk = from disk in disks where (disk.name == txtTenDia.Text) select disk.idDisk;
+            foreach (var item in idDisk)
+            {
+                txtIdDia.Text = item.ToString();
             }
         }
         private void btnThongTinPhiTre_Click(object sender, EventArgs e)
@@ -254,13 +223,35 @@ namespace Nhom18_XDPM_UI
             }
             else
                 UC_CheckLateCharge.Instance.BringToFront();
-            UC_CheckLateCharge frm = new UC_CheckLateCharge();     
-            frm.data = txtIDKhachHang.Text;
+
+            if (form == null)
+            {
+                form = new UC_CheckLateCharge(customer.idCustomer);
+            }
+
+            for (int i = 0; i < form.listRecord.Count; i++)
+            {
+                if (lateFeeList[i].isPaid != form.listRecord[i].isPaid)
+                {
+                    if (form.listRecord[i].isPaid)
+                    {
+                        totalCharge += (float)form.listRecord[i].lateFee;
+                    }
+                    else
+                    {
+                        totalCharge -= (float)form.listRecord[i].lateFee;
+                    }
+                    lateFeeList[i].isPaid = !lateFeeList[i].isPaid;
+                }
+            }
+            //lateFeeList = form.listRecord;
+            txtTongTien.Text = totalCharge.ToString();
+            CreateDataGridView("");
         }
 
         private void btnThue_Click(object sender, EventArgs e)
         {
-           /* DialogResult dialogResult = MessageBox.Show("Xác nhận thanh toán", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Xác nhận thanh toán", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 if (rentingList.Count > 0)
@@ -304,10 +295,41 @@ namespace Nhom18_XDPM_UI
                     }
                 }
 
-                txt_CustomerName.Text = "";
-                lb_TotalCharge.Text = "0";
-                btn_rentDisk.Enabled = false;
-                MessageBox.Show("Thanh toán thành công");*/
+                txtTenKH.Text = "";
+                txtIDKhachHang.Text = "";
+                txtSDT.Text = "";
+                txtTongPhiThue.Text = "0";
+                txtTongTien.Text = "0";
+                btnThue.Enabled = false;
+                dgvListItem.Rows.Clear();
+                dgvListItem.Refresh();
+                MessageBox.Show("Thanh toán thành công");
+            }
+        }
+
+        private void dgvListItem_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var idDisk = dgvListItem.Rows[e.RowIndex].Cells["idDisk"].Value.ToString();
+            var idTitle = dgvListItem.Rows[e.RowIndex].Cells["idTitle"].Value.ToString();
+            var disk = rentingList.FirstOrDefault(x => x.idDisk == idDisk);
+
+            rentingList.Remove(disk);
+            disk.status = Status.OnShelf;
+            disks.Add(disk);
+            var idCategory = titleBLL.getIdCategoryByIdTitle(disk.idTitle);
+            totalPhiThue -= categoryBLL.getRentalChargeById(idCategory);
+            totalCharge -= categoryBLL.getRentalChargeById(idCategory);
+            txtTongPhiThue.Text = totalPhiThue.ToString();
+            txtTongTien.Text = totalCharge.ToString();
+
+            if (dgvListItem.Rows.Count == 1)
+            {
+                dgvListItem.DataSource = new List<Disk>();
+            }
+            else
+            {
+                CreateDataGridView("");
             }
         }
     }
+}

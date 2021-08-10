@@ -30,9 +30,7 @@ namespace Nhom18_XDPM_UI
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnHuy = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnThue = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnDatDia = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvListItem = new System.Windows.Forms.DataGridView();
@@ -57,14 +55,8 @@ namespace Nhom18_XDPM_UI
             this.label2 = new System.Windows.Forms.Label();
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtpNgayTra = new System.Windows.Forms.DateTimePicker();
-            this.btnXoaDia = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnTimDia = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnSuaDia = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnThemDia = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtPhiThue = new System.Windows.Forms.TextBox();
             this.txtTenDia = new System.Windows.Forms.TextBox();
             this.txtIdDia = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -85,52 +77,13 @@ namespace Nhom18_XDPM_UI
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnHuy);
             this.panel2.Controls.Add(this.btnThue);
-            this.panel2.Controls.Add(this.btnDatDia);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(4, 509);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 61);
             this.panel2.TabIndex = 4;
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Active = false;
-            this.btnHuy.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnHuy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHuy.BorderRadius = 0;
-            this.btnHuy.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnHuy.ButtonText = "HỦY";
-            this.btnHuy.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnHuy.DisabledColor = System.Drawing.Color.Gray;
-            this.btnHuy.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnHuy.Iconimage = null;
-            this.btnHuy.Iconimage_right = null;
-            this.btnHuy.Iconimage_right_Selected = null;
-            this.btnHuy.Iconimage_Selected = null;
-            this.btnHuy.IconMarginLeft = 0;
-            this.btnHuy.IconMarginRight = 0;
-            this.btnHuy.IconRightVisible = true;
-            this.btnHuy.IconRightZoom = 0D;
-            this.btnHuy.IconVisible = true;
-            this.btnHuy.IconZoom = 70D;
-            this.btnHuy.IsTab = false;
-            this.btnHuy.Location = new System.Drawing.Point(660, 11);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnHuy.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnHuy.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnHuy.selected = false;
-            this.btnHuy.Size = new System.Drawing.Size(122, 36);
-            this.btnHuy.TabIndex = 6;
-            this.btnHuy.Text = "HỦY";
-            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnHuy.Textcolor = System.Drawing.Color.White;
-            this.btnHuy.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btnThue
             // 
@@ -156,7 +109,7 @@ namespace Nhom18_XDPM_UI
             this.btnThue.IconVisible = true;
             this.btnThue.IconZoom = 70D;
             this.btnThue.IsTab = false;
-            this.btnThue.Location = new System.Drawing.Point(523, 11);
+            this.btnThue.Location = new System.Drawing.Point(593, 6);
             this.btnThue.Name = "btnThue";
             this.btnThue.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btnThue.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
@@ -169,43 +122,6 @@ namespace Nhom18_XDPM_UI
             this.btnThue.Textcolor = System.Drawing.Color.White;
             this.btnThue.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThue.Click += new System.EventHandler(this.btnThue_Click);
-            // 
-            // btnDatDia
-            // 
-            this.btnDatDia.Active = false;
-            this.btnDatDia.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnDatDia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDatDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnDatDia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDatDia.BorderRadius = 0;
-            this.btnDatDia.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnDatDia.ButtonText = "ĐẶT ĐĨA";
-            this.btnDatDia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnDatDia.DisabledColor = System.Drawing.Color.Gray;
-            this.btnDatDia.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnDatDia.Iconimage = null;
-            this.btnDatDia.Iconimage_right = null;
-            this.btnDatDia.Iconimage_right_Selected = null;
-            this.btnDatDia.Iconimage_Selected = null;
-            this.btnDatDia.IconMarginLeft = 0;
-            this.btnDatDia.IconMarginRight = 0;
-            this.btnDatDia.IconRightVisible = true;
-            this.btnDatDia.IconRightZoom = 0D;
-            this.btnDatDia.IconVisible = true;
-            this.btnDatDia.IconZoom = 70D;
-            this.btnDatDia.IsTab = false;
-            this.btnDatDia.Location = new System.Drawing.Point(402, 11);
-            this.btnDatDia.Name = "btnDatDia";
-            this.btnDatDia.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnDatDia.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnDatDia.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnDatDia.selected = false;
-            this.btnDatDia.Size = new System.Drawing.Size(100, 36);
-            this.btnDatDia.TabIndex = 6;
-            this.btnDatDia.Text = "ĐẶT ĐĨA";
-            this.btnDatDia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDatDia.Textcolor = System.Drawing.Color.White;
-            this.btnDatDia.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // panel3
             // 
@@ -554,14 +470,8 @@ namespace Nhom18_XDPM_UI
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtpNgayTra);
-            this.groupBox1.Controls.Add(this.btnXoaDia);
             this.groupBox1.Controls.Add(this.btnTimDia);
-            this.groupBox1.Controls.Add(this.btnSuaDia);
             this.groupBox1.Controls.Add(this.btnThemDia);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txtPhiThue);
             this.groupBox1.Controls.Add(this.txtTenDia);
             this.groupBox1.Controls.Add(this.txtIdDia);
             this.groupBox1.Controls.Add(this.label9);
@@ -577,55 +487,6 @@ namespace Nhom18_XDPM_UI
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "KHÁCH HÀNG";
-            // 
-            // dtpNgayTra
-            // 
-            this.dtpNgayTra.CustomFormat = "dd-MM-yyyy";
-            this.dtpNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayTra.Location = new System.Drawing.Point(92, 112);
-            this.dtpNgayTra.Name = "dtpNgayTra";
-            this.dtpNgayTra.Size = new System.Drawing.Size(288, 26);
-            this.dtpNgayTra.TabIndex = 27;
-            this.dtpNgayTra.ValueChanged += new System.EventHandler(this.dtpNgayTra_ValueChanged);
-            // 
-            // btnXoaDia
-            // 
-            this.btnXoaDia.Active = false;
-            this.btnXoaDia.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnXoaDia.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXoaDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnXoaDia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnXoaDia.BorderRadius = 0;
-            this.btnXoaDia.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnXoaDia.ButtonText = "Xóa";
-            this.btnXoaDia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnXoaDia.DisabledColor = System.Drawing.Color.Gray;
-            this.btnXoaDia.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnXoaDia.Iconimage = null;
-            this.btnXoaDia.Iconimage_right = null;
-            this.btnXoaDia.Iconimage_right_Selected = null;
-            this.btnXoaDia.Iconimage_Selected = null;
-            this.btnXoaDia.IconMarginLeft = 0;
-            this.btnXoaDia.IconMarginRight = 0;
-            this.btnXoaDia.IconRightVisible = true;
-            this.btnXoaDia.IconRightZoom = 0D;
-            this.btnXoaDia.IconVisible = true;
-            this.btnXoaDia.IconZoom = 70D;
-            this.btnXoaDia.IsTab = false;
-            this.btnXoaDia.Location = new System.Drawing.Point(289, 185);
-            this.btnXoaDia.Margin = new System.Windows.Forms.Padding(21, 28, 21, 28);
-            this.btnXoaDia.Name = "btnXoaDia";
-            this.btnXoaDia.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnXoaDia.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnXoaDia.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnXoaDia.selected = false;
-            this.btnXoaDia.Size = new System.Drawing.Size(59, 30);
-            this.btnXoaDia.TabIndex = 26;
-            this.btnXoaDia.Text = "Xóa";
-            this.btnXoaDia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnXoaDia.Textcolor = System.Drawing.Color.White;
-            this.btnXoaDia.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaDia.Click += new System.EventHandler(this.btnXoaDia_Click);
             // 
             // btnTimDia
             // 
@@ -667,45 +528,6 @@ namespace Nhom18_XDPM_UI
             this.btnTimDia.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimDia.Click += new System.EventHandler(this.btnTimDia_Click);
             // 
-            // btnSuaDia
-            // 
-            this.btnSuaDia.Active = false;
-            this.btnSuaDia.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnSuaDia.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSuaDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnSuaDia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSuaDia.BorderRadius = 0;
-            this.btnSuaDia.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnSuaDia.ButtonText = "Sửa";
-            this.btnSuaDia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnSuaDia.DisabledColor = System.Drawing.Color.Gray;
-            this.btnSuaDia.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnSuaDia.Iconimage = null;
-            this.btnSuaDia.Iconimage_right = null;
-            this.btnSuaDia.Iconimage_right_Selected = null;
-            this.btnSuaDia.Iconimage_Selected = null;
-            this.btnSuaDia.IconMarginLeft = 0;
-            this.btnSuaDia.IconMarginRight = 0;
-            this.btnSuaDia.IconRightVisible = true;
-            this.btnSuaDia.IconRightZoom = 0D;
-            this.btnSuaDia.IconVisible = true;
-            this.btnSuaDia.IconZoom = 70D;
-            this.btnSuaDia.IsTab = false;
-            this.btnSuaDia.Location = new System.Drawing.Point(191, 185);
-            this.btnSuaDia.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
-            this.btnSuaDia.Name = "btnSuaDia";
-            this.btnSuaDia.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnSuaDia.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnSuaDia.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnSuaDia.selected = false;
-            this.btnSuaDia.Size = new System.Drawing.Size(68, 29);
-            this.btnSuaDia.TabIndex = 26;
-            this.btnSuaDia.Text = "Sửa";
-            this.btnSuaDia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSuaDia.Textcolor = System.Drawing.Color.White;
-            this.btnSuaDia.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaDia.Click += new System.EventHandler(this.btnSuaDia_Click);
-            // 
             // btnThemDia
             // 
             this.btnThemDia.Active = false;
@@ -730,7 +552,7 @@ namespace Nhom18_XDPM_UI
             this.btnThemDia.IconVisible = true;
             this.btnThemDia.IconZoom = 70D;
             this.btnThemDia.IsTab = false;
-            this.btnThemDia.Location = new System.Drawing.Point(92, 185);
+            this.btnThemDia.Location = new System.Drawing.Point(163, 168);
             this.btnThemDia.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnThemDia.Name = "btnThemDia";
             this.btnThemDia.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
@@ -744,37 +566,6 @@ namespace Nhom18_XDPM_UI
             this.btnThemDia.Textcolor = System.Drawing.Color.White;
             this.btnThemDia.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemDia.Click += new System.EventHandler(this.btnThemDia_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(11, 154);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 20);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Phí thuê:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(10, 117);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 20);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Ngày trả:";
-            // 
-            // txtPhiThue
-            // 
-            this.txtPhiThue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhiThue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.txtPhiThue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPhiThue.ForeColor = System.Drawing.Color.White;
-            this.txtPhiThue.Location = new System.Drawing.Point(92, 152);
-            this.txtPhiThue.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPhiThue.Name = "txtPhiThue";
-            this.txtPhiThue.Size = new System.Drawing.Size(238, 26);
-            this.txtPhiThue.TabIndex = 10;
             // 
             // txtTenDia
             // 
@@ -857,9 +648,7 @@ namespace Nhom18_XDPM_UI
         #endregion
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private Bunifu.Framework.UI.BunifuFlatButton btnHuy;
         private Bunifu.Framework.UI.BunifuFlatButton btnThue;
-        private Bunifu.Framework.UI.BunifuFlatButton btnDatDia;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.SplitContainer splitContainer1;
@@ -872,19 +661,13 @@ namespace Nhom18_XDPM_UI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTenKH;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dtpNgayTra;
         private Bunifu.Framework.UI.BunifuFlatButton btnThemDia;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtPhiThue;
         private System.Windows.Forms.TextBox txtTenDia;
         private System.Windows.Forms.TextBox txtIdDia;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private Bunifu.Framework.UI.BunifuFlatButton btnTimKH;
         private Bunifu.Framework.UI.BunifuFlatButton btnTimDia;
-        private Bunifu.Framework.UI.BunifuFlatButton btnSuaDia;
-        private Bunifu.Framework.UI.BunifuFlatButton btnXoaDia;
         private System.Windows.Forms.GroupBox groupBox3;
         private Bunifu.Framework.UI.BunifuFlatButton btnThongTinPhiTre;
         private System.Windows.Forms.Label label6;

@@ -258,7 +258,6 @@ namespace Nhom18_XDPM_UI
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_CheckLateCharge";
             this.Size = new System.Drawing.Size(829, 579);
-            this.Load += new System.EventHandler(this.UC_CheckLateCharge_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListItem)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

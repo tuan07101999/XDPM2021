@@ -133,6 +133,7 @@ namespace DataAccess
         public bool addRecord(Record record)
         {
             db.Records.Add(record);
+            db.SaveChanges();
             return true;
         }
         public List<Record> getPendingDiskByIDCustomer(int idCustomer)
