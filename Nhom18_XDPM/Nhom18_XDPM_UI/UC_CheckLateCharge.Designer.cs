@@ -105,7 +105,7 @@ namespace Nhom18_XDPM_UI
             this.label2.Location = new System.Drawing.Point(296, 23);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(18, 20);
+            this.label2.Size = new System.Drawing.Size(20, 22);
             this.label2.TabIndex = 11;
             this.label2.Text = "$";
             // 
@@ -129,7 +129,7 @@ namespace Nhom18_XDPM_UI
             this.label1.Location = new System.Drawing.Point(33, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 20);
+            this.label1.Size = new System.Drawing.Size(73, 22);
             this.label1.TabIndex = 9;
             this.label1.Text = "TỔNG:";
             // 

@@ -33,6 +33,10 @@ namespace DataAccess
         {
             return db.Records.Where(x =>x.actualReturnDate==null&&x.idCustomer == id).ToList();
         }
+        public Record GetRecordUnReturnByDiskID(string id)
+        {
+            return db.Records.FirstOrDefault(x => x.idDisk == id && x.isPaid == false && x.rentDate != null && x.actualReturnDate == null);
+        }
         public Result UpdateDateReturnAndLateFee(Record record)
         {
             var item = db.Records.FirstOrDefault(x => x.idCustomer.Equals(record.idCustomer)
@@ -121,6 +125,20 @@ namespace DataAccess
                     isSuccess = false
                 };
             }
+        }
+        public bool updateReturnDisk(Record record)
+        {
+            var check = db.Records.Find(record.idRecord);
+            if (check != null)
+            {
+                check.rentDate = record.rentDate;
+                check.isPaid = record.isPaid;
+                check.dueDate = record.dueDate;
+                check.actualReturnDate = record.actualReturnDate;
+                check.lateFee = record.lateFee;
+            }
+            db.SaveChanges();
+            return true;
         }
         public List<Record> checkLateFee(int idCustomer)
         {

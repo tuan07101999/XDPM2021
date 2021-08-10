@@ -32,6 +32,10 @@ namespace Business
         {
             return dal.getDisksOnShelf();
         }
+        public List<Disk> getDisksRented()
+        {
+            return dal.getDisksRented();
+        }
         public Disk getDiskByID(string id)
         {
             return dal.getDiskByID(id);
@@ -39,6 +43,11 @@ namespace Business
         public Disk GetONEDiskByIDtitle(string id)
         {
             return dal.GetONEDiskByIDtitle(id);
+        }
+        //Quoc
+        public Disk GetONEDiskOnshelftByIDtitle(string id)
+        {
+            return dal.GetONEDiskOnshelftByIDtitle(id);
         }
         public Result delete(String idDisk)
         {

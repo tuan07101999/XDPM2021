@@ -71,7 +71,10 @@ namespace Nhom18_XDPM_UI
                 UC_ReturnDisk.Instance.BringToFront();
             }
             else
+            {
                 UC_ReturnDisk.Instance.BringToFront();
+                UC_ReturnDisk.Instance.UC_Load();
+            }
         }
 
         private void btnDatTruoc_Click(object sender, EventArgs e)
@@ -85,7 +88,12 @@ namespace Nhom18_XDPM_UI
                 UC_Reservation.Instance.BringToFront();
             }
             else
+            {
                 UC_Reservation.Instance.BringToFront();
+                UC_Reservation.Instance.LoadDgvReservation();
+            }
+
+
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)

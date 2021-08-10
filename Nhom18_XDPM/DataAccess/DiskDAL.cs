@@ -40,6 +40,11 @@ namespace DataAccess
             }
         }
 
+        public List<Disk> getDisksRented()
+        {
+            return db.Disks.Where(x => x.status == Entities.Enum.Status.Rented).ToList();
+        }
+
         public List<Disk> getDisksOnShelf()
         {
             return db.Disks.Where(x => x.status == Entities.Enum.Status.OnShelf).ToList();
@@ -52,6 +57,12 @@ namespace DataAccess
         public Disk GetONEDiskByIDtitle(string id)
         {
             return db.Disks.FirstOrDefault(x => x.idTitle == id);
+        }
+
+        //Quoc
+        public Disk GetONEDiskOnshelftByIDtitle(string id)
+        {
+            return db.Disks.FirstOrDefault(x => x.idTitle == id && x.status == Entities.Enum.Status.OnShelf);
         }
 
         public Result addDisk(Disk disk)
