@@ -147,6 +147,11 @@ namespace Nhom18_XDPM_UI
         }
         private void dgvReturn_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
+            {
+                DataGridViewRow row = dgvReturn.Rows[e.RowIndex];
+            }
+            
             if (e.ColumnIndex == 4)
             {
                 DialogResult dr = MessageBox.Show("Bạn muốn HỦY đĩa này .\nXác Nhận Hủy ?", "Hủy", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

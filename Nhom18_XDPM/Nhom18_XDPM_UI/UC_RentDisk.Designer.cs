@@ -151,6 +151,7 @@ namespace Nhom18_XDPM_UI
             // dgvListItem
             // 
             this.dgvListItem.AllowUserToAddRows = false;
+            this.dgvListItem.AllowUserToDeleteRows = false;
             this.dgvListItem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListItem.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.dgvListItem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -159,6 +160,7 @@ namespace Nhom18_XDPM_UI
             this.dgvListItem.Location = new System.Drawing.Point(0, 0);
             this.dgvListItem.Margin = new System.Windows.Forms.Padding(2);
             this.dgvListItem.Name = "dgvListItem";
+            this.dgvListItem.ReadOnly = true;
             this.dgvListItem.RowHeadersWidth = 51;
             this.dgvListItem.RowTemplate.Height = 24;
             this.dgvListItem.Size = new System.Drawing.Size(504, 281);

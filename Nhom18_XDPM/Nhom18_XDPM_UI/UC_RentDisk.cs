@@ -292,6 +292,11 @@ namespace Nhom18_XDPM_UI
 
         private void dgvListItem_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
+            {
+                DataGridViewRow row = dgvListItem.Rows[e.RowIndex];
+            }
+
             if (e.ColumnIndex == 0)
             {
                 var idDisk = dgvListItem.Rows[e.RowIndex].Cells["idDisk"].Value.ToString();

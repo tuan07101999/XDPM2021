@@ -155,6 +155,7 @@ namespace DataAccess
         {
             return db.Records.Where(x => x.idCustomer == idCustomer && x.actualReturnDate > x.dueDate && !x.isPaid).ToList();
         }
+
         public Record getRecordByID(int id)
         {
             return db.Records.FirstOrDefault(x => x.idRecord == id);
