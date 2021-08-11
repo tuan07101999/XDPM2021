@@ -93,7 +93,7 @@ namespace DataAccess
                                                     );
             if (item != null)
             {
-                item.isPaid = true;
+                item.isPaid = record.isPaid;
                 try
                 {
                     db.SaveChanges();
@@ -136,6 +136,17 @@ namespace DataAccess
                 check.dueDate = record.dueDate;
                 check.actualReturnDate = record.actualReturnDate;
                 check.lateFee = record.lateFee;
+            }
+            db.SaveChanges();
+            return true;
+        }
+        public bool CancelLateCharge(int id)
+        {
+            var check = db.Records.Find(id);
+            if (check != null)
+            {   
+                check.isPaid = true;
+                check.lateFee = 0;
             }
             db.SaveChanges();
             return true;

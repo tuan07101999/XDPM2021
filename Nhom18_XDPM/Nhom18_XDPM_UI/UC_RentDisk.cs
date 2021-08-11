@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using Business;
 using DataAccess.Entities;
 using DataAccess.Entities.Enum;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Globalization;
+using DataAccess.DTO;
 
 namespace Nhom18_XDPM_UI
 {
@@ -27,9 +23,12 @@ namespace Nhom18_XDPM_UI
         private RecordBLL recordBLL;
         private float totalCharge = 0;
         private float totalPhiThue = 0;
+         private float totalPhiTre = 0;
         private List<Record> lateFeeList;
         private UC_CheckLateCharge form;
         private List<Record> pendingRecords;
+        public List<RecordDTO> listRecord;
+        AutoCompleteStringCollection sourcename, sourceNameCustomer;
         public UC_RentDisk()
         {
             InitializeComponent();
@@ -43,6 +42,14 @@ namespace Nhom18_XDPM_UI
             categoryBLL = new CategoryBLL();
             lateFeeList = new List<Record>();
             pendingRecords = new List<Record>();
+
+            sourcename = new AutoCompleteStringCollection();
+            txtIdDia.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtIdDia.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            sourceNameCustomer = new AutoCompleteStringCollection();
+            txtIDKhachHang.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtIDKhachHang.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         private static UC_RentDisk _instance;
@@ -84,65 +91,24 @@ namespace Nhom18_XDPM_UI
 
             dgvListItem.Columns["Title"].Visible = false;
             dgvListItem.Columns["Records"].Visible = false;
+            dgvListItem.Columns["Status"].Visible = false;
 
             dgvListItem.Columns["idDisk"].Width = 100;
             dgvListItem.Columns["name"].Width = 300;
         }
 
-        private void btnDatDia_Click(object sender, EventArgs e)
-        {
-            if (!Parent.Controls.Contains(UC_Reservation.Instance))
-            {
-                Parent.Controls.Add(UC_Reservation.Instance);
-                UC_Reservation.Instance.Dock = DockStyle.Fill;
-                UC_Reservation.Instance.BringToFront();
-            }
-            else
-                UC_Reservation.Instance.BringToFront();
-        }
-        private void AutoComplete()
-        {
-            var name = disks.Select(d => { return d.name; });
-            AutoCompleteStringCollection sourcename = new AutoCompleteStringCollection();
-            sourcename.AddRange(name.ToArray());
-            txtTenDia.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            txtTenDia.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txtTenDia.AutoCompleteCustomSource = sourcename;
-        }
-
-        private void btnTimKH_Click(object sender, EventArgs e)
-        {
-            string txt = txtIDKhachHang.Text.ToString().Trim();
-            if (customer == null)
-            {
-                customer = new Customer();
-                customer = customerBLL.searchCustomerbyId(Int32.Parse(txt));
-            }
-            if (customer != null)
-            {
-                txtTenKH.Text = customer.name;
-                txtSDT.Text = customer.phoneNumber;
-                lateFeeList = recordBLL.checkLateFee(Int32.Parse(txt));
-                if (lateFeeList.Count > 0)
-                {
-                    foreach (var item in lateFeeList)
-                    {
-                        totalCharge += (float)item.lateFee;
-                        item.isPaid = !item.isPaid;
-                    }
-                    btnThue.Enabled = true;
-                    MessageBox.Show("Khách hàng có phí trễ, có muốn thanh toán không?");
-                }
-            }
-            else
-            {
-               btnThue.Enabled = false;
-                MessageBox.Show("Không tìm thấy khách hàng");
-            }
-        }
         private void UC_RentDisk_Load(object sender, EventArgs e)
         {
-            AutoComplete();
+            var id = disks.Select(d => { return d.idDisk; });
+            sourcename.AddRange(id.ToArray());
+            txtIdDia.AutoCompleteCustomSource = sourcename;
+
+            
+            foreach (var item in customerBLL.GetAllCustomer())
+            {
+                sourceNameCustomer.Add(item.idCustomer.ToString());
+            }
+            txtIDKhachHang.AutoCompleteCustomSource = sourceNameCustomer;
 
             DataBindings.Clear();
             if (rentingList.Count > 0)
@@ -152,11 +118,21 @@ namespace Nhom18_XDPM_UI
             CreateButtonDataGridView();
 
             txtTongTien.Text = totalCharge.ToString();
+            txtPhiTre.Text = totalPhiTre.ToString();
             txtTongPhiThue.Text = totalPhiThue.ToString();
             txtNgayThue.Text = DateTime.Now.Date.ToString("dd-MM-yyyy");
-            txtIdDia.ReadOnly = true;
+
+            txtTenDia.Enabled = false;
+            txtTenKH.Enabled = false;
+            txtSDT.Enabled = false;
+
+            txtNgayThue.Enabled = false;
+            txtPhiTre.Enabled = false;
+            txtTongPhiThue.Enabled = false;
+            txtTongTien.Enabled = false;
 
             btnThue.Enabled = false;
+            btnThongTinPhiTre.Enabled = false;
         }
         private void ClearTextBox()
         {
@@ -166,6 +142,11 @@ namespace Nhom18_XDPM_UI
 
         private void btnThemDia_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrWhiteSpace(txtIdDia.Text))
+            {
+                MessageBox.Show("Chưa nhập ID đĩa!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var idDisk = txtIdDia.Text;
             var disk = disks.FirstOrDefault(x => x.idDisk == idDisk);
             disk.status = Status.Rented;
@@ -194,135 +175,233 @@ namespace Nhom18_XDPM_UI
                 btnThue.Enabled = false;
             }
 
-            var idDia = txtIdDia.Text;
+            sourcename.Remove(txtIdDia.Text);
             ClearTextBox();
-        }
-
-
-        private void btnTimDia_Click(object sender, EventArgs e)
-        {
-            var idDisk = from disk in disks where (disk.name == txtTenDia.Text) select disk.idDisk;
-            foreach (var item in idDisk)
-            {
-                txtIdDia.Text = item.ToString();
-            }
         }
         private void btnThongTinPhiTre_Click(object sender, EventArgs e)
         {
-            if (!Parent.Controls.Contains(UC_CheckLateCharge.Instance))
+           
+            if (String.IsNullOrWhiteSpace(txtIDKhachHang.Text))
             {
-                Parent.Controls.Add(UC_CheckLateCharge.Instance);
-                UC_CheckLateCharge.Instance.Dock = DockStyle.Fill;
-                UC_CheckLateCharge.Instance.BringToFront();
+                MessageBox.Show("Chưa nhập ID khách hàng!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             else
-                UC_CheckLateCharge.Instance.BringToFront();
+            {
+                if (!Parent.Controls.Contains(UC_CheckLateCharge.Instance))
+                {
+                    Parent.Controls.Add(UC_CheckLateCharge.Instance);
+                    UC_CheckLateCharge.Instance.Dock = DockStyle.Fill;
+                    UC_CheckLateCharge.Instance.BringToFront();
+                }
+                else
+                    UC_CheckLateCharge.Instance.BringToFront();
+                UC_CheckLateCharge.Instance.GetIdCustomerFromRentDisk(Int32.Parse(txtIDKhachHang.Text));
+            }
+            
+        }
+        public void listLateFeeIsPaid(List<RecordDTO> list, float totalLateFee)
+        {
+            listRecord = list;
+            foreach (var item in lateFeeList)
+            {
+                foreach (var item2 in listRecord)
+                {
+                    if (item.idRecord == item2.idRecord)
+                        item.isPaid = item2.isPaid;
+                }
+            }
+            totalPhiTre = totalLateFee;
+            txtPhiTre.Text = totalPhiTre.ToString();
 
-            //if (form == null)
-            //{
-            //    form = new UC_CheckLateCharge(customer.idCustomer);
-            //}
-
-            //for (int i = 0; i < form.listRecord.Count; i++)
-            //{
-            //    if (lateFeeList[i].isPaid != form.listRecord[i].isPaid)
-            //    {
-            //        if (form.listRecord[i].isPaid)
-            //        {
-            //            totalCharge += (float)form.listRecord[i].lateFee;
-            //        }
-            //        else
-            //        {
-            //            totalCharge -= (float)form.listRecord[i].lateFee;
-            //        }
-            //        lateFeeList[i].isPaid = !lateFeeList[i].isPaid;
-            //    }
-            //}
-            //lateFeeList = form.listRecord;
-            //txtTongTien.Text = totalCharge.ToString();
-            //CreateDataGridView("");
+            totalCharge += totalPhiTre;
+            txtTongTien.Text = totalCharge.ToString();
         }
 
         private void btnThue_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Xác nhận thanh toán", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
+            if(totalCharge > 0)
             {
-                if (rentingList.Count > 0)
+                DialogResult dialogResult = MessageBox.Show("Xác nhận thanh toán", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    foreach (var item in rentingList)
+                    if (rentingList.Count > 0)
                     {
-                        var idCategory = titleBLL.getIdCategoryByIdTitle(item.idTitle);
-                        var category = categoryBLL.getCategoryById(idCategory);
-                        item.status = Status.Rented;
-                        diskBLL.updateStatusDisk(item);
-                        var newRecord = new Record()
+                        foreach (var item in rentingList)
                         {
-                            idCustomer = Int32.Parse(txtIDKhachHang.Text),
-                            idDisk = item.idDisk,
-                            isPaid = true,
-                            rentDate = DateTime.Now,
-                            dueDate = DateTime.Now.AddDays(category.rentalPeriod),
-                            lateFee = 0
-                        };
-                        var check = pendingRecords.FirstOrDefault(x => x.idCustomer == newRecord.idCustomer
-                            && x.idDisk == newRecord.idDisk);
-                        if (check == null)
-                        {
-                            recordBLL.addRecord(newRecord);
-                        }
-                        else
-                        {
-                            check.isPaid = !check.isPaid;
-                            check.rentDate = DateTime.Now;
-                            check.dueDate = DateTime.Now.AddDays(category.rentalPeriod);
-                            recordBLL.updateRentDate(check);
+                            var idCategory = titleBLL.getIdCategoryByIdTitle(item.idTitle);
+                            var category = categoryBLL.getCategoryById(idCategory);
+                            item.status = Status.Rented;
+                            diskBLL.updateStatusDisk(item);
+                            var newRecord = new Record()
+                            {
+                                idCustomer = Int32.Parse(txtIDKhachHang.Text),
+                                idDisk = item.idDisk,
+                                isPaid = true,
+                                rentDate = DateTime.Now,
+                                dueDate = DateTime.Now.AddDays(category.rentalPeriod),
+                                lateFee = 0
+                            };
+                            var check = pendingRecords.FirstOrDefault(x => x.idCustomer == newRecord.idCustomer
+                                && x.idDisk == newRecord.idDisk);
+                            if (check == null)
+                            {
+                                recordBLL.addRecord(newRecord);
+                                dgvListItem.Rows.Clear();
+                                dgvListItem.Refresh();
+                            }
+                            else
+                            {
+                                check.isPaid = !check.isPaid;
+                                check.rentDate = DateTime.Now;
+                                check.dueDate = DateTime.Now.AddDays(category.rentalPeriod);
+                                recordBLL.updateRentDate(check);
+                                dgvListItem.Rows.Clear();
+                                dgvListItem.Refresh();
+                            }
                         }
                     }
-                }
-                if (lateFeeList.Count > 0)
-                {
-                    foreach (var item in lateFeeList)
+                    if (lateFeeList.Count > 0)
                     {
-                        recordBLL.UpdateIsPaid(item);
+                        foreach (var item in lateFeeList)
+                        {
+                            recordBLL.UpdateIsPaid(item);
+                        }
                     }
-                }
 
-                txtTenKH.Text = "";
-                txtIDKhachHang.Text = "";
-                txtSDT.Text = "";
-                txtTongPhiThue.Text = "0";
-                txtTongTien.Text = "0";
-                btnThue.Enabled = false;
-                dgvListItem.Rows.Clear();
-                dgvListItem.Refresh();
-                MessageBox.Show("Thanh toán thành công");
-            }
+                    txtTenKH.Text = "";
+                    txtIDKhachHang.Text = "";
+                    txtSDT.Text = "";
+                    txtTongPhiThue.Text = "0";
+                    txtTongTien.Text = "0";
+                    txtPhiTre.Text = "0";
+
+                    totalPhiThue = 0;
+                    totalPhiTre = 0;
+                    totalCharge = 0;
+                    btnThue.Enabled = false;
+                    MessageBox.Show("Thanh toán thành công");
+                }
+            }  else
+            {
+                MessageBox.Show("Tổng tiền: 0 !!!");
+                return;
+            }                
+            
         }
 
         private void dgvListItem_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var idDisk = dgvListItem.Rows[e.RowIndex].Cells["idDisk"].Value.ToString();
-            var idTitle = dgvListItem.Rows[e.RowIndex].Cells["idTitle"].Value.ToString();
-            var disk = rentingList.FirstOrDefault(x => x.idDisk == idDisk);
-
-            rentingList.Remove(disk);
-            disk.status = Status.OnShelf;
-            disks.Add(disk);
-            var idCategory = titleBLL.getIdCategoryByIdTitle(disk.idTitle);
-            totalPhiThue -= categoryBLL.getRentalChargeById(idCategory);
-            totalCharge -= categoryBLL.getRentalChargeById(idCategory);
-            txtTongPhiThue.Text = totalPhiThue.ToString();
-            txtTongTien.Text = totalCharge.ToString();
-
-            if (dgvListItem.Rows.Count == 1)
+            if (e.ColumnIndex == 0)
             {
-                dgvListItem.DataSource = new List<Disk>();
+                var idDisk = dgvListItem.Rows[e.RowIndex].Cells["idDisk"].Value.ToString();
+                var idTitle = dgvListItem.Rows[e.RowIndex].Cells["idTitle"].Value.ToString();
+                var disk = rentingList.FirstOrDefault(x => x.idDisk == idDisk);
+
+                rentingList.Remove(disk);
+                disk.status = Status.OnShelf;
+                disks.Add(disk);
+                sourcename.Add(txtIdDia.Text);
+                var idCategory = titleBLL.getIdCategoryByIdTitle(disk.idTitle);
+                totalPhiThue -= categoryBLL.getRentalChargeById(idCategory);
+                totalCharge -= categoryBLL.getRentalChargeById(idCategory);
+                txtTongPhiThue.Text = totalPhiThue.ToString();
+                txtTongTien.Text = totalCharge.ToString();
+
+                if (dgvListItem.Rows.Count == 1)
+                {
+                    dgvListItem.DataSource = new List<Disk>();
+                }
+                else
+                {
+                    CreateDataGridView("");
+                }
             }
-            else
+            else return;
+           
+        }
+
+        private void txtIDKhachHang_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
             {
-                CreateDataGridView("");
+                if (!(int.TryParse(txtIDKhachHang.Text, out int i) && customerBLL.searchCustomerbyId(Convert.ToInt32(txtIDKhachHang.Text)) != null))
+                {
+                    MessageBox.Show("Không tìm thấy khách hàng");
+                    return;
+                }
+                txtTenKH.Text = customerBLL.searchCustomerbyId(Convert.ToInt32(txtIDKhachHang.Text)).name;
+                txtSDT.Text = customerBLL.searchCustomerbyId(Convert.ToInt32(txtIDKhachHang.Text)).phoneNumber;
+
+                string txt = txtIDKhachHang.Text.ToString().Trim();
+                if (customer == null)
+                {
+                    customer = new Customer();
+                    customer = customerBLL.searchCustomerbyId(Int32.Parse(txt));
+                }
+                if (customer != null)
+                {
+                    lateFeeList = recordBLL.checkLateFee(Int32.Parse(txt));
+                    pendingRecords = recordBLL.getPendingDiskByIDCustomer(Int32.Parse(txt));
+                    if (pendingRecords != null && pendingRecords.Count > 0)
+                    {
+                        foreach (var item in pendingRecords)
+                        {
+                            var disk = diskBLL.getDiskByID(item.idDisk);
+                            var idCategory = titleBLL.getIdCategoryByIdTitle(disk.idTitle);
+                            totalCharge += categoryBLL.getRentalChargeById(idCategory);
+                            rentingList.Add(disk);
+                        }
+                        btnThue.Enabled = true;
+                    }
+                    if (lateFeeList.Count > 0)
+                    {
+                        btnThue.Enabled = true;
+                        MessageBox.Show("Khách hàng có phí trễ !");
+                    }
+                }
             }
+            btnThue.Enabled = true;
+            btnThongTinPhiTre.Enabled = true;
+        }
+
+        private void txtIDKhachHang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Chỉ nhập số!", "Nhập sai", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+            }
+        }
+
+        private void txtIdDia_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (String.IsNullOrWhiteSpace(txtIdDia.Text))
+                {
+                    MessageBox.Show("Chưa nhập ID đĩa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (diskBLL.getDiskByID(txtIdDia.Text) == null)
+                {
+                    MessageBox.Show("Đĩa không tồn tại !");
+                    txtTenDia.Text = "";
+                    return;
+                }
+                txtTenDia.Text = diskBLL.getDiskByID(txtIdDia.Text).name;
+            }
+        }
+
+        private void txtIdDia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Chỉ nhập số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+            }
+
         }
     }
 }
