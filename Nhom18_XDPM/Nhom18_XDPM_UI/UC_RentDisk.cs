@@ -147,6 +147,12 @@ namespace Nhom18_XDPM_UI
                 MessageBox.Show("Chưa nhập ID đĩa!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            if (!sourcename.Contains(txtIdDia.Text))
+            {
+                MessageBox.Show("Đĩa không tồn tại!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var idDisk = txtIdDia.Text;
             var disk = disks.FirstOrDefault(x => x.idDisk == idDisk);
             disk.status = Status.Rented;
@@ -279,6 +285,7 @@ namespace Nhom18_XDPM_UI
                     totalPhiThue = 0;
                     totalPhiTre = 0;
                     totalCharge = 0;
+                    rentingList.Clear();
                     btnThue.Enabled = false;
                     MessageBox.Show("Thanh toán thành công");
                 }
