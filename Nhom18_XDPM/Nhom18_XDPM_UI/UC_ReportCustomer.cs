@@ -150,7 +150,14 @@ namespace Nhom18_XDPM_UI
                 recordModelBindingSource.DataSource = titleList;
                 hasOverdueModelBindingSource.DataSource = overdueList;
 
-                txtTotalLateFee.Text = overdueList.Sum(item => item.SoTien).ToString("C0", CultureInfo.GetCultureInfo("vi-vn"));
+                try
+                {
+                    txtTotalLateFee.Text = overdueList.Sum(item => item.SoTien).ToString("C0", CultureInfo.GetCultureInfo("vi-vn"));
+                }
+                catch
+                {
+                    return;
+                }
             }
         }
     }

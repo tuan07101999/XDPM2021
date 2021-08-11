@@ -51,7 +51,6 @@ namespace Nhom18_XDPM_UI
             this.dgv_ListKhachHang = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_HuyThem = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_TTPhiTre = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimKiem)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -432,7 +431,6 @@ namespace Nhom18_XDPM_UI
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_TTPhiTre);
             this.panel1.Controls.Add(this.btn_HuyThem);
             this.panel1.Controls.Add(this.btn_HuySua);
             this.panel1.Controls.Add(this.groupBox1);
@@ -486,45 +484,6 @@ namespace Nhom18_XDPM_UI
             this.btn_HuyThem.Visible = false;
             this.btn_HuyThem.Click += new System.EventHandler(this.btn_HuyThem_Click);
             // 
-            // btn_TTPhiTre
-            // 
-            this.btn_TTPhiTre.Active = false;
-            this.btn_TTPhiTre.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btn_TTPhiTre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_TTPhiTre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btn_TTPhiTre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_TTPhiTre.BorderRadius = 0;
-            this.btn_TTPhiTre.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btn_TTPhiTre.ButtonText = "Thông tin phí trễ của khách hàng";
-            this.btn_TTPhiTre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btn_TTPhiTre.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_TTPhiTre.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_TTPhiTre.Iconimage = null;
-            this.btn_TTPhiTre.Iconimage_right = null;
-            this.btn_TTPhiTre.Iconimage_right_Selected = null;
-            this.btn_TTPhiTre.Iconimage_Selected = null;
-            this.btn_TTPhiTre.IconMarginLeft = 0;
-            this.btn_TTPhiTre.IconMarginRight = 0;
-            this.btn_TTPhiTre.IconRightVisible = true;
-            this.btn_TTPhiTre.IconRightZoom = 0D;
-            this.btn_TTPhiTre.IconVisible = true;
-            this.btn_TTPhiTre.IconZoom = 70D;
-            this.btn_TTPhiTre.IsTab = false;
-            this.btn_TTPhiTre.Location = new System.Drawing.Point(9, 591);
-            this.btn_TTPhiTre.Name = "btn_TTPhiTre";
-            this.btn_TTPhiTre.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btn_TTPhiTre.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btn_TTPhiTre.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_TTPhiTre.selected = false;
-            this.btn_TTPhiTre.Size = new System.Drawing.Size(353, 32);
-            this.btn_TTPhiTre.TabIndex = 11;
-            this.btn_TTPhiTre.Text = "Thông tin phí trễ của khách hàng";
-            this.btn_TTPhiTre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_TTPhiTre.Textcolor = System.Drawing.Color.White;
-            this.btn_TTPhiTre.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_TTPhiTre.Click += new System.EventHandler(this.btn_TTPhiTre_Click);
-            // 
             // UC_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -570,6 +529,5 @@ namespace Nhom18_XDPM_UI
         private System.Windows.Forms.DataGridView dgv_ListKhachHang;
         private Bunifu.Framework.UI.BunifuFlatButton btn_HuyThem;
         private System.Windows.Forms.DateTimePicker datePicker_NgaySinh;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_TTPhiTre;
     }
 }

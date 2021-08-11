@@ -25,7 +25,6 @@ namespace Nhom18_XDPM_UI
         private float totalPhiThue = 0;
          private float totalPhiTre = 0;
         private List<Record> lateFeeList;
-        private UC_CheckLateCharge form;
         private List<Record> pendingRecords;
         public List<RecordDTO> listRecord;
         AutoCompleteStringCollection sourcename, sourceNameCustomer;

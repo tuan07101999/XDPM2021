@@ -79,8 +79,9 @@ namespace Nhom18_XDPM_UI
             this.panelTop.Controls.Add(this.panelTopLeft);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
+            this.panelTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1122, 78);
+            this.panelTop.Size = new System.Drawing.Size(842, 63);
             this.panelTop.TabIndex = 0;
             // 
             // panelTopRight
@@ -88,9 +89,10 @@ namespace Nhom18_XDPM_UI
             this.panelTopRight.Controls.Add(this.lblPrintReport);
             this.panelTopRight.Controls.Add(this.pictureBoxPrint);
             this.panelTopRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTopRight.Location = new System.Drawing.Point(763, 0);
+            this.panelTopRight.Location = new System.Drawing.Point(572, 0);
+            this.panelTopRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelTopRight.Name = "panelTopRight";
-            this.panelTopRight.Size = new System.Drawing.Size(359, 78);
+            this.panelTopRight.Size = new System.Drawing.Size(270, 63);
             this.panelTopRight.TabIndex = 1;
             // 
             // lblPrintReport
@@ -98,18 +100,20 @@ namespace Nhom18_XDPM_UI
             this.lblPrintReport.AutoSize = true;
             this.lblPrintReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrintReport.ForeColor = System.Drawing.Color.White;
-            this.lblPrintReport.Location = new System.Drawing.Point(188, 33);
+            this.lblPrintReport.Location = new System.Drawing.Point(141, 27);
+            this.lblPrintReport.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrintReport.Name = "lblPrintReport";
-            this.lblPrintReport.Size = new System.Drawing.Size(108, 25);
+            this.lblPrintReport.Size = new System.Drawing.Size(89, 20);
             this.lblPrintReport.TabIndex = 1;
             this.lblPrintReport.Text = "In thống kê";
             // 
             // pictureBoxPrint
             // 
             this.pictureBoxPrint.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPrint.Image")));
-            this.pictureBoxPrint.Location = new System.Drawing.Point(118, 8);
+            this.pictureBoxPrint.Location = new System.Drawing.Point(88, 6);
+            this.pictureBoxPrint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxPrint.Name = "pictureBoxPrint";
-            this.pictureBoxPrint.Size = new System.Drawing.Size(64, 64);
+            this.pictureBoxPrint.Size = new System.Drawing.Size(48, 52);
             this.pictureBoxPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxPrint.TabIndex = 0;
             this.pictureBoxPrint.TabStop = false;
@@ -120,8 +124,9 @@ namespace Nhom18_XDPM_UI
             this.panelTopLeft.Controls.Add(this.lblReportType);
             this.panelTopLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelTopLeft.Location = new System.Drawing.Point(0, 0);
+            this.panelTopLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelTopLeft.Name = "panelTopLeft";
-            this.panelTopLeft.Size = new System.Drawing.Size(763, 78);
+            this.panelTopLeft.Size = new System.Drawing.Size(572, 63);
             this.panelTopLeft.TabIndex = 0;
             // 
             // cmbType
@@ -132,9 +137,10 @@ namespace Nhom18_XDPM_UI
             this.cmbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbType.ForeColor = System.Drawing.Color.DarkGray;
             this.cmbType.FormattingEnabled = true;
-            this.cmbType.Location = new System.Drawing.Point(183, 25);
+            this.cmbType.Location = new System.Drawing.Point(137, 20);
+            this.cmbType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(425, 33);
+            this.cmbType.Size = new System.Drawing.Size(320, 28);
             this.cmbType.TabIndex = 1;
             this.cmbType.ValueMember = "Type";
             this.cmbType.SelectedValueChanged += new System.EventHandler(this.cmbType_SelectedValueChanged);
@@ -148,9 +154,10 @@ namespace Nhom18_XDPM_UI
             this.lblReportType.AutoSize = true;
             this.lblReportType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReportType.ForeColor = System.Drawing.Color.White;
-            this.lblReportType.Location = new System.Drawing.Point(42, 25);
+            this.lblReportType.Location = new System.Drawing.Point(32, 20);
+            this.lblReportType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReportType.Name = "lblReportType";
-            this.lblReportType.Size = new System.Drawing.Size(135, 25);
+            this.lblReportType.Size = new System.Drawing.Size(109, 20);
             this.lblReportType.TabIndex = 0;
             this.lblReportType.Text = "Loại thống kê:";
             // 
@@ -159,9 +166,10 @@ namespace Nhom18_XDPM_UI
             this.panelBottom.Controls.Add(this.panelButtonBottom);
             this.panelBottom.Controls.Add(this.panelListCustomer);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBottom.Location = new System.Drawing.Point(0, 78);
+            this.panelBottom.Location = new System.Drawing.Point(0, 63);
+            this.panelBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(1122, 687);
+            this.panelBottom.Size = new System.Drawing.Size(842, 559);
             this.panelBottom.TabIndex = 1;
             // 
             // panelButtonBottom
@@ -170,9 +178,10 @@ namespace Nhom18_XDPM_UI
             this.panelButtonBottom.Controls.Add(this.txtTotalLateFee);
             this.panelButtonBottom.Controls.Add(this.lblTotalLateFee);
             this.panelButtonBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelButtonBottom.Location = new System.Drawing.Point(0, 621);
+            this.panelButtonBottom.Location = new System.Drawing.Point(0, 505);
+            this.panelButtonBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelButtonBottom.Name = "panelButtonBottom";
-            this.panelButtonBottom.Size = new System.Drawing.Size(1122, 66);
+            this.panelButtonBottom.Size = new System.Drawing.Size(842, 54);
             this.panelButtonBottom.TabIndex = 1;
             // 
             // label4
@@ -180,18 +189,20 @@ namespace Nhom18_XDPM_UI
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(445, 21);
+            this.label4.Location = new System.Drawing.Point(334, 17);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 25);
+            this.label4.Size = new System.Drawing.Size(18, 20);
             this.label4.TabIndex = 2;
             this.label4.Text = "$";
             // 
             // txtTotalLateFee
             // 
-            this.txtTotalLateFee.Location = new System.Drawing.Point(207, 14);
+            this.txtTotalLateFee.Location = new System.Drawing.Point(155, 11);
+            this.txtTotalLateFee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTotalLateFee.Multiline = true;
             this.txtTotalLateFee.Name = "txtTotalLateFee";
-            this.txtTotalLateFee.Size = new System.Drawing.Size(217, 35);
+            this.txtTotalLateFee.Size = new System.Drawing.Size(164, 29);
             this.txtTotalLateFee.TabIndex = 1;
             // 
             // lblTotalLateFee
@@ -199,9 +210,10 @@ namespace Nhom18_XDPM_UI
             this.lblTotalLateFee.AutoSize = true;
             this.lblTotalLateFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalLateFee.ForeColor = System.Drawing.Color.White;
-            this.lblTotalLateFee.Location = new System.Drawing.Point(55, 14);
+            this.lblTotalLateFee.Location = new System.Drawing.Point(41, 11);
+            this.lblTotalLateFee.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalLateFee.Name = "lblTotalLateFee";
-            this.lblTotalLateFee.Size = new System.Drawing.Size(122, 25);
+            this.lblTotalLateFee.Size = new System.Drawing.Size(97, 20);
             this.lblTotalLateFee.TabIndex = 0;
             this.lblTotalLateFee.Text = "Tổng phí trễ:";
             // 
@@ -212,12 +224,15 @@ namespace Nhom18_XDPM_UI
             this.panelListCustomer.Controls.Add(this.txtSearch);
             this.panelListCustomer.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelListCustomer.Location = new System.Drawing.Point(0, 0);
+            this.panelListCustomer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelListCustomer.Name = "panelListCustomer";
-            this.panelListCustomer.Size = new System.Drawing.Size(1122, 621);
+            this.panelListCustomer.Size = new System.Drawing.Size(842, 505);
             this.panelListCustomer.TabIndex = 0;
             // 
             // dgvCustomer
             // 
+            this.dgvCustomer.AllowUserToAddRows = false;
+            this.dgvCustomer.AllowUserToDeleteRows = false;
             this.dgvCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -234,11 +249,13 @@ namespace Nhom18_XDPM_UI
             this.soDiaQuaHanDataGridViewTextBoxColumn,
             this.lateFeeDataGridViewTextBoxColumn});
             this.dgvCustomer.DataSource = this.customerReportModelBindingSource;
-            this.dgvCustomer.Location = new System.Drawing.Point(25, 80);
+            this.dgvCustomer.Location = new System.Drawing.Point(19, 65);
+            this.dgvCustomer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvCustomer.Name = "dgvCustomer";
+            this.dgvCustomer.ReadOnly = true;
             this.dgvCustomer.RowHeadersWidth = 51;
             this.dgvCustomer.RowTemplate.Height = 24;
-            this.dgvCustomer.Size = new System.Drawing.Size(1080, 522);
+            this.dgvCustomer.Size = new System.Drawing.Size(810, 424);
             this.dgvCustomer.TabIndex = 2;
             this.dgvCustomer.SelectionChanged += new System.EventHandler(this.dgvCustomer_SelectionChanged);
             // 
@@ -248,6 +265,7 @@ namespace Nhom18_XDPM_UI
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             this.iDDataGridViewTextBoxColumn.Width = 125;
             // 
             // hoTenDataGridViewTextBoxColumn
@@ -256,6 +274,7 @@ namespace Nhom18_XDPM_UI
             this.hoTenDataGridViewTextBoxColumn.HeaderText = "Họ Tên";
             this.hoTenDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
+            this.hoTenDataGridViewTextBoxColumn.ReadOnly = true;
             this.hoTenDataGridViewTextBoxColumn.Width = 160;
             // 
             // soDienThoaiDataGridViewTextBoxColumn
@@ -264,6 +283,7 @@ namespace Nhom18_XDPM_UI
             this.soDienThoaiDataGridViewTextBoxColumn.HeaderText = "Số Điện Thoại";
             this.soDienThoaiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.soDienThoaiDataGridViewTextBoxColumn.Name = "soDienThoaiDataGridViewTextBoxColumn";
+            this.soDienThoaiDataGridViewTextBoxColumn.ReadOnly = true;
             this.soDienThoaiDataGridViewTextBoxColumn.Width = 150;
             // 
             // diaChiDataGridViewTextBoxColumn
@@ -272,6 +292,7 @@ namespace Nhom18_XDPM_UI
             this.diaChiDataGridViewTextBoxColumn.HeaderText = "Địa Chỉ";
             this.diaChiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.diaChiDataGridViewTextBoxColumn.Name = "diaChiDataGridViewTextBoxColumn";
+            this.diaChiDataGridViewTextBoxColumn.ReadOnly = true;
             this.diaChiDataGridViewTextBoxColumn.Width = 230;
             // 
             // soDiaThueDataGridViewTextBoxColumn
@@ -280,6 +301,7 @@ namespace Nhom18_XDPM_UI
             this.soDiaThueDataGridViewTextBoxColumn.HeaderText = "Số Đĩa Thuê";
             this.soDiaThueDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.soDiaThueDataGridViewTextBoxColumn.Name = "soDiaThueDataGridViewTextBoxColumn";
+            this.soDiaThueDataGridViewTextBoxColumn.ReadOnly = true;
             this.soDiaThueDataGridViewTextBoxColumn.Width = 125;
             // 
             // soDiaQuaHanDataGridViewTextBoxColumn
@@ -288,6 +310,7 @@ namespace Nhom18_XDPM_UI
             this.soDiaQuaHanDataGridViewTextBoxColumn.HeaderText = "Số Đĩa Quá Hạn";
             this.soDiaQuaHanDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.soDiaQuaHanDataGridViewTextBoxColumn.Name = "soDiaQuaHanDataGridViewTextBoxColumn";
+            this.soDiaQuaHanDataGridViewTextBoxColumn.ReadOnly = true;
             this.soDiaQuaHanDataGridViewTextBoxColumn.Width = 140;
             // 
             // lateFeeDataGridViewTextBoxColumn
@@ -296,6 +319,7 @@ namespace Nhom18_XDPM_UI
             this.lateFeeDataGridViewTextBoxColumn.HeaderText = "Phí Trễ";
             this.lateFeeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.lateFeeDataGridViewTextBoxColumn.Name = "lateFeeDataGridViewTextBoxColumn";
+            this.lateFeeDataGridViewTextBoxColumn.ReadOnly = true;
             this.lateFeeDataGridViewTextBoxColumn.Width = 125;
             // 
             // customerReportModelBindingSource
@@ -307,9 +331,10 @@ namespace Nhom18_XDPM_UI
             this.pictureBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(67)))));
             this.pictureBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSearch.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSearch.Image")));
-            this.pictureBoxSearch.Location = new System.Drawing.Point(585, 19);
+            this.pictureBoxSearch.Location = new System.Drawing.Point(439, 15);
+            this.pictureBoxSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxSearch.Name = "pictureBoxSearch";
-            this.pictureBoxSearch.Size = new System.Drawing.Size(55, 41);
+            this.pictureBoxSearch.Size = new System.Drawing.Size(42, 34);
             this.pictureBoxSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxSearch.TabIndex = 1;
             this.pictureBoxSearch.TabStop = false;
@@ -320,10 +345,11 @@ namespace Nhom18_XDPM_UI
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtSearch.Location = new System.Drawing.Point(68, 19);
+            this.txtSearch.Location = new System.Drawing.Point(51, 15);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(521, 41);
+            this.txtSearch.Size = new System.Drawing.Size(391, 34);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.Text = "Nhập vào mã khách hàng cần tìm";
             this.txtSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearch_MouseClick);
@@ -339,14 +365,14 @@ namespace Nhom18_XDPM_UI
             // 
             // UC_ReportCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.panelTop);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UC_ReportCustomer";
-            this.Size = new System.Drawing.Size(1122, 765);
+            this.Size = new System.Drawing.Size(842, 622);
             this.Load += new System.EventHandler(this.UC_ReportCustomer_Load);
             this.panelTop.ResumeLayout(false);
             this.panelTopRight.ResumeLayout(false);

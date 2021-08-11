@@ -88,14 +88,21 @@ namespace Business
         }
         public List<HasOverdueModel> GetOverdueRecords(int customerId)
         {
-            var records = dal.GetAllRecord().Where(rec => rec.idCustomer == customerId).Select(rec => new HasOverdueModel
+            try
             {
-                TieuDe = rec.Disk.Title.name,
-                NgayDenHan = rec.dueDate.Value,
-                NgayTra = rec.actualReturnDate.Value,
-                SoTien = rec.dueDate.Value >= DateTime.Now ? 0 : rec.lateFee.Value
-            });
-            return records.ToList();
+                var records = dal.GetAllRecord().Where(rec => rec.idCustomer == customerId).Select(rec => new HasOverdueModel
+                {
+                    TieuDe = rec.Disk.Title.name,
+                    NgayDenHan = rec.dueDate.Value,
+                    NgayTra = rec.actualReturnDate.Value,
+                    SoTien = rec.dueDate.Value >= DateTime.Now ? 0 : rec.lateFee.Value
+                });
+                return records.ToList();
+            }
+            catch
+            {
+                return null;
+            }            
         }
     }
 }
