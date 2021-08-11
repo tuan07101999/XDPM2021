@@ -47,20 +47,18 @@ namespace Nhom18_XDPM_UI
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnTimKH = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtSDT = new System.Windows.Forms.TextBox();
-            this.txtIDKhachHang = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTenKH = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnTimDia = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnThemDia = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtTenDia = new System.Windows.Forms.TextBox();
             this.txtIdDia = new System.Windows.Forms.TextBox();
+            this.btnThemDia = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtIDKhachHang = new System.Windows.Forms.TextBox();
+            this.txtTenKH = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtSDT = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -94,7 +92,7 @@ namespace Nhom18_XDPM_UI
             this.btnThue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnThue.BorderRadius = 0;
             this.btnThue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnThue.ButtonText = "THUÊ";
+            this.btnThue.ButtonText = "THANH TOÁN";
             this.btnThue.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.btnThue.DisabledColor = System.Drawing.Color.Gray;
             this.btnThue.Iconcolor = System.Drawing.Color.Transparent;
@@ -117,7 +115,7 @@ namespace Nhom18_XDPM_UI
             this.btnThue.selected = false;
             this.btnThue.Size = new System.Drawing.Size(122, 36);
             this.btnThue.TabIndex = 6;
-            this.btnThue.Text = "THUÊ";
+            this.btnThue.Text = "THANH TOÁN";
             this.btnThue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThue.Textcolor = System.Drawing.Color.White;
             this.btnThue.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -344,7 +342,6 @@ namespace Nhom18_XDPM_UI
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtTenDia);
-            this.groupBox2.Controls.Add(this.btnTimDia);
             this.groupBox2.Controls.Add(this.txtIdDia);
             this.groupBox2.Controls.Add(this.btnThemDia);
             this.groupBox2.Controls.Add(this.label9);
@@ -361,172 +358,35 @@ namespace Nhom18_XDPM_UI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ĐĨA";
             // 
-            // label1
+            // txtTenDia
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 39);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 20);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "ID Khách hàng:";
-            // 
-            // btnTimKH
-            // 
-            this.btnTimKH.Active = false;
-            this.btnTimKH.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnTimKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTimKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnTimKH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTimKH.BorderRadius = 0;
-            this.btnTimKH.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnTimKH.ButtonText = "THÊM";
-            this.btnTimKH.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnTimKH.DisabledColor = System.Drawing.Color.Gray;
-            this.btnTimKH.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnTimKH.Iconimage = null;
-            this.btnTimKH.Iconimage_right = null;
-            this.btnTimKH.Iconimage_right_Selected = null;
-            this.btnTimKH.Iconimage_Selected = null;
-            this.btnTimKH.IconMarginLeft = 0;
-            this.btnTimKH.IconMarginRight = 0;
-            this.btnTimKH.IconRightVisible = true;
-            this.btnTimKH.IconRightZoom = 0D;
-            this.btnTimKH.IconVisible = true;
-            this.btnTimKH.IconZoom = 70D;
-            this.btnTimKH.IsTab = false;
-            this.btnTimKH.Location = new System.Drawing.Point(148, 180);
-            this.btnTimKH.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
-            this.btnTimKH.Name = "btnTimKH";
-            this.btnTimKH.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnTimKH.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnTimKH.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnTimKH.selected = false;
-            this.btnTimKH.Size = new System.Drawing.Size(96, 26);
-            this.btnTimKH.TabIndex = 26;
-            this.btnTimKH.Text = "THÊM";
-            this.btnTimKH.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnTimKH.Textcolor = System.Drawing.Color.White;
-            this.btnTimKH.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKH.Click += new System.EventHandler(this.btnTimKH_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 131);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 20);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Số điện thoại:";
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtTenDia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSDT.Location = new System.Drawing.Point(147, 125);
-            this.txtSDT.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(230, 26);
-            this.txtSDT.TabIndex = 8;
+            this.txtTenDia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtTenDia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtTenDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
+            this.txtTenDia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTenDia.ForeColor = System.Drawing.Color.White;
+            this.txtTenDia.Location = new System.Drawing.Point(117, 115);
+            this.txtTenDia.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTenDia.Name = "txtTenDia";
+            this.txtTenDia.Size = new System.Drawing.Size(224, 26);
+            this.txtTenDia.TabIndex = 10;
             // 
-            // txtIDKhachHang
+            // txtIdDia
             // 
-            this.txtIDKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtIdDia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIDKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.txtIDKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIDKhachHang.ForeColor = System.Drawing.Color.White;
-            this.txtIDKhachHang.Location = new System.Drawing.Point(148, 39);
-            this.txtIDKhachHang.Margin = new System.Windows.Forms.Padding(2);
-            this.txtIDKhachHang.Name = "txtIDKhachHang";
-            this.txtIDKhachHang.Size = new System.Drawing.Size(229, 26);
-            this.txtIDKhachHang.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 84);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Tên Khách hàng:";
-            // 
-            // txtTenKH
-            // 
-            this.txtTenKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTenKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.txtTenKH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTenKH.Location = new System.Drawing.Point(148, 84);
-            this.txtTenKH.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTenKH.Name = "txtTenKH";
-            this.txtTenKH.Size = new System.Drawing.Size(229, 26);
-            this.txtTenKH.TabIndex = 11;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnTimKH);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtIDKhachHang);
-            this.groupBox1.Controls.Add(this.txtTenKH);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtSDT);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(2, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(396, 220);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "KHÁCH HÀNG";
-            // 
-            // btnTimDia
-            // 
-            this.btnTimDia.Active = false;
-            this.btnTimDia.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnTimDia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTimDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnTimDia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTimDia.BorderRadius = 0;
-            this.btnTimDia.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnTimDia.ButtonText = "THÊM";
-            this.btnTimDia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnTimDia.DisabledColor = System.Drawing.Color.Gray;
-            this.btnTimDia.ForeColor = System.Drawing.Color.White;
-            this.btnTimDia.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnTimDia.Iconimage = null;
-            this.btnTimDia.Iconimage_right = null;
-            this.btnTimDia.Iconimage_right_Selected = null;
-            this.btnTimDia.Iconimage_Selected = null;
-            this.btnTimDia.IconMarginLeft = 0;
-            this.btnTimDia.IconMarginRight = 0;
-            this.btnTimDia.IconRightVisible = true;
-            this.btnTimDia.IconRightZoom = 0D;
-            this.btnTimDia.IconVisible = true;
-            this.btnTimDia.IconZoom = 70D;
-            this.btnTimDia.IsTab = false;
-            this.btnTimDia.Location = new System.Drawing.Point(328, 52);
-            this.btnTimDia.Margin = new System.Windows.Forms.Padding(14, 18, 14, 18);
-            this.btnTimDia.Name = "btnTimDia";
-            this.btnTimDia.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnTimDia.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnTimDia.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnTimDia.selected = false;
-            this.btnTimDia.Size = new System.Drawing.Size(52, 26);
-            this.btnTimDia.TabIndex = 26;
-            this.btnTimDia.Text = "THÊM";
-            this.btnTimDia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnTimDia.Textcolor = System.Drawing.Color.White;
-            this.btnTimDia.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimDia.Click += new System.EventHandler(this.btnTimDia_Click);
+            this.txtIdDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
+            this.txtIdDia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdDia.ForeColor = System.Drawing.Color.White;
+            this.txtIdDia.Location = new System.Drawing.Point(117, 64);
+            this.txtIdDia.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIdDia.Name = "txtIdDia";
+            this.txtIdDia.Size = new System.Drawing.Size(224, 26);
+            this.txtIdDia.TabIndex = 10;
+            this.txtIdDia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIdDia_KeyDown);
+            this.txtIdDia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdDia_KeyPress);
             // 
             // btnThemDia
             // 
@@ -552,7 +412,7 @@ namespace Nhom18_XDPM_UI
             this.btnThemDia.IconVisible = true;
             this.btnThemDia.IconZoom = 70D;
             this.btnThemDia.IsTab = false;
-            this.btnThemDia.Location = new System.Drawing.Point(150, 181);
+            this.btnThemDia.Location = new System.Drawing.Point(174, 170);
             this.btnThemDia.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnThemDia.Name = "btnThemDia";
             this.btnThemDia.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
@@ -567,38 +427,10 @@ namespace Nhom18_XDPM_UI
             this.btnThemDia.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemDia.Click += new System.EventHandler(this.btnThemDia_Click);
             // 
-            // txtTenDia
-            // 
-            this.txtTenDia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTenDia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtTenDia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtTenDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.txtTenDia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTenDia.ForeColor = System.Drawing.Color.White;
-            this.txtTenDia.Location = new System.Drawing.Point(96, 103);
-            this.txtTenDia.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTenDia.Name = "txtTenDia";
-            this.txtTenDia.Size = new System.Drawing.Size(224, 26);
-            this.txtTenDia.TabIndex = 10;
-            // 
-            // txtIdDia
-            // 
-            this.txtIdDia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIdDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.txtIdDia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdDia.ForeColor = System.Drawing.Color.White;
-            this.txtIdDia.Location = new System.Drawing.Point(96, 52);
-            this.txtIdDia.Margin = new System.Windows.Forms.Padding(2);
-            this.txtIdDia.Name = "txtIdDia";
-            this.txtIdDia.Size = new System.Drawing.Size(224, 26);
-            this.txtIdDia.TabIndex = 10;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 105);
+            this.label9.Location = new System.Drawing.Point(37, 117);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 20);
             this.label9.TabIndex = 0;
@@ -607,11 +439,100 @@ namespace Nhom18_XDPM_UI
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 52);
+            this.label8.Location = new System.Drawing.Point(37, 64);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 20);
             this.label8.TabIndex = 0;
             this.label8.Text = "ID Đĩa:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtIDKhachHang);
+            this.groupBox1.Controls.Add(this.txtTenKH);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtSDT);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(396, 220);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "KHÁCH HÀNG";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "ID Khách hàng:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 103);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Tên Khách hàng:";
+            // 
+            // txtIDKhachHang
+            // 
+            this.txtIDKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtIDKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
+            this.txtIDKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIDKhachHang.ForeColor = System.Drawing.Color.White;
+            this.txtIDKhachHang.Location = new System.Drawing.Point(144, 58);
+            this.txtIDKhachHang.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIDKhachHang.Name = "txtIDKhachHang";
+            this.txtIDKhachHang.Size = new System.Drawing.Size(229, 26);
+            this.txtIDKhachHang.TabIndex = 10;
+            this.txtIDKhachHang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIDKhachHang_KeyDown);
+            this.txtIDKhachHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDKhachHang_KeyPress);
+            // 
+            // txtTenKH
+            // 
+            this.txtTenKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTenKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
+            this.txtTenKH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTenKH.Location = new System.Drawing.Point(144, 103);
+            this.txtTenKH.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTenKH.Name = "txtTenKH";
+            this.txtTenKH.Size = new System.Drawing.Size(229, 26);
+            this.txtTenKH.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 150);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 20);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Số điện thoại:";
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
+            this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSDT.Location = new System.Drawing.Point(143, 144);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(230, 26);
+            this.txtSDT.TabIndex = 8;
             // 
             // UC_RentDisk
             // 
@@ -666,8 +587,6 @@ namespace Nhom18_XDPM_UI
         private System.Windows.Forms.TextBox txtIdDia;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private Bunifu.Framework.UI.BunifuFlatButton btnTimKH;
-        private Bunifu.Framework.UI.BunifuFlatButton btnTimDia;
         private System.Windows.Forms.GroupBox groupBox3;
         private Bunifu.Framework.UI.BunifuFlatButton btnThongTinPhiTre;
         private System.Windows.Forms.Label label6;

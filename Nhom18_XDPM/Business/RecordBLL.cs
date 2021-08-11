@@ -65,6 +65,10 @@ namespace Business
         {
             return dal.updateRentDate(record);
         }
+        public bool CancelLateCharge(int id)
+        {
+            return dal.CancelLateCharge(id);
+        }
         public Result add(Record record)
         {
             return dal.add(record);

@@ -38,7 +38,7 @@ namespace Nhom18_XDPM_UI
             this.label2 = new System.Windows.Forms.Label();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnHuy = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnBack = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnThanhToan = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBoxTimKiem = new System.Windows.Forms.PictureBox();
@@ -66,6 +66,8 @@ namespace Nhom18_XDPM_UI
             this.dgvListItem.RowTemplate.Height = 24;
             this.dgvListItem.Size = new System.Drawing.Size(783, 424);
             this.dgvListItem.TabIndex = 2;
+            this.dgvListItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListItem_CellClick);
+            this.dgvListItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListItem_CellContentClick);
             // 
             // bunifuElipse1
             // 
@@ -88,7 +90,7 @@ namespace Nhom18_XDPM_UI
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.txtTongTien);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.btnHuy);
+            this.panel3.Controls.Add(this.btnBack);
             this.panel3.Controls.Add(this.btnThanhToan);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 521);
@@ -105,7 +107,7 @@ namespace Nhom18_XDPM_UI
             this.label2.Location = new System.Drawing.Point(296, 23);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 22);
+            this.label2.Size = new System.Drawing.Size(18, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "$";
             // 
@@ -129,46 +131,47 @@ namespace Nhom18_XDPM_UI
             this.label1.Location = new System.Drawing.Point(33, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 22);
+            this.label1.Size = new System.Drawing.Size(63, 20);
             this.label1.TabIndex = 9;
             this.label1.Text = "TỔNG:";
             // 
-            // btnHuy
+            // btnBack
             // 
-            this.btnHuy.Active = false;
-            this.btnHuy.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnHuy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHuy.BorderRadius = 0;
-            this.btnHuy.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnHuy.ButtonText = "HỦY";
-            this.btnHuy.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnHuy.DisabledColor = System.Drawing.Color.Gray;
-            this.btnHuy.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnHuy.Iconimage = null;
-            this.btnHuy.Iconimage_right = null;
-            this.btnHuy.Iconimage_right_Selected = null;
-            this.btnHuy.Iconimage_Selected = null;
-            this.btnHuy.IconMarginLeft = 0;
-            this.btnHuy.IconMarginRight = 0;
-            this.btnHuy.IconRightVisible = true;
-            this.btnHuy.IconRightZoom = 0D;
-            this.btnHuy.IconVisible = true;
-            this.btnHuy.IconZoom = 70D;
-            this.btnHuy.IsTab = false;
-            this.btnHuy.Location = new System.Drawing.Point(707, 6);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btnHuy.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btnHuy.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnHuy.selected = false;
-            this.btnHuy.Size = new System.Drawing.Size(79, 36);
-            this.btnHuy.TabIndex = 8;
-            this.btnHuy.Text = "HỦY";
-            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnHuy.Textcolor = System.Drawing.Color.White;
-            this.btnHuy.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Active = false;
+            this.btnBack.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.BorderRadius = 0;
+            this.btnBack.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btnBack.ButtonText = "<< THUÊ";
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.btnBack.DisabledColor = System.Drawing.Color.Gray;
+            this.btnBack.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnBack.Iconimage = null;
+            this.btnBack.Iconimage_right = null;
+            this.btnBack.Iconimage_right_Selected = null;
+            this.btnBack.Iconimage_Selected = null;
+            this.btnBack.IconMarginLeft = 0;
+            this.btnBack.IconMarginRight = 0;
+            this.btnBack.IconRightVisible = true;
+            this.btnBack.IconRightZoom = 0D;
+            this.btnBack.IconVisible = true;
+            this.btnBack.IconZoom = 70D;
+            this.btnBack.IsTab = false;
+            this.btnBack.Location = new System.Drawing.Point(707, 6);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.btnBack.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
+            this.btnBack.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnBack.selected = false;
+            this.btnBack.Size = new System.Drawing.Size(79, 36);
+            this.btnBack.TabIndex = 8;
+            this.btnBack.Text = "<< THUÊ";
+            this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnBack.Textcolor = System.Drawing.Color.White;
+            this.btnBack.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnThanhToan
             // 
@@ -206,6 +209,7 @@ namespace Nhom18_XDPM_UI
             this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThanhToan.Textcolor = System.Drawing.Color.White;
             this.btnThanhToan.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // panel1
             // 
@@ -232,6 +236,7 @@ namespace Nhom18_XDPM_UI
             this.pictureBoxTimKiem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxTimKiem.TabIndex = 1;
             this.pictureBoxTimKiem.TabStop = false;
+            this.pictureBoxTimKiem.Click += new System.EventHandler(this.pictureBoxTimKiem_Click);
             // 
             // txtTimKiem
             // 
@@ -247,7 +252,7 @@ namespace Nhom18_XDPM_UI
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(485, 37);
             this.txtTimKiem.TabIndex = 0;
-            this.txtTimKiem.Text = "     Nhập vào mã Khách hàng cần tìm";
+            this.txtTimKiem.Text = "    ";
             // 
             // UC_CheckLateCharge
             // 
@@ -278,7 +283,7 @@ namespace Nhom18_XDPM_UI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuFlatButton btnHuy;
+        private Bunifu.Framework.UI.BunifuFlatButton btnBack;
         private Bunifu.Framework.UI.BunifuFlatButton btnThanhToan;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBoxTimKiem;
