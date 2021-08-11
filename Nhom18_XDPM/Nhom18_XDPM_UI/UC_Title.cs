@@ -40,7 +40,6 @@ namespace Nhom18_XDPM_UI
             InitializeComponent();
             SetUp_dataGridViewTitle();
 
-            //cbx_rentalFee.Text = "DVD";
         }
 
         private void SetUp_dataGridViewTitle()
@@ -65,6 +64,7 @@ namespace Nhom18_XDPM_UI
             bindingSource.DataSource = titleBLL.GetAlltt();
             dgv_title.DataSource = bindingSource;
             CustomDataGridViewTitle();
+            
         }
 
         private void CustomDataGridViewTitle()
@@ -76,18 +76,57 @@ namespace Nhom18_XDPM_UI
             dgv_title.Columns["Disks"].Visible = false;
             dgv_title.Columns["Category"].Visible = false;
 
-            dgv_title.Columns["idTitle"].Width = 120;
-            dgv_title.Columns["name"].Width = 240;
-            dgv_title.Columns["numberOfCopies"].Width = 100;
+            dgv_title.Columns["idTitle"].Width = 150;
+            dgv_title.Columns["name"].Width = 270;
+            dgv_title.Columns["numberOfCopies"].Width = 160;
             dgv_title.Columns["idCategory"].Width = 100;
+        }
+
+        private void CustomDataGridViewDisk()
+        {
+            dgv_title.Columns["idDisk"].HeaderText = "Mã đĩa";
+            dgv_title.Columns["name"].HeaderText = "Tên đĩa";
+            dgv_title.Columns["status"].HeaderText = "Trạng thái";
+            dgv_title.Columns["idTitle"].HeaderText = "Mã tiêu đề";
+            dgv_title.Columns["Title"].HeaderText = "Tên tiêu đề";
+            dgv_title.Columns["Records"].HeaderText = "Records";
+
+            dgv_title.Columns["Disks"].Visible = false;
+            dgv_title.Columns["Category"].Visible = false;
+
+            dgv_title.Columns["idDisk"].Width = 120;
+            dgv_title.Columns["name"].Width = 250;
+            dgv_title.Columns["status"].Width = 120;
+            dgv_title.Columns["idTitle"].Width = 100;
+            dgv_title.Columns["Title"].Width = 120;
+            dgv_title.Columns["Records"].Width = 100;
         }
 
         private void DiskCreateDataGridView(string id)
         {
+           
             bindingSource2.DataSource = diskBLL.GetListDiskByIDtitle(id);
             dgv_disk.DataSource = bindingSource2;
         }
 
+        private void LoadDataToTextboxTitle()
+        {
+                //Load data to textbox
+                string titleID = dgv_title.SelectedRows[0].Cells[0].Value.ToString();
+                string titleName = dgv_title.SelectedRows[0].Cells[1].Value.ToString();
+                string titleType = dgv_title.SelectedRows[0].Cells[3].Value.ToString();
+            txt_TitleID.Text = titleID;
+            txt_TitleName.Text = titleName;
+            if (titleType.Equals("1"))
+            {
+                cbx_titleType_addTitle.Text = "DVD";
+            }
+            else if (titleType.Equals("2"))
+            {
+                cbx_titleType_addTitle.Text = "CD";
+            }
+
+        }
         private void dgv_title_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
             if (dgv_title.SelectedRows.Count > 0 && dgv_title.SelectedRows[0].Cells[0].Value != null)
@@ -96,20 +135,9 @@ namespace Nhom18_XDPM_UI
                 DiskCreateDataGridView(id);
 
                 //Load data to textbox
-                string titleID = dgv_title.SelectedRows[0].Cells[0].Value.ToString();
-                string titleName = dgv_title.SelectedRows[0].Cells[1].Value.ToString();
-                string titleType = dgv_title.SelectedRows[0].Cells[3].Value.ToString();
+                LoadDataToTextboxTitle();
 
-                txt_TitleID.Text = titleID;
-                txt_TitleName.Text = titleName;
-                if (titleType.Equals("1"))
-                {
-                    cbx_titleType_addTitle.Text = "DVD";
-                }
-                else if (titleType.Equals("2"))
-                {
-                    cbx_titleType_addTitle.Text = "CD";
-                }
+                
 
 
             }
@@ -203,6 +231,13 @@ namespace Nhom18_XDPM_UI
                         btn_RemoveTitle.Enabled = true;
                         btn_CancelUpdateTitle.Enabled = false;
 
+                        txt_TitleID.Clear();
+                        txt_TitleName.Clear();
+                        if(dgv_title.SelectedRows[0].Cells[0].Value != null)
+                        {
+                            LoadDataToTextboxTitle();
+                        }
+
                     }
                     else
                     {
@@ -233,6 +268,7 @@ namespace Nhom18_XDPM_UI
             if (btn_ChangeTitle.Text == "Sửa")
             {
                 // Change status control
+                btn_ChangeTitle.Text = "Lưu";
                 txt_TitleID.Enabled = false;
                 txt_TitleName.Enabled = true;
                 cbx_titleType_addTitle.Enabled = true;
@@ -272,11 +308,18 @@ namespace Nhom18_XDPM_UI
                         txt_TitleID.Enabled = false;
                         txt_TitleName.Enabled = false;
                         cbx_titleType_addTitle.Enabled = false;
+                        txt_TitleID.Clear();
+                        txt_TitleName.Clear();
 
                         btn_AddTitle.Enabled = true;
                         btn_ChangeTitle.Enabled = true;
                         btn_RemoveTitle.Enabled = true;
                         btn_CancelUpdateTitle.Enabled = false;
+
+                        if(dgv_title.SelectedRows[0].Cells[0].Value != null)
+                        {
+                            LoadDataToTextboxTitle();
+                        }
 
                     }
                     else
@@ -308,6 +351,11 @@ namespace Nhom18_XDPM_UI
             btn_RemoveTitle.Enabled = true;
             btn_AddTitle.Enabled = true;
             btn_CancelUpdateTitle.Enabled = false;
+
+            if (dgv_title.SelectedRows[0].Cells[0].Value != null)
+            {
+                LoadDataToTextboxTitle();
+            }
         }
 
         private void btn_RemoveTitle_Click(object sender, EventArgs e)
@@ -438,10 +486,13 @@ namespace Nhom18_XDPM_UI
                     ReloadTitle();
                 }
             }
-            else
-            {
-                return;
+                else
+                {
+                    MessageBox.Show(result.message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    return;
+                }
             }
+            
         }
 
         private void btn_AddDisk_Click(object sender, EventArgs e)
