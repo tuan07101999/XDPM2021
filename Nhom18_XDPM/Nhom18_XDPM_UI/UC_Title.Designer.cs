@@ -92,11 +92,11 @@ namespace Nhom18_XDPM_UI
             this.groupBoxChangeLateFee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxChangeLateFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxChangeLateFee.ForeColor = System.Drawing.Color.White;
-            this.groupBoxChangeLateFee.Location = new System.Drawing.Point(3, 296);
-            this.groupBoxChangeLateFee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxChangeLateFee.Location = new System.Drawing.Point(2, 241);
+            this.groupBoxChangeLateFee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxChangeLateFee.Name = "groupBoxChangeLateFee";
-            this.groupBoxChangeLateFee.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxChangeLateFee.Size = new System.Drawing.Size(400, 304);
+            this.groupBoxChangeLateFee.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxChangeLateFee.Size = new System.Drawing.Size(300, 246);
             this.groupBoxChangeLateFee.TabIndex = 0;
             this.groupBoxChangeLateFee.TabStop = false;
             this.groupBoxChangeLateFee.Text = "Đặt lại giá thuê";
@@ -104,18 +104,20 @@ namespace Nhom18_XDPM_UI
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(301, 89);
+            this.label11.Location = new System.Drawing.Point(226, 72);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 25);
+            this.label11.Size = new System.Drawing.Size(43, 20);
             this.label11.TabIndex = 18;
             this.label11.Text = "ngày";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(312, 44);
+            this.label10.Location = new System.Drawing.Point(234, 36);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(23, 25);
+            this.label10.Size = new System.Drawing.Size(18, 20);
             this.label10.TabIndex = 17;
             this.label10.Text = "$";
             // 
@@ -143,14 +145,14 @@ namespace Nhom18_XDPM_UI
             this.btn_CancelChangeRentalFee.IconVisible = true;
             this.btn_CancelChangeRentalFee.IconZoom = 70D;
             this.btn_CancelChangeRentalFee.IsTab = false;
-            this.btn_CancelChangeRentalFee.Location = new System.Drawing.Point(250, 217);
-            this.btn_CancelChangeRentalFee.Margin = new System.Windows.Forms.Padding(72, 81, 72, 81);
+            this.btn_CancelChangeRentalFee.Location = new System.Drawing.Point(188, 176);
+            this.btn_CancelChangeRentalFee.Margin = new System.Windows.Forms.Padding(54, 66, 54, 66);
             this.btn_CancelChangeRentalFee.Name = "btn_CancelChangeRentalFee";
             this.btn_CancelChangeRentalFee.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btn_CancelChangeRentalFee.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.btn_CancelChangeRentalFee.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_CancelChangeRentalFee.selected = false;
-            this.btn_CancelChangeRentalFee.Size = new System.Drawing.Size(95, 42);
+            this.btn_CancelChangeRentalFee.Size = new System.Drawing.Size(72, 35);
             this.btn_CancelChangeRentalFee.TabIndex = 16;
             this.btn_CancelChangeRentalFee.Text = "Hủy";
             this.btn_CancelChangeRentalFee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -167,19 +169,19 @@ namespace Nhom18_XDPM_UI
             this.cbx_rentalFee.Items.AddRange(new object[] {
             "DVD",
             "CD"});
-            this.cbx_rentalFee.Location = new System.Drawing.Point(173, 135);
-            this.cbx_rentalFee.Margin = new System.Windows.Forms.Padding(4);
+            this.cbx_rentalFee.Location = new System.Drawing.Point(130, 110);
             this.cbx_rentalFee.Name = "cbx_rentalFee";
-            this.cbx_rentalFee.Size = new System.Drawing.Size(140, 33);
+            this.cbx_rentalFee.Size = new System.Drawing.Size(96, 28);
             this.cbx_rentalFee.TabIndex = 15;
             this.cbx_rentalFee.SelectedIndexChanged += new System.EventHandler(this.cbx_rentalFee_SelectedIndexChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(104, 139);
+            this.label8.Location = new System.Drawing.Point(78, 113);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 25);
+            this.label8.Size = new System.Drawing.Size(39, 20);
             this.label8.TabIndex = 14;
             this.label8.Text = "Loại";
             // 
@@ -207,14 +209,14 @@ namespace Nhom18_XDPM_UI
             this.btn_ChangeRentFee.IconVisible = true;
             this.btn_ChangeRentFee.IconZoom = 70D;
             this.btn_ChangeRentFee.IsTab = false;
-            this.btn_ChangeRentFee.Location = new System.Drawing.Point(61, 217);
-            this.btn_ChangeRentFee.Margin = new System.Windows.Forms.Padding(48, 53, 48, 53);
+            this.btn_ChangeRentFee.Location = new System.Drawing.Point(46, 176);
+            this.btn_ChangeRentFee.Margin = new System.Windows.Forms.Padding(36, 43, 36, 43);
             this.btn_ChangeRentFee.Name = "btn_ChangeRentFee";
             this.btn_ChangeRentFee.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btn_ChangeRentFee.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.btn_ChangeRentFee.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_ChangeRentFee.selected = false;
-            this.btn_ChangeRentFee.Size = new System.Drawing.Size(107, 42);
+            this.btn_ChangeRentFee.Size = new System.Drawing.Size(81, 35);
             this.btn_ChangeRentFee.TabIndex = 10;
             this.btn_ChangeRentFee.Text = "Thay đổi";
             this.btn_ChangeRentFee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,9 +227,10 @@ namespace Nhom18_XDPM_UI
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 94);
+            this.label5.Location = new System.Drawing.Point(8, 76);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 25);
+            this.label5.Size = new System.Drawing.Size(113, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "Thời gian thuê:";
             // 
@@ -237,18 +240,19 @@ namespace Nhom18_XDPM_UI
             this.txt_RentalPeriod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_RentalPeriod.Enabled = false;
             this.txt_RentalPeriod.ForeColor = System.Drawing.Color.White;
-            this.txt_RentalPeriod.Location = new System.Drawing.Point(173, 89);
-            this.txt_RentalPeriod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_RentalPeriod.Location = new System.Drawing.Point(130, 72);
+            this.txt_RentalPeriod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_RentalPeriod.Name = "txt_RentalPeriod";
-            this.txt_RentalPeriod.Size = new System.Drawing.Size(106, 30);
+            this.txt_RentalPeriod.Size = new System.Drawing.Size(96, 26);
             this.txt_RentalPeriod.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(62, 44);
+            this.label4.Location = new System.Drawing.Point(46, 36);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 25);
+            this.label4.Size = new System.Drawing.Size(74, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Giá thuê:";
             // 
@@ -258,10 +262,10 @@ namespace Nhom18_XDPM_UI
             this.txt_RentFee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_RentFee.Enabled = false;
             this.txt_RentFee.ForeColor = System.Drawing.Color.White;
-            this.txt_RentFee.Location = new System.Drawing.Point(173, 42);
-            this.txt_RentFee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_RentFee.Location = new System.Drawing.Point(130, 34);
+            this.txt_RentFee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_RentFee.Name = "txt_RentFee";
-            this.txt_RentFee.Size = new System.Drawing.Size(127, 30);
+            this.txt_RentFee.Size = new System.Drawing.Size(96, 26);
             this.txt_RentFee.TabIndex = 1;
             // 
             // btn_AddDisk
@@ -288,14 +292,14 @@ namespace Nhom18_XDPM_UI
             this.btn_AddDisk.IconVisible = true;
             this.btn_AddDisk.IconZoom = 70D;
             this.btn_AddDisk.IsTab = false;
-            this.btn_AddDisk.Location = new System.Drawing.Point(104, 117);
-            this.btn_AddDisk.Margin = new System.Windows.Forms.Padding(32, 34, 32, 34);
+            this.btn_AddDisk.Location = new System.Drawing.Point(50, 97);
+            this.btn_AddDisk.Margin = new System.Windows.Forms.Padding(24, 28, 24, 28);
             this.btn_AddDisk.Name = "btn_AddDisk";
             this.btn_AddDisk.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btn_AddDisk.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.btn_AddDisk.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_AddDisk.selected = false;
-            this.btn_AddDisk.Size = new System.Drawing.Size(84, 40);
+            this.btn_AddDisk.Size = new System.Drawing.Size(64, 33);
             this.btn_AddDisk.TabIndex = 10;
             this.btn_AddDisk.Text = "Thêm";
             this.btn_AddDisk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -312,11 +316,11 @@ namespace Nhom18_XDPM_UI
             this.groupBoxDisk.Controls.Add(this.dgv_disk);
             this.groupBoxDisk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxDisk.ForeColor = System.Drawing.Color.White;
-            this.groupBoxDisk.Location = new System.Drawing.Point(3, 400);
-            this.groupBoxDisk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxDisk.Location = new System.Drawing.Point(2, 325);
+            this.groupBoxDisk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxDisk.Name = "groupBoxDisk";
-            this.groupBoxDisk.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxDisk.Size = new System.Drawing.Size(705, 394);
+            this.groupBoxDisk.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxDisk.Size = new System.Drawing.Size(529, 320);
             this.groupBoxDisk.TabIndex = 0;
             this.groupBoxDisk.TabStop = false;
             this.groupBoxDisk.Text = "DANH SÁCH ĐĨA";
@@ -345,14 +349,14 @@ namespace Nhom18_XDPM_UI
             this.btn_RemoveDisk.IconVisible = true;
             this.btn_RemoveDisk.IconZoom = 70D;
             this.btn_RemoveDisk.IsTab = false;
-            this.btn_RemoveDisk.Location = new System.Drawing.Point(607, 350);
-            this.btn_RemoveDisk.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.btn_RemoveDisk.Location = new System.Drawing.Point(455, 284);
+            this.btn_RemoveDisk.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.btn_RemoveDisk.Name = "btn_RemoveDisk";
             this.btn_RemoveDisk.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btn_RemoveDisk.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.btn_RemoveDisk.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_RemoveDisk.selected = false;
-            this.btn_RemoveDisk.Size = new System.Drawing.Size(83, 31);
+            this.btn_RemoveDisk.Size = new System.Drawing.Size(63, 26);
             this.btn_RemoveDisk.TabIndex = 8;
             this.btn_RemoveDisk.Text = "Xóa";
             this.btn_RemoveDisk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -370,22 +374,23 @@ namespace Nhom18_XDPM_UI
             this.dgv_disk.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgv_disk.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_disk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_disk.Location = new System.Drawing.Point(11, 28);
-            this.dgv_disk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgv_disk.Location = new System.Drawing.Point(8, 23);
+            this.dgv_disk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgv_disk.Name = "dgv_disk";
             this.dgv_disk.ReadOnly = true;
             this.dgv_disk.RowHeadersWidth = 51;
             this.dgv_disk.RowTemplate.Height = 24;
-            this.dgv_disk.Size = new System.Drawing.Size(683, 309);
+            this.dgv_disk.Size = new System.Drawing.Size(512, 251);
             this.dgv_disk.TabIndex = 2;
             // 
             // label9
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(58, 58);
+            this.label9.Location = new System.Drawing.Point(52, 49);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 25);
+            this.label9.Size = new System.Drawing.Size(62, 20);
             this.label9.TabIndex = 17;
             this.label9.Text = "ID Đĩa: ";
             // 
@@ -395,10 +400,10 @@ namespace Nhom18_XDPM_UI
             this.txt_IDDisk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.txt_IDDisk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_IDDisk.ForeColor = System.Drawing.Color.White;
-            this.txt_IDDisk.Location = new System.Drawing.Point(157, 56);
-            this.txt_IDDisk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_IDDisk.Location = new System.Drawing.Point(118, 47);
+            this.txt_IDDisk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_IDDisk.Name = "txt_IDDisk";
-            this.txt_IDDisk.Size = new System.Drawing.Size(218, 30);
+            this.txt_IDDisk.Size = new System.Drawing.Size(164, 26);
             this.txt_IDDisk.TabIndex = 17;
             // 
             // groupBoxTitle
@@ -412,11 +417,11 @@ namespace Nhom18_XDPM_UI
             this.groupBoxTitle.Controls.Add(this.txt_searchTitle);
             this.groupBoxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxTitle.ForeColor = System.Drawing.Color.White;
-            this.groupBoxTitle.Location = new System.Drawing.Point(3, 2);
-            this.groupBoxTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxTitle.Location = new System.Drawing.Point(2, 2);
+            this.groupBoxTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxTitle.Name = "groupBoxTitle";
-            this.groupBoxTitle.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxTitle.Size = new System.Drawing.Size(705, 394);
+            this.groupBoxTitle.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxTitle.Size = new System.Drawing.Size(529, 319);
             this.groupBoxTitle.TabIndex = 0;
             this.groupBoxTitle.TabStop = false;
             this.groupBoxTitle.Text = "NHAN ĐỀ";
@@ -445,14 +450,14 @@ namespace Nhom18_XDPM_UI
             this.btn_RemoveTitle.IconVisible = true;
             this.btn_RemoveTitle.IconZoom = 70D;
             this.btn_RemoveTitle.IsTab = false;
-            this.btn_RemoveTitle.Location = new System.Drawing.Point(593, 353);
-            this.btn_RemoveTitle.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btn_RemoveTitle.Location = new System.Drawing.Point(445, 286);
+            this.btn_RemoveTitle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_RemoveTitle.Name = "btn_RemoveTitle";
             this.btn_RemoveTitle.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btn_RemoveTitle.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.btn_RemoveTitle.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_RemoveTitle.selected = false;
-            this.btn_RemoveTitle.Size = new System.Drawing.Size(87, 31);
+            this.btn_RemoveTitle.Size = new System.Drawing.Size(66, 26);
             this.btn_RemoveTitle.TabIndex = 8;
             this.btn_RemoveTitle.Text = "Xóa";
             this.btn_RemoveTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -469,12 +474,12 @@ namespace Nhom18_XDPM_UI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_title.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgv_title.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_title.Location = new System.Drawing.Point(11, 68);
-            this.dgv_title.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgv_title.Location = new System.Drawing.Point(8, 55);
+            this.dgv_title.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgv_title.Name = "dgv_title";
             this.dgv_title.RowHeadersWidth = 51;
             this.dgv_title.RowTemplate.Height = 24;
-            this.dgv_title.Size = new System.Drawing.Size(688, 277);
+            this.dgv_title.Size = new System.Drawing.Size(516, 224);
             this.dgv_title.TabIndex = 2;
             this.dgv_title.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dgv_title_RowStateChanged);
             // 
@@ -484,10 +489,10 @@ namespace Nhom18_XDPM_UI
             this.pictureBoxTimKiemNhanDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(67)))));
             this.pictureBoxTimKiemNhanDe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxTimKiemNhanDe.Image = global::Nhom18_XDPM_UI.Properties.Resources.reboot_16px;
-            this.pictureBoxTimKiemNhanDe.Location = new System.Drawing.Point(660, 28);
-            this.pictureBoxTimKiemNhanDe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxTimKiemNhanDe.Location = new System.Drawing.Point(495, 23);
+            this.pictureBoxTimKiemNhanDe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxTimKiemNhanDe.Name = "pictureBoxTimKiemNhanDe";
-            this.pictureBoxTimKiemNhanDe.Size = new System.Drawing.Size(38, 34);
+            this.pictureBoxTimKiemNhanDe.Size = new System.Drawing.Size(29, 28);
             this.pictureBoxTimKiemNhanDe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxTimKiemNhanDe.TabIndex = 1;
             this.pictureBoxTimKiemNhanDe.TabStop = false;
@@ -500,11 +505,11 @@ namespace Nhom18_XDPM_UI
             this.txt_searchTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(67)))));
             this.txt_searchTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_searchTitle.ForeColor = System.Drawing.Color.DarkGray;
-            this.txt_searchTitle.Location = new System.Drawing.Point(11, 28);
-            this.txt_searchTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_searchTitle.Location = new System.Drawing.Point(8, 23);
+            this.txt_searchTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_searchTitle.Multiline = true;
             this.txt_searchTitle.Name = "txt_searchTitle";
-            this.txt_searchTitle.Size = new System.Drawing.Size(643, 34);
+            this.txt_searchTitle.Size = new System.Drawing.Size(483, 28);
             this.txt_searchTitle.TabIndex = 0;
             this.txt_searchTitle.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_searchTitle_KeyUp);
             // 
@@ -531,14 +536,14 @@ namespace Nhom18_XDPM_UI
             this.btn_ChangeTitle.IconVisible = true;
             this.btn_ChangeTitle.IconZoom = 70D;
             this.btn_ChangeTitle.IsTab = false;
-            this.btn_ChangeTitle.Location = new System.Drawing.Point(140, 211);
-            this.btn_ChangeTitle.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.btn_ChangeTitle.Location = new System.Drawing.Point(105, 171);
+            this.btn_ChangeTitle.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.btn_ChangeTitle.Name = "btn_ChangeTitle";
             this.btn_ChangeTitle.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btn_ChangeTitle.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.btn_ChangeTitle.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_ChangeTitle.selected = false;
-            this.btn_ChangeTitle.Size = new System.Drawing.Size(93, 35);
+            this.btn_ChangeTitle.Size = new System.Drawing.Size(71, 29);
             this.btn_ChangeTitle.TabIndex = 8;
             this.btn_ChangeTitle.Text = "Sửa ";
             this.btn_ChangeTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -561,11 +566,11 @@ namespace Nhom18_XDPM_UI
             this.groupBoxAddTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxAddTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxAddTitle.ForeColor = System.Drawing.Color.White;
-            this.groupBoxAddTitle.Location = new System.Drawing.Point(3, 2);
-            this.groupBoxAddTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxAddTitle.Location = new System.Drawing.Point(2, 2);
+            this.groupBoxAddTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxAddTitle.Name = "groupBoxAddTitle";
-            this.groupBoxAddTitle.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxAddTitle.Size = new System.Drawing.Size(400, 290);
+            this.groupBoxAddTitle.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxAddTitle.Size = new System.Drawing.Size(300, 235);
             this.groupBoxAddTitle.TabIndex = 0;
             this.groupBoxAddTitle.TabStop = false;
             this.groupBoxAddTitle.Text = "THÊM NHAN ĐỀ";
@@ -580,10 +585,9 @@ namespace Nhom18_XDPM_UI
             this.cbx_titleType_addTitle.Items.AddRange(new object[] {
             "CD",
             "DVD"});
-            this.cbx_titleType_addTitle.Location = new System.Drawing.Point(146, 126);
-            this.cbx_titleType_addTitle.Margin = new System.Windows.Forms.Padding(4);
+            this.cbx_titleType_addTitle.Location = new System.Drawing.Point(105, 105);
             this.cbx_titleType_addTitle.Name = "cbx_titleType_addTitle";
-            this.cbx_titleType_addTitle.Size = new System.Drawing.Size(138, 33);
+            this.cbx_titleType_addTitle.Size = new System.Drawing.Size(177, 28);
             this.cbx_titleType_addTitle.TabIndex = 13;
             // 
             // btn_CancelUpdateTitle
@@ -609,14 +613,14 @@ namespace Nhom18_XDPM_UI
             this.btn_CancelUpdateTitle.IconVisible = true;
             this.btn_CancelUpdateTitle.IconZoom = 70D;
             this.btn_CancelUpdateTitle.IsTab = false;
-            this.btn_CancelUpdateTitle.Location = new System.Drawing.Point(273, 211);
-            this.btn_CancelUpdateTitle.Margin = new System.Windows.Forms.Padding(29, 32, 29, 32);
+            this.btn_CancelUpdateTitle.Location = new System.Drawing.Point(205, 171);
+            this.btn_CancelUpdateTitle.Margin = new System.Windows.Forms.Padding(22, 26, 22, 26);
             this.btn_CancelUpdateTitle.Name = "btn_CancelUpdateTitle";
             this.btn_CancelUpdateTitle.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btn_CancelUpdateTitle.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.btn_CancelUpdateTitle.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_CancelUpdateTitle.selected = false;
-            this.btn_CancelUpdateTitle.Size = new System.Drawing.Size(92, 35);
+            this.btn_CancelUpdateTitle.Size = new System.Drawing.Size(70, 29);
             this.btn_CancelUpdateTitle.TabIndex = 12;
             this.btn_CancelUpdateTitle.Text = "Hủy";
             this.btn_CancelUpdateTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -647,14 +651,14 @@ namespace Nhom18_XDPM_UI
             this.btn_AddTitle.IconVisible = true;
             this.btn_AddTitle.IconZoom = 70D;
             this.btn_AddTitle.IsTab = false;
-            this.btn_AddTitle.Location = new System.Drawing.Point(13, 211);
-            this.btn_AddTitle.Margin = new System.Windows.Forms.Padding(13, 14, 13, 14);
+            this.btn_AddTitle.Location = new System.Drawing.Point(10, 171);
+            this.btn_AddTitle.Margin = new System.Windows.Forms.Padding(10, 11, 10, 11);
             this.btn_AddTitle.Name = "btn_AddTitle";
             this.btn_AddTitle.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btn_AddTitle.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.btn_AddTitle.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_AddTitle.selected = false;
-            this.btn_AddTitle.Size = new System.Drawing.Size(89, 35);
+            this.btn_AddTitle.Size = new System.Drawing.Size(68, 29);
             this.btn_AddTitle.TabIndex = 10;
             this.btn_AddTitle.Text = "Thêm";
             this.btn_AddTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -665,18 +669,20 @@ namespace Nhom18_XDPM_UI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 129);
+            this.label3.Location = new System.Drawing.Point(29, 105);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 25);
+            this.label3.Size = new System.Drawing.Size(68, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "Thể loại:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 86);
+            this.label2.Location = new System.Drawing.Point(26, 70);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 25);
+            this.label2.Size = new System.Drawing.Size(73, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Nhan đề:";
             // 
@@ -688,10 +694,10 @@ namespace Nhom18_XDPM_UI
             this.txt_TitleName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_TitleName.Enabled = false;
             this.txt_TitleName.ForeColor = System.Drawing.Color.White;
-            this.txt_TitleName.Location = new System.Drawing.Point(140, 81);
-            this.txt_TitleName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_TitleName.Location = new System.Drawing.Point(105, 66);
+            this.txt_TitleName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_TitleName.Name = "txt_TitleName";
-            this.txt_TitleName.Size = new System.Drawing.Size(235, 30);
+            this.txt_TitleName.Size = new System.Drawing.Size(177, 26);
             this.txt_TitleName.TabIndex = 1;
             // 
             // txt_TitleID
@@ -702,18 +708,19 @@ namespace Nhom18_XDPM_UI
             this.txt_TitleID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_TitleID.Enabled = false;
             this.txt_TitleID.ForeColor = System.Drawing.Color.White;
-            this.txt_TitleID.Location = new System.Drawing.Point(140, 35);
-            this.txt_TitleID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_TitleID.Location = new System.Drawing.Point(105, 28);
+            this.txt_TitleID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_TitleID.Name = "txt_TitleID";
-            this.txt_TitleID.Size = new System.Drawing.Size(235, 30);
+            this.txt_TitleID.Size = new System.Drawing.Size(177, 26);
             this.txt_TitleID.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 37);
+            this.label1.Location = new System.Drawing.Point(8, 30);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 25);
+            this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID Nhan đề:";
             // 
@@ -726,12 +733,12 @@ namespace Nhom18_XDPM_UI
             this.tableLayoutPanelLeft.Controls.Add(this.groupBoxDisk, 0, 1);
             this.tableLayoutPanelLeft.Controls.Add(this.groupBoxTitle, 0, 0);
             this.tableLayoutPanelLeft.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanelLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanelLeft.Name = "tableLayoutPanelLeft";
             this.tableLayoutPanelLeft.RowCount = 2;
             this.tableLayoutPanelLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelLeft.Size = new System.Drawing.Size(711, 796);
+            this.tableLayoutPanelLeft.Size = new System.Drawing.Size(533, 647);
             this.tableLayoutPanelLeft.TabIndex = 1;
             // 
             // tableLayoutPanelRight
@@ -742,13 +749,14 @@ namespace Nhom18_XDPM_UI
             this.tableLayoutPanelRight.Controls.Add(this.groupBoxChangeLateFee, 0, 1);
             this.tableLayoutPanelRight.Controls.Add(this.groupBoxAddTitle, 0, 0);
             this.tableLayoutPanelRight.Controls.Add(this.groupBoxAddDisk, 0, 2);
-            this.tableLayoutPanelRight.Location = new System.Drawing.Point(711, 0);
+            this.tableLayoutPanelRight.Location = new System.Drawing.Point(533, 0);
+            this.tableLayoutPanelRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanelRight.Name = "tableLayoutPanelRight";
             this.tableLayoutPanelRight.RowCount = 3;
             this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.83721F));
             this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.16279F));
-            this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 193F));
-            this.tableLayoutPanelRight.Size = new System.Drawing.Size(406, 796);
+            this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 157F));
+            this.tableLayoutPanelRight.Size = new System.Drawing.Size(304, 647);
             this.tableLayoutPanelRight.TabIndex = 2;
             // 
             // groupBoxAddDisk
@@ -760,14 +768,16 @@ namespace Nhom18_XDPM_UI
             this.groupBoxAddDisk.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxAddDisk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxAddDisk.ForeColor = System.Drawing.Color.White;
-            this.groupBoxAddDisk.Location = new System.Drawing.Point(3, 605);
+            this.groupBoxAddDisk.Location = new System.Drawing.Point(2, 491);
+            this.groupBoxAddDisk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxAddDisk.Name = "groupBoxAddDisk";
-            this.groupBoxAddDisk.Size = new System.Drawing.Size(400, 188);
+            this.groupBoxAddDisk.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxAddDisk.Size = new System.Drawing.Size(300, 154);
             this.groupBoxAddDisk.TabIndex = 1;
             this.groupBoxAddDisk.TabStop = false;
             this.groupBoxAddDisk.Text = "Thêm mới đĩa";
             // 
-            // btnCancelAddDisk
+            // btn_CancelAddDisk
             // 
             this.btn_CancelAddDisk.Active = false;
             this.btn_CancelAddDisk.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
@@ -791,14 +801,14 @@ namespace Nhom18_XDPM_UI
             this.btn_CancelAddDisk.IconVisible = true;
             this.btn_CancelAddDisk.IconZoom = 70D;
             this.btn_CancelAddDisk.IsTab = false;
-            this.btn_CancelAddDisk.Location = new System.Drawing.Point(268, 117);
-            this.btn_CancelAddDisk.Margin = new System.Windows.Forms.Padding(48, 53, 48, 53);
-            this.btn_CancelAddDisk.Name = "btnCancelAddDisk";
+            this.btn_CancelAddDisk.Location = new System.Drawing.Point(201, 96);
+            this.btn_CancelAddDisk.Margin = new System.Windows.Forms.Padding(36, 43, 36, 43);
+            this.btn_CancelAddDisk.Name = "btn_CancelAddDisk";
             this.btn_CancelAddDisk.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btn_CancelAddDisk.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.btn_CancelAddDisk.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_CancelAddDisk.selected = false;
-            this.btn_CancelAddDisk.Size = new System.Drawing.Size(87, 40);
+            this.btn_CancelAddDisk.Size = new System.Drawing.Size(66, 33);
             this.btn_CancelAddDisk.TabIndex = 10;
             this.btn_CancelAddDisk.Text = "Hủy";
             this.btn_CancelAddDisk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -808,14 +818,14 @@ namespace Nhom18_XDPM_UI
             // 
             // UC_Title
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.Controls.Add(this.tableLayoutPanelRight);
             this.Controls.Add(this.tableLayoutPanelLeft);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UC_Title";
-            this.Size = new System.Drawing.Size(1117, 796);
+            this.Size = new System.Drawing.Size(838, 647);
             this.Load += new System.EventHandler(this.UC_Title_Load);
             this.groupBoxChangeLateFee.ResumeLayout(false);
             this.groupBoxChangeLateFee.PerformLayout();

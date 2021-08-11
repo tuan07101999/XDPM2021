@@ -161,14 +161,16 @@ namespace Nhom18_XDPM_UI
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if (!Parent.Controls.Contains(UC_RentDisk.Instance))
+            if (dgvListItem.SelectedRows.Count > 0 && dgvListItem.SelectedRows[0].Cells[0].Value != null)
             {
-                Parent.Controls.Add(UC_RentDisk.Instance);
-                UC_RentDisk.Instance.Dock = DockStyle.Fill;
-                UC_RentDisk.Instance.BringToFront();
-            }
-            else
-                UC_RentDisk.Instance.BringToFront();
+                if (!Parent.Controls.Contains(UC_RentDisk.Instance))
+                {
+                    Parent.Controls.Add(UC_RentDisk.Instance);
+                    UC_RentDisk.Instance.Dock = DockStyle.Fill;
+                    UC_RentDisk.Instance.BringToFront();
+                }
+                else
+                    UC_RentDisk.Instance.BringToFront();
                 UC_RentDisk.Instance.listLateFeeIsPaid(listRecord, totalLateFee);
 
                 dgvListItem.Rows.Clear();
@@ -176,11 +178,16 @@ namespace Nhom18_XDPM_UI
                 totalLateFee = 0;
                 txtTongTien.Text = "0";
                 listRecord = null;
-         
+            }    
         }
 
         private void dgvListItem_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
+            {
+                DataGridViewRow row = dgvListItem.Rows[e.RowIndex];
+            }
+
             if (e.ColumnIndex == 8)
             {
                 DialogResult dr = MessageBox.Show("Bạn muốn HỦY đĩa này .\nXác Nhận Hủy ?", "Hủy", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

@@ -52,6 +52,7 @@ namespace Nhom18_XDPM_UI
             // 
             // dgvListItem
             // 
+            this.dgvListItem.AllowUserToAddRows = false;
             this.dgvListItem.AllowUserToDeleteRows = false;
             this.dgvListItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -62,6 +63,7 @@ namespace Nhom18_XDPM_UI
             this.dgvListItem.Location = new System.Drawing.Point(21, 84);
             this.dgvListItem.Margin = new System.Windows.Forms.Padding(2);
             this.dgvListItem.Name = "dgvListItem";
+            this.dgvListItem.ReadOnly = true;
             this.dgvListItem.RowHeadersWidth = 51;
             this.dgvListItem.RowTemplate.Height = 24;
             this.dgvListItem.Size = new System.Drawing.Size(783, 424);
