@@ -263,6 +263,11 @@
       <DependentUpon>UC_Title.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Business.Models.CustomerFilterTypeObject.datasource" />
+    <None Include="Properties\DataSources\Business.Models.CustomerReportModel.datasource" />
+    <None Include="Properties\DataSources\Business.Models.HasOverdueModel.datasource" />
+    <None Include="Properties\DataSources\Business.Models.RecordModel.datasource" />
+    <None Include="Properties\DataSources\Business.Models.TitleReportModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

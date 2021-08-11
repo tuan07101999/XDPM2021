@@ -37,9 +37,6 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbl_InThongKe = new System.Windows.Forms.Label();
-            this.btn_InThongKe = new System.Windows.Forms.PictureBox();
-            this.txt_TimKiem = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.tieuDeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tongSoBanSaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,12 +44,15 @@
             this.tongSoBanSaoTrongKhoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuongBanSaoDangDatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleReportModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lbl_InThongKe = new System.Windows.Forms.Label();
+            this.btn_InThongKe = new System.Windows.Forms.PictureBox();
+            this.txt_TimKiem = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_InThongKe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.titleReportModelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_InThongKe)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,8 +62,9 @@
             this.panel1.Controls.Add(this.materialLabel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 38);
+            this.panel1.Size = new System.Drawing.Size(1087, 47);
             this.panel1.TabIndex = 22;
             // 
             // btn_back
@@ -75,9 +76,10 @@
             this.btn_back.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_back.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_back.Location = new System.Drawing.Point(3, 3);
+            this.btn_back.Location = new System.Drawing.Point(4, 4);
+            this.btn_back.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(150, 32);
+            this.btn_back.Size = new System.Drawing.Size(200, 39);
             this.btn_back.TabIndex = 20;
             this.btn_back.Text = "          Back";
             this.btn_back.UseVisualStyleBackColor = true;
@@ -87,12 +89,13 @@
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(303, 9);
+            this.materialLabel1.Location = new System.Drawing.Point(404, 11);
+            this.materialLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(111, 18);
+            this.materialLabel1.Size = new System.Drawing.Size(141, 24);
             this.materialLabel1.TabIndex = 17;
             this.materialLabel1.Text = "Báo cáo tiêu đề";
             // 
@@ -102,9 +105,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Location = new System.Drawing.Point(0, 41);
+            this.panel2.Location = new System.Drawing.Point(0, 50);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 408);
+            this.panel2.Size = new System.Drawing.Size(1087, 616);
             this.panel2.TabIndex = 23;
             // 
             // groupBox1
@@ -116,52 +120,14 @@
             this.groupBox1.Controls.Add(this.lbl_InThongKe);
             this.groupBox1.Controls.Add(this.btn_InThongKe);
             this.groupBox1.Controls.Add(this.txt_TimKiem);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(794, 402);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1079, 609);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách tiêu đề";
-            // 
-            // lbl_InThongKe
-            // 
-            this.lbl_InThongKe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_InThongKe.AutoSize = true;
-            this.lbl_InThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_InThongKe.Location = new System.Drawing.Point(716, 27);
-            this.lbl_InThongKe.Name = "lbl_InThongKe";
-            this.lbl_InThongKe.Size = new System.Drawing.Size(72, 16);
-            this.lbl_InThongKe.TabIndex = 3;
-            this.lbl_InThongKe.Text = "In thống kê";
-            // 
-            // btn_InThongKe
-            // 
-            this.btn_InThongKe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_InThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_InThongKe.Image = global::Nhom18_XDPM.Properties.Resources.print_filled_100px;
-            this.btn_InThongKe.Location = new System.Drawing.Point(677, 15);
-            this.btn_InThongKe.Name = "btn_InThongKe";
-            this.btn_InThongKe.Size = new System.Drawing.Size(30, 28);
-            this.btn_InThongKe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btn_InThongKe.TabIndex = 2;
-            this.btn_InThongKe.TabStop = false;
-            // 
-            // txt_TimKiem
-            // 
-            this.txt_TimKiem.Depth = 0;
-            this.txt_TimKiem.Hint = "";
-            this.txt_TimKiem.Location = new System.Drawing.Point(10, 20);
-            this.txt_TimKiem.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txt_TimKiem.Name = "txt_TimKiem";
-            this.txt_TimKiem.PasswordChar = '\0';
-            this.txt_TimKiem.SelectedText = "";
-            this.txt_TimKiem.SelectionLength = 0;
-            this.txt_TimKiem.SelectionStart = 0;
-            this.txt_TimKiem.Size = new System.Drawing.Size(384, 23);
-            this.txt_TimKiem.TabIndex = 0;
-            this.txt_TimKiem.Text = "Tìm kiếm";
-            this.txt_TimKiem.UseSystemPasswordChar = false;
-            this.txt_TimKiem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btn_TimKiem_KeyUp);
             // 
             // bunifuCustomDataGrid1
             // 
@@ -197,7 +163,8 @@
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(173)))), ((int)(((byte)(196)))));
             this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.White;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(10, 49);
+            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(13, 60);
+            this.bunifuCustomDataGrid1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
             this.bunifuCustomDataGrid1.ReadOnly = true;
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -210,7 +177,8 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.bunifuCustomDataGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(778, 345);
+            this.bunifuCustomDataGrid1.RowHeadersWidth = 51;
+            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(1057, 539);
             this.bunifuCustomDataGrid1.TabIndex = 4;
             // 
             // tieuDeDataGridViewTextBoxColumn
@@ -218,6 +186,7 @@
             this.tieuDeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.tieuDeDataGridViewTextBoxColumn.DataPropertyName = "TieuDe";
             this.tieuDeDataGridViewTextBoxColumn.HeaderText = "Tiêu đề";
+            this.tieuDeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tieuDeDataGridViewTextBoxColumn.Name = "tieuDeDataGridViewTextBoxColumn";
             this.tieuDeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -226,6 +195,7 @@
             this.tongSoBanSaoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.tongSoBanSaoDataGridViewTextBoxColumn.DataPropertyName = "TongSoBanSao";
             this.tongSoBanSaoDataGridViewTextBoxColumn.HeaderText = "Tổng số bản sao";
+            this.tongSoBanSaoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tongSoBanSaoDataGridViewTextBoxColumn.Name = "tongSoBanSaoDataGridViewTextBoxColumn";
             this.tongSoBanSaoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -234,6 +204,7 @@
             this.tongSoBanSaoDangDuocThueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.tongSoBanSaoDangDuocThueDataGridViewTextBoxColumn.DataPropertyName = "TongSoBanSaoDangDuocThue";
             this.tongSoBanSaoDangDuocThueDataGridViewTextBoxColumn.HeaderText = "Tổng số bản sao đang được thuê";
+            this.tongSoBanSaoDangDuocThueDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tongSoBanSaoDangDuocThueDataGridViewTextBoxColumn.Name = "tongSoBanSaoDangDuocThueDataGridViewTextBoxColumn";
             this.tongSoBanSaoDangDuocThueDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -242,6 +213,7 @@
             this.tongSoBanSaoTrongKhoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.tongSoBanSaoTrongKhoDataGridViewTextBoxColumn.DataPropertyName = "TongSoBanSaoTrongKho";
             this.tongSoBanSaoTrongKhoDataGridViewTextBoxColumn.HeaderText = "Tổng số bản sao trong kho";
+            this.tongSoBanSaoTrongKhoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tongSoBanSaoTrongKhoDataGridViewTextBoxColumn.Name = "tongSoBanSaoTrongKhoDataGridViewTextBoxColumn";
             this.tongSoBanSaoTrongKhoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -250,6 +222,7 @@
             this.soLuongBanSaoDangDatDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.soLuongBanSaoDangDatDataGridViewTextBoxColumn.DataPropertyName = "SoLuongBanSaoDangDat";
             this.soLuongBanSaoDangDatDataGridViewTextBoxColumn.HeaderText = "Tổng số lượng đặt hàng";
+            this.soLuongBanSaoDangDatDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.soLuongBanSaoDangDatDataGridViewTextBoxColumn.Name = "soLuongBanSaoDangDatDataGridViewTextBoxColumn";
             this.soLuongBanSaoDangDatDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -257,15 +230,59 @@
             // 
             this.titleReportModelBindingSource.DataSource = typeof(Business.Models.TitleReportModel);
             // 
+            // lbl_InThongKe
+            // 
+            this.lbl_InThongKe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_InThongKe.AutoSize = true;
+            this.lbl_InThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_InThongKe.Location = new System.Drawing.Point(975, 33);
+            this.lbl_InThongKe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_InThongKe.Name = "lbl_InThongKe";
+            this.lbl_InThongKe.Size = new System.Drawing.Size(90, 20);
+            this.lbl_InThongKe.TabIndex = 3;
+            this.lbl_InThongKe.Text = "In thống kê";
+            // 
+            // btn_InThongKe
+            // 
+            this.btn_InThongKe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_InThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_InThongKe.Image = global::Nhom18_XDPM.Properties.Resources.print_filled_100px;
+            this.btn_InThongKe.Location = new System.Drawing.Point(923, 18);
+            this.btn_InThongKe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_InThongKe.Name = "btn_InThongKe";
+            this.btn_InThongKe.Size = new System.Drawing.Size(40, 34);
+            this.btn_InThongKe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btn_InThongKe.TabIndex = 2;
+            this.btn_InThongKe.TabStop = false;
+            // 
+            // txt_TimKiem
+            // 
+            this.txt_TimKiem.Depth = 0;
+            this.txt_TimKiem.Hint = "";
+            this.txt_TimKiem.Location = new System.Drawing.Point(13, 25);
+            this.txt_TimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_TimKiem.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_TimKiem.Name = "txt_TimKiem";
+            this.txt_TimKiem.PasswordChar = '\0';
+            this.txt_TimKiem.SelectedText = "";
+            this.txt_TimKiem.SelectionLength = 0;
+            this.txt_TimKiem.SelectionStart = 0;
+            this.txt_TimKiem.Size = new System.Drawing.Size(512, 28);
+            this.txt_TimKiem.TabIndex = 0;
+            this.txt_TimKiem.Text = "Tìm kiếm";
+            this.txt_TimKiem.UseSystemPasswordChar = false;
+            this.txt_TimKiem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btn_TimKiem_KeyUp);
+            // 
             // ReportTitleForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1087, 668);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ReportTitleForm";
             this.Text = "ReportForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -275,9 +292,9 @@
             this.panel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_InThongKe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.titleReportModelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_InThongKe)).EndInit();
             this.ResumeLayout(false);
 
         }
