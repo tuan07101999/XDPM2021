@@ -35,7 +35,7 @@ namespace DataAccess
         }
         public Record GetRecordUnReturnByDiskID(string id)
         {
-            return db.Records.FirstOrDefault(x => x.idDisk == id && x.isPaid == false && x.rentDate != null && x.actualReturnDate == null);
+            return db.Records.FirstOrDefault(x => x.idDisk == id && x.rentDate != null && x.actualReturnDate == null);
         }
         public Result UpdateDateReturnAndLateFee(Record record)
         {

@@ -122,6 +122,12 @@ namespace Nhom18_XDPM_UI
                 return;
             }
 
+            if(!diskBLL.getDisks().Contains(diskBLL.getDiskByID(txtIDDia.Text)))
+            {
+                MessageBox.Show("Đĩa có ID  "+ txtIDDia.Text+ "  không có trong hệ thống!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (!autoIDDisk.Contains(txtIDDia.Text))
             {
                 MessageBox.Show("Đĩa chưa được thuê!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -167,7 +173,7 @@ namespace Nhom18_XDPM_UI
                 MessageBox.Show("Chưa có đĩa trong danh sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            DialogResult dr = MessageBox.Show("Bạn xác nhận việc TRẢ đĩa.\nXác Nhận Hủy ?", "Hủy", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult dr = MessageBox.Show("Bạn xác nhận việc TRẢ đĩa.\nXác Nhận Trả ?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dr == DialogResult.Yes)
             {
                 float lateFeeTotal = 0;
@@ -180,6 +186,10 @@ namespace Nhom18_XDPM_UI
                     {
                         item.lateFee = LateFeeCalculation(item);
 
+                    }
+                    if(item.lateFee > 0)
+                    {
+                        item.isPaid = false;
                     }
                     recordBLL.updateReturnDisk(item);
 

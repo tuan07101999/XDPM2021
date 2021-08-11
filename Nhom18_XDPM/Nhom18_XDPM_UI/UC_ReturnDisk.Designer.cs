@@ -35,8 +35,6 @@ namespace Nhom18_XDPM_UI
             this.txtIDDia = new System.Windows.Forms.TextBox();
             this.txtDiskName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtNgayThue = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.dgvReturn = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -71,16 +69,16 @@ namespace Nhom18_XDPM_UI
             this.btnThem.IconVisible = true;
             this.btnThem.IconZoom = 70D;
             this.btnThem.IsTab = false;
-            this.btnThem.Location = new System.Drawing.Point(216, 120);
+            this.btnThem.Location = new System.Drawing.Point(217, 137);
             this.btnThem.Name = "btnThem";
             this.btnThem.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btnThem.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.btnThem.OnHoverTextColor = System.Drawing.Color.White;
             this.btnThem.selected = false;
-            this.btnThem.Size = new System.Drawing.Size(80, 28);
+            this.btnThem.Size = new System.Drawing.Size(96, 41);
             this.btnThem.TabIndex = 6;
             this.btnThem.Text = "THÊM";
-            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnThem.Textcolor = System.Drawing.Color.White;
             this.btnThem.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -94,15 +92,13 @@ namespace Nhom18_XDPM_UI
             this.groupBox2.Controls.Add(this.txtIDDia);
             this.groupBox2.Controls.Add(this.txtDiskName);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.txtNgayThue);
-            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox2.Size = new System.Drawing.Size(483, 159);
+            this.groupBox2.Size = new System.Drawing.Size(483, 113);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ĐĨA";
@@ -110,10 +106,10 @@ namespace Nhom18_XDPM_UI
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(45, 21);
+            this.label10.Location = new System.Drawing.Point(32, 52);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(58, 20);
+            this.label10.Size = new System.Drawing.Size(64, 22);
             this.label10.TabIndex = 2;
             this.label10.Text = "ID Đĩa:";
             // 
@@ -124,10 +120,10 @@ namespace Nhom18_XDPM_UI
             this.txtIDDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.txtIDDia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIDDia.ForeColor = System.Drawing.Color.White;
-            this.txtIDDia.Location = new System.Drawing.Point(103, 21);
+            this.txtIDDia.Location = new System.Drawing.Point(103, 49);
             this.txtIDDia.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDDia.Name = "txtIDDia";
-            this.txtIDDia.Size = new System.Drawing.Size(355, 26);
+            this.txtIDDia.Size = new System.Drawing.Size(355, 27);
             this.txtIDDia.TabIndex = 1;
             this.txtIDDia.TextChanged += new System.EventHandler(this.txtIDDia_TextChanged);
             this.txtIDDia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIDDia_KeyDown);
@@ -140,43 +136,21 @@ namespace Nhom18_XDPM_UI
             this.txtDiskName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.txtDiskName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDiskName.ForeColor = System.Drawing.Color.White;
-            this.txtDiskName.Location = new System.Drawing.Point(104, 51);
+            this.txtDiskName.Location = new System.Drawing.Point(104, 87);
             this.txtDiskName.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiskName.Name = "txtDiskName";
-            this.txtDiskName.Size = new System.Drawing.Size(355, 26);
+            this.txtDiskName.Size = new System.Drawing.Size(355, 27);
             this.txtDiskName.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 53);
+            this.label5.Location = new System.Drawing.Point(17, 92);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 20);
+            this.label5.Size = new System.Drawing.Size(83, 22);
             this.label5.TabIndex = 0;
             this.label5.Text = "Nhan đề:";
-            // 
-            // txtNgayThue
-            // 
-            this.txtNgayThue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNgayThue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.txtNgayThue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNgayThue.Location = new System.Drawing.Point(105, 89);
-            this.txtNgayThue.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNgayThue.Name = "txtNgayThue";
-            this.txtNgayThue.Size = new System.Drawing.Size(354, 26);
-            this.txtNgayThue.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 90);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 20);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Ngày thuê:";
             // 
             // dgvReturn
             // 
@@ -186,12 +160,12 @@ namespace Nhom18_XDPM_UI
             this.dgvReturn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvReturn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReturn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvReturn.Location = new System.Drawing.Point(2, 161);
+            this.dgvReturn.Location = new System.Drawing.Point(2, 115);
             this.dgvReturn.Margin = new System.Windows.Forms.Padding(2);
             this.dgvReturn.Name = "dgvReturn";
             this.dgvReturn.RowHeadersWidth = 51;
             this.dgvReturn.RowTemplate.Height = 24;
-            this.dgvReturn.Size = new System.Drawing.Size(814, 315);
+            this.dgvReturn.Size = new System.Drawing.Size(814, 361);
             this.dgvReturn.TabIndex = 0;
             this.dgvReturn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReturn_CellClick);
             // 
@@ -206,8 +180,8 @@ namespace Nhom18_XDPM_UI
             this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.2636F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.7364F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.64017F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.35983F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 96F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(818, 575);
@@ -287,8 +261,6 @@ namespace Nhom18_XDPM_UI
         private System.Windows.Forms.TextBox txtIDDia;
         private System.Windows.Forms.TextBox txtDiskName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtNgayThue;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvReturn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
