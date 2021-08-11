@@ -317,5 +317,12 @@ namespace Nhom18_XDPM_UI
                 FillTextBox();
             }    
         }
+
+        private void btn_TTPhiTre_Click(object sender, EventArgs e)
+        {
+            Parent.Controls.Add(UC_CheckLateCharge.Instance);
+            UC_CheckLateCharge.Instance.Dock = DockStyle.Fill;
+            UC_CheckLateCharge.Instance.BringToFront();
+        }
     }
 }

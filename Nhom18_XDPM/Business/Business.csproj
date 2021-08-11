@@ -59,6 +59,7 @@
     <Compile Include="Models\CustomerReportModel.cs" />
     <Compile Include="Models\FilterTypeObject.cs" />
     <Compile Include="Models\HasOverdueModel.cs" />
+    <Compile Include="Models\HoldingModel.cs" />
     <Compile Include="Models\RecordModel.cs" />
     <Compile Include="Models\TitleReportModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
