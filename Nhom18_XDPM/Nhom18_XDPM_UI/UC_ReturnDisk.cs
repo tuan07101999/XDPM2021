@@ -19,6 +19,7 @@ namespace Nhom18_XDPM_UI
         RecordBLL recordBLL;
         AutoCompleteStringCollection autoIDDisk;
         List<Record> records;
+        List<int> recordIDs;
 
 
         public static UC_ReturnDisk Instance
@@ -37,6 +38,7 @@ namespace Nhom18_XDPM_UI
             diskBLL = new DiskBLL();
             recordBLL = new RecordBLL();
             records = new List<Record>();
+            recordIDs = new List<int>();
 
             //AutoComplete
             autoIDDisk = new AutoCompleteStringCollection();
@@ -74,19 +76,20 @@ namespace Nhom18_XDPM_UI
 
         }
 
-        //private void btnThongTinPhiTre_Click(object sender, EventArgs e)
-        //{
-        //    if (!Parent.Controls.Contains(UC_CheckLateCharge.Instance))
-        //    {
-        //        Parent.Controls.Add(UC_CheckLateCharge.Instance);
-        //        UC_CheckLateCharge.Instance.Dock = DockStyle.Fill;
-        //        UC_CheckLateCharge.Instance.BringToFront();
-        //    }
-        //    else
-        //    {
-        //        UC_CheckLateCharge.Instance.BringToFront();
-        //    }
-        //}
+        private void btnThongTinPhiTre_Click(object sender, EventArgs e)
+        {
+            if (!Parent.Controls.Contains(UC_CheckLateCharge.Instance))
+            {
+                Parent.Controls.Add(UC_CheckLateCharge.Instance);
+                UC_CheckLateCharge.Instance.Dock = DockStyle.Fill;
+                UC_CheckLateCharge.Instance.BringToFront();
+            }
+            else
+            {
+                UC_CheckLateCharge.Instance.BringToFront();
+            }
+            UC_CheckLateCharge.Instance.getLateFeeFromRenturnDisk(recordIDs);
+        }
 
         private void UC_ReturnDisk_Load(object sender, EventArgs e)
         {
@@ -182,6 +185,7 @@ namespace Nhom18_XDPM_UI
             if (dr == DialogResult.Yes)
             {
                 float lateFeeTotal = 0;
+                recordIDs.Clear();
                 foreach (var item in records)
                 {
                     //Cập nhật Record
@@ -195,6 +199,7 @@ namespace Nhom18_XDPM_UI
                     if(item.lateFee > 0)
                     {
                         item.isPaid = false;
+                        recordIDs.Add(item.idRecord);
                     }
                     recordBLL.updateReturnDisk(item);
 
@@ -208,6 +213,7 @@ namespace Nhom18_XDPM_UI
                 }
                 MessageBox.Show("Trả đĩa thành công! \n Phí trễ được thêm vào:  "+ lateFeeTotal+"$", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dgvReturn.Rows.Clear();
+                records.Clear();
             }   
         }
 
@@ -233,6 +239,11 @@ namespace Nhom18_XDPM_UI
 
             dgvReturn.Rows.Clear();
             records.Clear();
+        }
+
+        public void setDefaultRecordIDs()
+        {
+            recordIDs.Clear();
         }
 
         private void txtIDDia_KeyDown(object sender, KeyEventArgs e)

@@ -468,7 +468,7 @@ namespace Nhom18_XDPM_UI
                 {
                     idDisk = txt_IDDisk.Text.Trim(),
                     idTitle = dgv_title.SelectedRows[0].Cells[0].Value.ToString(),
-                    name = dgv_title.SelectedRows[0].Cells[0].Value.ToString() + " - Đĩa mới",
+                    name = dgv_title.SelectedRows[0].Cells[0].Value.ToString() + " - "+titleBLL.GetItemTitleById(dgv_title.SelectedRows[0].Cells[0].Value.ToString()).name,
                     status = 0
                 };
                 Result result = null;

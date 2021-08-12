@@ -38,6 +38,7 @@ namespace Nhom18_XDPM_UI
             this.dgvReturn = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPhiTre = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnTraDia = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReturn)).BeginInit();
@@ -109,7 +110,7 @@ namespace Nhom18_XDPM_UI
             this.label10.Location = new System.Drawing.Point(28, 32);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(58, 20);
+            this.label10.Size = new System.Drawing.Size(64, 22);
             this.label10.TabIndex = 2;
             this.label10.Text = "ID Đĩa:";
             // 
@@ -123,7 +124,7 @@ namespace Nhom18_XDPM_UI
             this.txtIDDia.Location = new System.Drawing.Point(99, 29);
             this.txtIDDia.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDDia.Name = "txtIDDia";
-            this.txtIDDia.Size = new System.Drawing.Size(306, 26);
+            this.txtIDDia.Size = new System.Drawing.Size(306, 27);
             this.txtIDDia.TabIndex = 1;
             this.txtIDDia.TextChanged += new System.EventHandler(this.txtIDDia_TextChanged);
             this.txtIDDia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIDDia_KeyDown);
@@ -139,7 +140,7 @@ namespace Nhom18_XDPM_UI
             this.txtDiskName.Location = new System.Drawing.Point(100, 67);
             this.txtDiskName.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiskName.Name = "txtDiskName";
-            this.txtDiskName.Size = new System.Drawing.Size(305, 26);
+            this.txtDiskName.Size = new System.Drawing.Size(305, 27);
             this.txtDiskName.TabIndex = 1;
             // 
             // label5
@@ -148,7 +149,7 @@ namespace Nhom18_XDPM_UI
             this.label5.Location = new System.Drawing.Point(13, 72);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 20);
+            this.label5.Size = new System.Drawing.Size(83, 22);
             this.label5.TabIndex = 0;
             this.label5.Text = "Nhan đề:";
             // 
@@ -190,12 +191,51 @@ namespace Nhom18_XDPM_UI
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnPhiTre);
             this.panel1.Controls.Add(this.btnTraDia);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 481);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(812, 91);
             this.panel1.TabIndex = 2;
+            // 
+            // btnPhiTre
+            // 
+            this.btnPhiTre.Active = false;
+            this.btnPhiTre.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
+            this.btnPhiTre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPhiTre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.btnPhiTre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPhiTre.BorderRadius = 0;
+            this.btnPhiTre.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btnPhiTre.ButtonText = "THÔNG TIN PHÍ TRỄ";
+            this.btnPhiTre.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.btnPhiTre.DisabledColor = System.Drawing.Color.Gray;
+            this.btnPhiTre.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnPhiTre.Iconimage = null;
+            this.btnPhiTre.Iconimage_right = null;
+            this.btnPhiTre.Iconimage_right_Selected = null;
+            this.btnPhiTre.Iconimage_Selected = null;
+            this.btnPhiTre.IconMarginLeft = 0;
+            this.btnPhiTre.IconMarginRight = 0;
+            this.btnPhiTre.IconRightVisible = true;
+            this.btnPhiTre.IconRightZoom = 0D;
+            this.btnPhiTre.IconVisible = true;
+            this.btnPhiTre.IconZoom = 70D;
+            this.btnPhiTre.IsTab = false;
+            this.btnPhiTre.Location = new System.Drawing.Point(438, 31);
+            this.btnPhiTre.Name = "btnPhiTre";
+            this.btnPhiTre.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.btnPhiTre.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
+            this.btnPhiTre.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnPhiTre.selected = false;
+            this.btnPhiTre.Size = new System.Drawing.Size(167, 36);
+            this.btnPhiTre.TabIndex = 7;
+            this.btnPhiTre.Text = "THÔNG TIN PHÍ TRỄ";
+            this.btnPhiTre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPhiTre.Textcolor = System.Drawing.Color.White;
+            this.btnPhiTre.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhiTre.Click += new System.EventHandler(this.btnThongTinPhiTre_Click);
             // 
             // btnTraDia
             // 
@@ -266,5 +306,6 @@ namespace Nhom18_XDPM_UI
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuFlatButton btnTraDia;
+        private Bunifu.Framework.UI.BunifuFlatButton btnPhiTre;
     }
 }

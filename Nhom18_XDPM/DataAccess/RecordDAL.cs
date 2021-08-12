@@ -88,9 +88,10 @@ namespace DataAccess
         }
         public Result UpdateIsPaid(Record record)
         {
-            var item = db.Records.FirstOrDefault(x => x.idCustomer.Equals(record.idCustomer)
-                                                   && x.idDisk.Equals(record.idDisk)
-                                                    );
+            //var item = db.Records.FirstOrDefault(x => x.idCustomer.Equals(record.idCustomer)
+            //                                       && x.idDisk.Equals(record.idDisk)
+            //                                        );
+            var item = db.Records.FirstOrDefault(x => x.idRecord == record.idRecord);
             if (item != null)
             {
                 item.isPaid = record.isPaid;

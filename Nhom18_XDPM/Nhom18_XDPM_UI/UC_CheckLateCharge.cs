@@ -23,6 +23,8 @@ namespace Nhom18_XDPM_UI
         private DiskBLL diskBLL;
         private static UC_CheckLateCharge _instance;
         float totalLateFee = 0;
+        int check = 0;
+        int checkThanhToanTraDia = 0;
         public static UC_CheckLateCharge Instance
         {
             get
@@ -45,6 +47,8 @@ namespace Nhom18_XDPM_UI
         {
             idCustomer = _idCustomer;
             txtTimKiem.Text = idCustomer.ToString();
+            setDefaultForm();
+            checkThanhToanTraDia = 0;
         }
         public void CreateButtonDataGridView()
         {  
@@ -85,6 +89,13 @@ namespace Nhom18_XDPM_UI
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            //Of The Form Return Disk
+            if (check == 1)
+            {
+                backReturnDisk();
+                return;
+            }
+
             if (!Parent.Controls.Contains(UC_RentDisk.Instance))
             {
                 Parent.Controls.Add(UC_RentDisk.Instance);
@@ -100,16 +111,18 @@ namespace Nhom18_XDPM_UI
             totalLateFee = 0;
             txtTongTien.Text = "0";
             listRecord = null;
+            setDefaultForm();
         }
 
         private void pictureBoxTimKiem_Click(object sender, EventArgs e)
         {
             DataBindings.Clear();
             dgvListItem.Columns.Clear();
+            listRecord = null;
             if (listRecord == null)
             {
                 listRecord = new List<RecordDTO>();
-                var listTemp = recordBLL.checkLateFee(idCustomer);
+                var listTemp = recordBLL.checkLateFee(int.Parse(txtTimKiem.Text.ToString()));
                 foreach (var item in listTemp)
                 {
                     listRecord.Add(new RecordDTO()
@@ -156,11 +169,40 @@ namespace Nhom18_XDPM_UI
                 }
                 txtTongTien.Text = totalLateFee.ToString();
                 if (totalLateFee > 0) btnThanhToan.Enabled = true;
+                else btnThanhToan.Enabled = false;
             }
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+            //Of The Form Return Disk
+            if(check == 1)
+            {
+                if (dgvListItem.SelectedRows.Count > 0 && dgvListItem.SelectedRows[0].Cells[0].Value != null)
+                {
+                    DialogResult dr = MessageBox.Show("Bạn muốn Thanh Toán phí trễ hạn .\nPhí trễ: "+txtTongTien.Text+"$ ?", "Thanh Toán?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dr == DialogResult.Yes)
+                    {
+                        Record rc;
+                        foreach(var item in listRecord)
+                        {
+                            rc = recordBLL.getRecordByID(item.idRecord);
+                            rc.isPaid = true;
+                            recordBLL.UpdateIsPaid(rc);
+                        }
+                        MessageBox.Show("Thanh toán phí trễ thành công!\n", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dgvListItem.Rows.Clear();
+                        dgvListItem.Refresh();
+                        totalLateFee = 0;
+                        txtTongTien.Text = "0";
+                        listRecord = null;
+                        checkThanhToanTraDia = 1;
+                    }
+                }
+                return;
+            }
+
+            //Of The Form Rent Disk
             if (dgvListItem.SelectedRows.Count > 0 && dgvListItem.SelectedRows[0].Cells[0].Value != null)
             {
                 if (!Parent.Controls.Contains(UC_RentDisk.Instance))
@@ -201,6 +243,101 @@ namespace Nhom18_XDPM_UI
                 }
                 else return;
                
+            }
+        }
+
+
+        //Of The Form Return Disk
+        public void getLateFeeFromRenturnDisk(List<int> recordIDs)
+        {
+            check = 1;
+            checkThanhToanTraDia = 0;
+            btnBack.Text = "<< Trả Đĩa";
+            pictureBoxTimKiem.Enabled = false;
+            txtTimKiem.Enabled = false;
+            txtTimKiem.Text = "";
+            txtTongTien.Text = "";
+
+
+            var recordByFormReturn = new List<Record>();
+            if(recordIDs.Count > 0)
+            {
+                foreach(var item in recordIDs)
+                {
+                    recordByFormReturn.Add(recordBLL.getRecordByID(item));
+                }
+            }
+
+
+            DataBindings.Clear();
+            dgvListItem.Columns.Clear();
+            listRecord = null;
+            if (listRecord == null)
+            {
+                listRecord = new List<RecordDTO>();
+                foreach (var item in recordByFormReturn)
+                {
+                    listRecord.Add(new RecordDTO()
+                    {
+                        idRecord = item.idRecord,
+                        nameCustomer = customerBLL.searchCustomerbyId(item.idCustomer).name,
+                        nameDisk = diskBLL.getDiskByID(item.idDisk).name,
+                        rentDate = item.rentDate,
+                        dueDate = item.dueDate,
+                        actualReturnDate = item.actualReturnDate,
+                        lateFee = (float)item.lateFee,
+                        isPaid = item.isPaid
+                    });
+                }
+                CreateDataGridView("");
+                CreateButtonDataGridView();
+            }
+            if (listRecord.Count > 0)
+            {
+                CreateDataGridView("");
+            }
+            if (listRecord.Count == 0)
+            {
+                dgvListItem.DataSource = new List<RecordDTO>();
+                CreateDataGridView("");
+            }
+
+
+
+
+        }
+
+        private void setDefaultForm()
+        {
+            check = 0;
+            btnBack.Text = "<< Thuê";
+            pictureBoxTimKiem.Enabled = true;
+            txtTimKiem.Enabled = true;
+            txtTongTien.Text = "";
+
+        }
+
+        private void backReturnDisk()
+        {
+            if (!Parent.Controls.Contains(UC_ReturnDisk.Instance))
+            {
+                Parent.Controls.Add(UC_ReturnDisk.Instance);
+                UC_ReturnDisk.Instance.Dock = DockStyle.Fill;
+                UC_ReturnDisk.Instance.BringToFront();
+            }
+            else
+                UC_ReturnDisk.Instance.BringToFront();
+
+            dgvListItem.Rows.Clear();
+            dgvListItem.Refresh();
+            totalLateFee = 0;
+            txtTongTien.Text = "0";
+            listRecord = null;
+            setDefaultForm();
+
+            if (checkThanhToanTraDia == 1)
+            {
+                UC_ReturnDisk.Instance.setDefaultRecordIDs();
             }
         }
     }
