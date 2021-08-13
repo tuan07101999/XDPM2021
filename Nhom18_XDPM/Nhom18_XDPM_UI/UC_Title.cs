@@ -75,6 +75,7 @@ namespace Nhom18_XDPM_UI
             dgv_title.Columns["idCategory"].HeaderText = "Loại";
             dgv_title.Columns["Disks"].Visible = false;
             dgv_title.Columns["Category"].Visible = false;
+            dgv_title.Columns["Holdings"].Visible = false;
 
             dgv_title.Columns["idTitle"].Width = 120;
             dgv_title.Columns["name"].Width = 240;
@@ -86,6 +87,9 @@ namespace Nhom18_XDPM_UI
         {
             bindingSource2.DataSource = diskBLL.GetListDiskByIDtitle(id);
             dgv_disk.DataSource = bindingSource2;
+            dgv_disk.Columns["Records"].Visible = false;
+            dgv_disk.Columns["Title"].Visible = false;
+
         }
 
         private void dgv_title_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)

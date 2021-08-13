@@ -60,6 +60,7 @@ namespace Nhom18_XDPM_UI
             dgv_ListKhachHang.Columns["birthDate"].HeaderText = "Ngày sinh";
             // ẩn bảng phụ
             dgv_ListKhachHang.Columns["Records"].Visible = false;
+            dgv_ListKhachHang.Columns["Holdings"].Visible = false;
             // set chiều dài
             //dgv_ListKhachHang.Columns["idCustomer"].Width = 120;
             //dgv_ListKhachHang.Columns["name"].Width = 140;
