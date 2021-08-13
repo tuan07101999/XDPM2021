@@ -450,14 +450,7 @@ namespace Nhom18_XDPM_UI
 
         private void btn_AddDisk_Click(object sender, EventArgs e)
         {
-            if (btn_AddDisk.Text=="Thêm")
-            {
-                btn_AddDisk.Text = "Lưu";
-                btn_CancelAddDisk.Enabled = true;
-                txt_IDDisk.Enabled = true;
-            }
-            else
-            {
+
                 if (dgv_title.Rows.Count == 0)
                 {
                     MessageBox.Show("Chưa có dữ liệu đĩa!! Hãy chọn tiêu đề trước");
@@ -495,18 +488,12 @@ namespace Nhom18_XDPM_UI
                         DiskCreateDataGridView(id);
                         UpdateCountOfDisks(false);
                         ReloadTitle();
-
-                        btn_AddDisk.Text = "Thêm";
-                        txt_IDDisk.Clear();
-                        txt_IDDisk.Enabled = false;
-                        btn_CancelAddDisk.Enabled = false;
                     }
                 }
                 else
                 {
                     MessageBox.Show(result.message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
-            }
         }
 
         private void btn_HuyChangeRentalFee_Click(object sender, EventArgs e)
@@ -558,9 +545,6 @@ namespace Nhom18_XDPM_UI
             btn_ChangeRentFee.Enabled = false;
             btn_CancelChangeRentalFee.Enabled = false;
 
-            txt_IDDisk.Enabled = false;
-            btn_AddDisk.Enabled = false;
-            btn_CancelAddDisk.Enabled = false;
         }
 
         private void btn_CancelChangeRentalFee_Click(object sender, EventArgs e)
@@ -570,10 +554,7 @@ namespace Nhom18_XDPM_UI
             cbx_rentalFee.Text = "DVD";
         }
 
-        /// <summary>
-        /// Count up or count down the count of disk
-        /// </summary>
-        /// <param name="isCountDown">If true, count down, else count up</param>
+      
         private void UpdateCountOfDisks(bool isCountDown)
         {
             var titleId = dgv_title.SelectedRows[0].Cells[0].Value.ToString();

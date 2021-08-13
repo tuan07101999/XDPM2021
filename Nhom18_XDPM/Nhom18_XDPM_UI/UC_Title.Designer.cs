@@ -64,7 +64,6 @@ namespace Nhom18_XDPM_UI
             this.tableLayoutPanelLeft = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelRight = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxAddDisk = new System.Windows.Forms.GroupBox();
-            this.btn_CancelAddDisk = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBoxChangeLateFee.SuspendLayout();
             this.groupBoxDisk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_disk)).BeginInit();
@@ -93,9 +92,9 @@ namespace Nhom18_XDPM_UI
             this.groupBoxChangeLateFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxChangeLateFee.ForeColor = System.Drawing.Color.White;
             this.groupBoxChangeLateFee.Location = new System.Drawing.Point(2, 241);
-            this.groupBoxChangeLateFee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxChangeLateFee.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxChangeLateFee.Name = "groupBoxChangeLateFee";
-            this.groupBoxChangeLateFee.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxChangeLateFee.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxChangeLateFee.Size = new System.Drawing.Size(300, 246);
             this.groupBoxChangeLateFee.TabIndex = 0;
             this.groupBoxChangeLateFee.TabStop = false;
@@ -241,7 +240,7 @@ namespace Nhom18_XDPM_UI
             this.txt_RentalPeriod.Enabled = false;
             this.txt_RentalPeriod.ForeColor = System.Drawing.Color.White;
             this.txt_RentalPeriod.Location = new System.Drawing.Point(130, 72);
-            this.txt_RentalPeriod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_RentalPeriod.Margin = new System.Windows.Forms.Padding(2);
             this.txt_RentalPeriod.Name = "txt_RentalPeriod";
             this.txt_RentalPeriod.Size = new System.Drawing.Size(96, 26);
             this.txt_RentalPeriod.TabIndex = 1;
@@ -263,7 +262,7 @@ namespace Nhom18_XDPM_UI
             this.txt_RentFee.Enabled = false;
             this.txt_RentFee.ForeColor = System.Drawing.Color.White;
             this.txt_RentFee.Location = new System.Drawing.Point(130, 34);
-            this.txt_RentFee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_RentFee.Margin = new System.Windows.Forms.Padding(2);
             this.txt_RentFee.Name = "txt_RentFee";
             this.txt_RentFee.Size = new System.Drawing.Size(96, 26);
             this.txt_RentFee.TabIndex = 1;
@@ -317,9 +316,9 @@ namespace Nhom18_XDPM_UI
             this.groupBoxDisk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxDisk.ForeColor = System.Drawing.Color.White;
             this.groupBoxDisk.Location = new System.Drawing.Point(2, 325);
-            this.groupBoxDisk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxDisk.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxDisk.Name = "groupBoxDisk";
-            this.groupBoxDisk.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxDisk.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxDisk.Size = new System.Drawing.Size(529, 320);
             this.groupBoxDisk.TabIndex = 0;
             this.groupBoxDisk.TabStop = false;
@@ -350,7 +349,7 @@ namespace Nhom18_XDPM_UI
             this.btn_RemoveDisk.IconZoom = 70D;
             this.btn_RemoveDisk.IsTab = false;
             this.btn_RemoveDisk.Location = new System.Drawing.Point(455, 284);
-            this.btn_RemoveDisk.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.btn_RemoveDisk.Margin = new System.Windows.Forms.Padding(8);
             this.btn_RemoveDisk.Name = "btn_RemoveDisk";
             this.btn_RemoveDisk.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btn_RemoveDisk.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
@@ -375,7 +374,7 @@ namespace Nhom18_XDPM_UI
             this.dgv_disk.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_disk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_disk.Location = new System.Drawing.Point(8, 23);
-            this.dgv_disk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_disk.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_disk.Name = "dgv_disk";
             this.dgv_disk.ReadOnly = true;
             this.dgv_disk.RowHeadersWidth = 51;
@@ -401,7 +400,7 @@ namespace Nhom18_XDPM_UI
             this.txt_IDDisk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_IDDisk.ForeColor = System.Drawing.Color.White;
             this.txt_IDDisk.Location = new System.Drawing.Point(118, 47);
-            this.txt_IDDisk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_IDDisk.Margin = new System.Windows.Forms.Padding(2);
             this.txt_IDDisk.Name = "txt_IDDisk";
             this.txt_IDDisk.Size = new System.Drawing.Size(164, 26);
             this.txt_IDDisk.TabIndex = 17;
@@ -418,9 +417,9 @@ namespace Nhom18_XDPM_UI
             this.groupBoxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxTitle.ForeColor = System.Drawing.Color.White;
             this.groupBoxTitle.Location = new System.Drawing.Point(2, 2);
-            this.groupBoxTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxTitle.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxTitle.Name = "groupBoxTitle";
-            this.groupBoxTitle.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxTitle.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxTitle.Size = new System.Drawing.Size(529, 319);
             this.groupBoxTitle.TabIndex = 0;
             this.groupBoxTitle.TabStop = false;
@@ -475,7 +474,7 @@ namespace Nhom18_XDPM_UI
             this.dgv_title.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgv_title.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_title.Location = new System.Drawing.Point(8, 55);
-            this.dgv_title.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_title.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_title.Name = "dgv_title";
             this.dgv_title.RowHeadersWidth = 51;
             this.dgv_title.RowTemplate.Height = 24;
@@ -490,7 +489,7 @@ namespace Nhom18_XDPM_UI
             this.pictureBoxTimKiemNhanDe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxTimKiemNhanDe.Image = global::Nhom18_XDPM_UI.Properties.Resources.reboot_16px;
             this.pictureBoxTimKiemNhanDe.Location = new System.Drawing.Point(495, 23);
-            this.pictureBoxTimKiemNhanDe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxTimKiemNhanDe.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxTimKiemNhanDe.Name = "pictureBoxTimKiemNhanDe";
             this.pictureBoxTimKiemNhanDe.Size = new System.Drawing.Size(29, 28);
             this.pictureBoxTimKiemNhanDe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -506,7 +505,7 @@ namespace Nhom18_XDPM_UI
             this.txt_searchTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_searchTitle.ForeColor = System.Drawing.Color.DarkGray;
             this.txt_searchTitle.Location = new System.Drawing.Point(8, 23);
-            this.txt_searchTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_searchTitle.Margin = new System.Windows.Forms.Padding(2);
             this.txt_searchTitle.Multiline = true;
             this.txt_searchTitle.Name = "txt_searchTitle";
             this.txt_searchTitle.Size = new System.Drawing.Size(483, 28);
@@ -537,7 +536,7 @@ namespace Nhom18_XDPM_UI
             this.btn_ChangeTitle.IconZoom = 70D;
             this.btn_ChangeTitle.IsTab = false;
             this.btn_ChangeTitle.Location = new System.Drawing.Point(105, 171);
-            this.btn_ChangeTitle.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.btn_ChangeTitle.Margin = new System.Windows.Forms.Padding(8);
             this.btn_ChangeTitle.Name = "btn_ChangeTitle";
             this.btn_ChangeTitle.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.btn_ChangeTitle.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
@@ -567,9 +566,9 @@ namespace Nhom18_XDPM_UI
             this.groupBoxAddTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxAddTitle.ForeColor = System.Drawing.Color.White;
             this.groupBoxAddTitle.Location = new System.Drawing.Point(2, 2);
-            this.groupBoxAddTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxAddTitle.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxAddTitle.Name = "groupBoxAddTitle";
-            this.groupBoxAddTitle.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxAddTitle.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxAddTitle.Size = new System.Drawing.Size(300, 235);
             this.groupBoxAddTitle.TabIndex = 0;
             this.groupBoxAddTitle.TabStop = false;
@@ -695,7 +694,7 @@ namespace Nhom18_XDPM_UI
             this.txt_TitleName.Enabled = false;
             this.txt_TitleName.ForeColor = System.Drawing.Color.White;
             this.txt_TitleName.Location = new System.Drawing.Point(105, 66);
-            this.txt_TitleName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_TitleName.Margin = new System.Windows.Forms.Padding(2);
             this.txt_TitleName.Name = "txt_TitleName";
             this.txt_TitleName.Size = new System.Drawing.Size(177, 26);
             this.txt_TitleName.TabIndex = 1;
@@ -709,7 +708,7 @@ namespace Nhom18_XDPM_UI
             this.txt_TitleID.Enabled = false;
             this.txt_TitleID.ForeColor = System.Drawing.Color.White;
             this.txt_TitleID.Location = new System.Drawing.Point(105, 28);
-            this.txt_TitleID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_TitleID.Margin = new System.Windows.Forms.Padding(2);
             this.txt_TitleID.Name = "txt_TitleID";
             this.txt_TitleID.Size = new System.Drawing.Size(177, 26);
             this.txt_TitleID.TabIndex = 1;
@@ -733,7 +732,7 @@ namespace Nhom18_XDPM_UI
             this.tableLayoutPanelLeft.Controls.Add(this.groupBoxDisk, 0, 1);
             this.tableLayoutPanelLeft.Controls.Add(this.groupBoxTitle, 0, 0);
             this.tableLayoutPanelLeft.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanelLeft.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanelLeft.Name = "tableLayoutPanelLeft";
             this.tableLayoutPanelLeft.RowCount = 2;
             this.tableLayoutPanelLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -750,7 +749,7 @@ namespace Nhom18_XDPM_UI
             this.tableLayoutPanelRight.Controls.Add(this.groupBoxAddTitle, 0, 0);
             this.tableLayoutPanelRight.Controls.Add(this.groupBoxAddDisk, 0, 2);
             this.tableLayoutPanelRight.Location = new System.Drawing.Point(533, 0);
-            this.tableLayoutPanelRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanelRight.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanelRight.Name = "tableLayoutPanelRight";
             this.tableLayoutPanelRight.RowCount = 3;
             this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.83721F));
@@ -762,59 +761,19 @@ namespace Nhom18_XDPM_UI
             // groupBoxAddDisk
             // 
             this.groupBoxAddDisk.Controls.Add(this.txt_IDDisk);
-            this.groupBoxAddDisk.Controls.Add(this.btn_CancelAddDisk);
             this.groupBoxAddDisk.Controls.Add(this.btn_AddDisk);
             this.groupBoxAddDisk.Controls.Add(this.label9);
             this.groupBoxAddDisk.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxAddDisk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxAddDisk.ForeColor = System.Drawing.Color.White;
             this.groupBoxAddDisk.Location = new System.Drawing.Point(2, 491);
-            this.groupBoxAddDisk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxAddDisk.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxAddDisk.Name = "groupBoxAddDisk";
-            this.groupBoxAddDisk.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxAddDisk.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxAddDisk.Size = new System.Drawing.Size(300, 154);
             this.groupBoxAddDisk.TabIndex = 1;
             this.groupBoxAddDisk.TabStop = false;
             this.groupBoxAddDisk.Text = "Thêm mới đĩa";
-            // 
-            // btn_CancelAddDisk
-            // 
-            this.btn_CancelAddDisk.Active = false;
-            this.btn_CancelAddDisk.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btn_CancelAddDisk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_CancelAddDisk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btn_CancelAddDisk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_CancelAddDisk.BorderRadius = 0;
-            this.btn_CancelAddDisk.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btn_CancelAddDisk.ButtonText = "Hủy";
-            this.btn_CancelAddDisk.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btn_CancelAddDisk.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_CancelAddDisk.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_CancelAddDisk.Iconimage = null;
-            this.btn_CancelAddDisk.Iconimage_right = null;
-            this.btn_CancelAddDisk.Iconimage_right_Selected = null;
-            this.btn_CancelAddDisk.Iconimage_Selected = null;
-            this.btn_CancelAddDisk.IconMarginLeft = 0;
-            this.btn_CancelAddDisk.IconMarginRight = 0;
-            this.btn_CancelAddDisk.IconRightVisible = true;
-            this.btn_CancelAddDisk.IconRightZoom = 0D;
-            this.btn_CancelAddDisk.IconVisible = true;
-            this.btn_CancelAddDisk.IconZoom = 70D;
-            this.btn_CancelAddDisk.IsTab = false;
-            this.btn_CancelAddDisk.Location = new System.Drawing.Point(201, 96);
-            this.btn_CancelAddDisk.Margin = new System.Windows.Forms.Padding(36, 43, 36, 43);
-            this.btn_CancelAddDisk.Name = "btn_CancelAddDisk";
-            this.btn_CancelAddDisk.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.btn_CancelAddDisk.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.btn_CancelAddDisk.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_CancelAddDisk.selected = false;
-            this.btn_CancelAddDisk.Size = new System.Drawing.Size(66, 33);
-            this.btn_CancelAddDisk.TabIndex = 10;
-            this.btn_CancelAddDisk.Text = "Hủy";
-            this.btn_CancelAddDisk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_CancelAddDisk.Textcolor = System.Drawing.Color.White;
-            this.btn_CancelAddDisk.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CancelAddDisk.Click += new System.EventHandler(this.btn_AddDisk_Click);
             // 
             // UC_Title
             // 
@@ -823,7 +782,7 @@ namespace Nhom18_XDPM_UI
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.Controls.Add(this.tableLayoutPanelRight);
             this.Controls.Add(this.tableLayoutPanelLeft);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_Title";
             this.Size = new System.Drawing.Size(838, 647);
             this.Load += new System.EventHandler(this.UC_Title_Load);
@@ -881,6 +840,5 @@ namespace Nhom18_XDPM_UI
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBoxAddDisk;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_CancelAddDisk;
     }
 }
